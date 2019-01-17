@@ -87,9 +87,9 @@ public class Hmp extends AppCompatActivity
             tag = "sayac";
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Sayac(),tag).commit();
 
-        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_hedefler) {
 
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Hedefler()).commit();
 
         } else if (id == R.id.nav_sonuclar) {
 
