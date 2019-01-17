@@ -21,8 +21,8 @@
             android:id="@+id/nav_sonuclar"
             android:title="Deneme Sonuçları"/>
         <item
-            android:id="@+id/nav_settings"
-            android:title="Ayarlar"/>
+            android:id="@+id/nav_hedefler"
+            android:title="Hedefler"/>
 
     </group>
 
