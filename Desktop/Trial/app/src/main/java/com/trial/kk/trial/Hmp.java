@@ -21,7 +21,7 @@ public class Hmp extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //andskjasnjdlaşidkansfbaisd
         //Ben bu dosyaya girdim update edip push ettim.
         System.out.println("ASfasdasfasdsa");
 
