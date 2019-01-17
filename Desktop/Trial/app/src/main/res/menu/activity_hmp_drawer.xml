@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homepage"
+            android:title="Ana Sayfa"/>
+        <item
+            android:id="@+id/nav_countdown"
+            android:title="Geri Sayım" />
+        <item
+            android:id="@+id/nav_konular"
+            android:title="Konular" />
+        <item
+            android:id="@+id/nav_sorular"
+            android:title="Çözülen Sorular" />
+        <item
+            android:id="@+id/nav_kronometre"
+            android:title="Kronometre" />
+        <item
+            android:id="@+id/nav_sonuclar"
+            android:title="Deneme Sonuçları"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:title="Ayarlar"/>
+
+    </group>
+
+
+
+</menu>
