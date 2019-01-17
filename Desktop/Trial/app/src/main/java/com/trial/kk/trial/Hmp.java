@@ -21,9 +21,6 @@ public class Hmp extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //andskjasnjdlaşidkansfbaisd
-        //Ben bu dosyaya girdim update edip push ettim.
-        System.out.println("ASfasdasfasdsa");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -88,7 +85,7 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_kronometre) {
 
             tag = "sayac";
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Sayac(),tag).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Sayac(),tag).commit();
 
         } else if (id == R.id.nav_settings) {
 
