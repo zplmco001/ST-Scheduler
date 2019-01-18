@@ -51,10 +51,42 @@ public class Sayac extends Fragment{
         stop.setOnClickListener(new butonStop());
         reset.setOnClickListener(new butonReset());
 
-
-
-
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser){
+            startTime();
+        }
+    }
+
+
+    public void startTime(){
+
     }
 
 
@@ -105,13 +137,14 @@ public class Sayac extends Fragment{
 
                 @Override
                 public void onFinish() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Koz Karo");
-                builder.setMessage("Süre tamamlandı!");
-                builder.show();
-                hourEdit.setEnabled(true);
-                minuteEdit.setEnabled(true);
-                secondEdit.setEnabled(true);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Koz Karo");
+                    builder.setMessage("Süre tamamlandı!");
+                    builder.show();
+                    hourEdit.setEnabled(true);
+                    minuteEdit.setEnabled(true);
+                    secondEdit.setEnabled(true);
+                    start.setEnabled(true);
                 }
             }.start();
         }

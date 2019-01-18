@@ -23,6 +23,8 @@ public class GeriSayim extends Fragment{
 
     private TextView textView;
     private TextView dayText,hourText,minuteText,secondText;
+    private TextView textView2;
+    private TextView dayText2,hourText2,minuteText2,secondText2;
     private SimpleDateFormat dateFormat;
     private long days,hours,minutes,seconds;
     private Runnable runnable;
@@ -42,6 +44,12 @@ public class GeriSayim extends Fragment{
         hourText =(TextView) view.findViewById(R.id.hourText);
         minuteText = (TextView) view.findViewById(R.id.minuteText);
         secondText = (TextView) view.findViewById(R.id.secondText);
+
+        textView2 = (TextView) view.findViewById(R.id.textView2);
+        dayText2 = (TextView) view.findViewById(R.id.dayText2);
+        hourText2 = (TextView) view.findViewById(R.id.hourText2);
+        minuteText2 = (TextView) view.findViewById(R.id.minuteText2);
+        secondText2 = (TextView) view.findViewById(R.id.secondText2);
 
 
         countDownStart();
@@ -85,6 +93,11 @@ public class GeriSayim extends Fragment{
                         hourText.setText("Saat \n   "+hours);
                         minuteText.setText("Dakika \n    "+minutes);
                         secondText.setText("Saniye \n    "+seconds);
+
+                        dayText2.setText(" Gün \n   "+(days+1));
+                        hourText2.setText("Saat \n   "+hours);
+                        minuteText2.setText("Dakika \n    "+minutes);
+                        secondText2.setText("Saniye \n    "+seconds);
 
 
                     }
