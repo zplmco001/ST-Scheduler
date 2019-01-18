@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -30,6 +31,8 @@ public class Sayac extends Fragment{
     private String hour,minute,second;
     private CountDownTimer countDownTimer;
     private long totalTime,total,h,m,s;
+    private ProgressBar progressBar;
+    private int progress = 0;
 
     @Nullable
     @Override
@@ -47,46 +50,16 @@ public class Sayac extends Fragment{
         stop=(Button) view.findViewById(R.id.stop);
         reset=(Button) view.findViewById(R.id.reset);
 
+        progressBar = view.findViewById(R.id.progressBar);
+
         start.setOnClickListener(new butonStart());
         stop.setOnClickListener(new butonStop());
         reset.setOnClickListener(new butonReset());
 
+
+
+
         return view;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser){
-            startTime();
-        }
-    }
-
-
-    public void startTime(){
-
     }
 
 
@@ -105,10 +78,14 @@ public class Sayac extends Fragment{
 
             totalTime = (Integer.parseInt(hour)*60*60*1000)+(Integer.parseInt(minute)*60*1000)+(Integer.parseInt(second)*1000);
             total=totalTime;
+            progressBar.setMax((int) totalTime);
+
+
             countDownTimer=new CountDownTimer(totalTime, 1000) {
                 @Override
                 public void onTick(long totalTime) {
 
+                    progressBar.setProgress(progress);
                     h=totalTime/(60*60*1000);
                     totalTime-=h*60*60*1000;
                     if(h<10){
@@ -132,11 +109,13 @@ public class Sayac extends Fragment{
                     }else{
                         secondEdit.setText(String.valueOf(s));
                     }
+                    progress += 1000;
 
                 }
 
                 @Override
                 public void onFinish() {
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("Koz Karo");
                     builder.setMessage("Süre tamamlandı!");
@@ -144,7 +123,7 @@ public class Sayac extends Fragment{
                     hourEdit.setEnabled(true);
                     minuteEdit.setEnabled(true);
                     secondEdit.setEnabled(true);
-                    start.setEnabled(true);
+                    progress = 0;
                 }
             }.start();
         }
@@ -170,6 +149,7 @@ public class Sayac extends Fragment{
             minuteEdit.setEnabled(true);
             secondEdit.setEnabled(true);
             start.setEnabled(true);
+            progressBar.setProgress(0);
         }
     }
 }
