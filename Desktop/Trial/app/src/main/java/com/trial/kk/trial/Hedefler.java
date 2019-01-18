@@ -54,9 +54,11 @@ public class Hedefler extends Fragment {
         tabHost.addTab(ct);
 
         pr = tabHost.newTabSpec("Pr");
-        pr.setIndicator("Pr");
+        pr.setIndicator("Pz");
         pr.setContent(R.id.Pr);
         tabHost.addTab(pr);
+
+
 
         return view;
 
