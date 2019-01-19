@@ -77,7 +77,7 @@ public class PopResult extends AppCompatActivity {
         geridön.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                finish();
             }
         });
 

@@ -14,13 +14,15 @@
         android:layout_width="124dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/temizle"
         android:text="KAYDET"
-        android:layout_marginStart="8dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/hesapla"
+        app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/hesapla"

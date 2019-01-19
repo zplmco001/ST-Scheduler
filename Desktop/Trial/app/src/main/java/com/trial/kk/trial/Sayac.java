@@ -124,6 +124,8 @@ public class Sayac extends Fragment{
                     minuteEdit.setEnabled(true);
                     secondEdit.setEnabled(true);
                     progress = 0;
+                    start.setEnabled(true);
+
                 }
             }.start();
         }

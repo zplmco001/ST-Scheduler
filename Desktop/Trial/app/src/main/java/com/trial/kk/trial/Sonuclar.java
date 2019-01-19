@@ -120,9 +120,6 @@ public class Sonuclar extends Fragment {
         yksDilYanlıs.setFilters(new InputFilter[]{new MinMaxFilter("0","80")});
 
 
-
-
-
         hesapla.setOnClickListener(new hesapla());
         temizle.setOnClickListener(new temizle());
         kaydet.setOnClickListener(new kaydet());
