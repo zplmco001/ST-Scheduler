@@ -89,12 +89,12 @@ public class GeriSayim extends Fragment{
 
                         seconds=  difference/1000;
 
-                        dayText.setText(" Gün \n  "+days);
+                        dayText.setText("Gün \n  "+days);
                         hourText.setText("Saat \n  "+hours);
                         minuteText.setText("Dakika \n   "+minutes);
                         secondText.setText("Saniye \n   "+seconds);
 
-                        dayText2.setText(" Gün \n  "+(days+1));
+                        dayText2.setText("Gün \n  "+(days+1));
                         hourText2.setText("Saat \n  "+hours);
                         minuteText2.setText("Dakika \n   "+minutes);
                         secondText2.setText("Saniye \n   "+seconds);
