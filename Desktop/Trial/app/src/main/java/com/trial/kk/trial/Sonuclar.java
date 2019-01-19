@@ -1,5 +1,6 @@
 package com.trial.kk.trial;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -212,6 +213,8 @@ public class Sonuclar extends Fragment {
             "\nTm ham puan: "+tmHamPuan+"\nTm yer puan: "+tmYerPuan+"\nTs ham puan: "+tsHamPuan+"\nTs yer puan: "+tsYerPuan+"\nDil ham puan: "+dilHamPuan+"\nDil yer puan: "
             +dilYerPuan);
 
+            Intent i = new Intent(getContext(),PopResult.class);
+            startActivity(i);
 
         }
 
