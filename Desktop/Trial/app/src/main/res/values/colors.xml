@@ -10,4 +10,6 @@
     <color name="f5">#2962FF</color>
     <color name="f6">#6D4C41</color>
     <color name="f7">#76FF03</color>
+    <color name="f8">#90A4AE</color>
+    <color name="accent_material_light_1">#cfd8dc</color>
 </resources>

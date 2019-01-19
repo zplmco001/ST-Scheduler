@@ -37,10 +37,11 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="34dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.503" />
 
     <TextView
         android:id="@+id/dayText"
@@ -59,13 +60,13 @@
         android:id="@+id/dayText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
         android:text="Gün"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/hourText2"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
+        android:layout_marginStart="36dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -79,7 +80,8 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/minuteText2"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/dayText2" />
+        app:layout_constraintLeft_toRightOf="@+id/dayText2"
+        android:layout_marginLeft="31dp" />
 
     <TextView
         android:id="@+id/minuteText2"
@@ -97,16 +99,17 @@
 
     <TextView
         android:id="@+id/secondText2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
         android:text="Saniye"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/secondText"
         app:layout_constraintBaseline_toBaselineOf="@+id/minuteText2"
-        tools:layout_constraintBaseline_creator="1" />
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/secondText" />
 
     <TextView
         android:id="@+id/hourText"
