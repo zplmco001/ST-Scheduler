@@ -129,6 +129,8 @@ public class Sonuclar extends Fragment {
         return view;
     }
 
+    //editText sa
+
     class hesapla implements View.OnClickListener{
 
         @Override
