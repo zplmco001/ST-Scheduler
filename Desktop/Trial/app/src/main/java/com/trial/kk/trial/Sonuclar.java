@@ -214,6 +214,17 @@ public class Sonuclar extends Fragment {
             +dilYerPuan);
 
             Intent i = new Intent(getContext(),PopResult.class);
+            i.putExtra("tythampuan",String.valueOf(tytHamPuan));
+            i.putExtra("tytyerpuan",String.valueOf(tytYerPuan));
+            i.putExtra("mfhampuan",String.valueOf(mfHamPuan));
+            i.putExtra("mfyerpuan",String.valueOf(mfYerPuan));
+            i.putExtra("tmhampuan",String.valueOf(tmHamPuan));
+            i.putExtra("tmyerpuan",String.valueOf(tmYerPuan));
+            i.putExtra("tshampuan",String.valueOf(tsHamPuan));
+            i.putExtra("tsyerpuan",String.valueOf(tsYerPuan));
+            i.putExtra("dilhampuan",String.valueOf(dilHamPuan));
+            i.putExtra("dilyerpuan",String.valueOf(dilYerPuan));
+
             startActivity(i);
 
         }
