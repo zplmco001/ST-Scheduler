@@ -32,7 +32,7 @@ public class Sayac extends Fragment{
     private CountDownTimer countDownTimer;
     private long totalTime,total,h,m,s;
     private ProgressBar progressBar;
-    private int progress = 0;
+    private int progress = 0,check=0;
 
     @Nullable
     @Override
@@ -67,6 +67,7 @@ public class Sayac extends Fragment{
 
         @Override
         public void onClick(View view) {
+            check=1;
             start.setEnabled(false);
 
             hourEdit.setEnabled(false);
@@ -105,7 +106,7 @@ public class Sayac extends Fragment{
 
                     s=totalTime/1000;
                     if(s<10){
-                        secondEdit.setText("0"+String.valueOf(s));
+                        secondEdit.setText("0"+String.valueOf(s-1));
                     }else{
                         secondEdit.setText(String.valueOf(s));
                     }
@@ -135,23 +136,29 @@ public class Sayac extends Fragment{
 
         @Override
         public void onClick(View view) {
-            countDownTimer.cancel();
-            start.setEnabled(true);
+            if(check==1){
+                countDownTimer.cancel();
+                start.setEnabled(true);
+            }
+
         }
     }
 
     class butonReset implements View.OnClickListener{
         @Override
         public void onClick(View view) {
-            countDownTimer.cancel();
-            hourEdit.setText("00");
-            minuteEdit.setText("00");
-            secondEdit.setText("00");
-            hourEdit.setEnabled(true);
-            minuteEdit.setEnabled(true);
-            secondEdit.setEnabled(true);
-            start.setEnabled(true);
-            progressBar.setProgress(0);
+            if(check==1){
+                countDownTimer.cancel();
+                hourEdit.setText("00");
+                minuteEdit.setText("00");
+                secondEdit.setText("00");
+                hourEdit.setEnabled(true);
+                minuteEdit.setEnabled(true);
+                secondEdit.setEnabled(true);
+                start.setEnabled(true);
+                progressBar.setProgress(0);
+            }
+
         }
     }
 }

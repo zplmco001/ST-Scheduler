@@ -24,6 +24,8 @@ public class Sonuclar extends Fragment {
     private EditText yksBioYanlıs,yksTarih2Dogru,yksCog2Dogru,yksFelsDogru;
     private EditText yksDinDogru,yksDilDogru,yksCogYanlıs,yksTarih2Yanlıs;
     private EditText yksCog2Yanlıs,yksFelsYanlıs,yksDinYanlıs,yksDilYanlıs;
+    private EditText türkçe,matematik,fen,sosyal,matematik2,fizik,kimya,biyoloji;
+    private EditText edebiyat,tarih1,coğrafya1,tarih2,coğrafya2,felsefe,din,dil;
 
     private Button hesapla,temizle,kaydet;
 
@@ -34,11 +36,29 @@ public class Sonuclar extends Fragment {
     private double tytHamPuan,tytYerPuan,mfHamPuan,mfYerPuan,tmHamPuan,tmYerPuan;
     private double tsHamPuan,tsYerPuan,dilHamPuan,dilYerPuan,tyt2;
 
+    private int check;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.sonuclar_layout, container, false);
+
+        türkçe = (EditText) view.findViewById(R.id.türkçe);
+        sosyal = (EditText) view.findViewById(R.id.sosyal);
+        matematik = (EditText) view.findViewById(R.id.matematik);
+        fen = (EditText) view.findViewById(R.id.fen);
+        matematik2 = (EditText) view.findViewById(R.id.matematik2);
+        fizik = (EditText) view.findViewById(R.id.fizik);
+        kimya = (EditText) view.findViewById(R.id.kimya);
+        biyoloji = (EditText) view.findViewById(R.id.biyoloji);
+        edebiyat = (EditText) view.findViewById(R.id.edebiyat);
+        tarih1 = (EditText) view.findViewById(R.id.tarih1);
+        tarih2 = (EditText) view.findViewById(R.id.tarih2);
+        coğrafya1 = (EditText) view.findViewById(R.id.coğrafya1);
+        coğrafya2 = (EditText) view.findViewById(R.id.coğrafya2);
+        felsefe = (EditText) view.findViewById(R.id.felsefe);
+        din = (EditText) view.findViewById(R.id.din);
+        dil = (EditText) view.findViewById(R.id.dil);
 
         dipNot = (EditText) view.findViewById(R.id.dipNot);
         türkDogru = (EditText) view.findViewById(R.id.türkDogru);
@@ -124,10 +144,26 @@ public class Sonuclar extends Fragment {
         temizle.setOnClickListener(new temizle());
         kaydet.setOnClickListener(new kaydet());
 
+
+
         return view;
     }
 
-    //editText sa
+    public int checkDiff(EditText editText,EditText editText1,EditText editText2,int range){
+        int diff=Integer.parseInt(editText1.getText().toString())+Integer.parseInt(editText2.getText().toString());
+
+        if(diff>range){
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            String []text=editText.getText().toString().split("\\(");
+            String header=text[0];
+            builder.setTitle("Hatalı Değer");
+            builder.setMessage(header+" bölümüne girdiğiniz yanlış sayısını kontrol edin!");
+            builder.show();
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 
     class hesapla implements View.OnClickListener{
 
@@ -168,61 +204,74 @@ public class Sonuclar extends Fragment {
             isItNull(yksDinDogru);
             isItNull(yksDinYanlıs);
 
+            if(checkDiff(türkçe,türkDogru,türkYanlıs,40)==1 || checkDiff(sosyal,sosDogru,sosYanlıs,20)==1 ||
+               checkDiff(matematik,matDogru,matYanlıs,40)==1 || checkDiff(fen,fenDogru,fenYanlıs,20)==1 ||
+               checkDiff(matematik2,yksMatDogru,yksMatYanlıs,40)==1 || checkDiff(fizik,yksFizikDogru,yksFizikYanlıs,14)==1 ||
+               checkDiff(kimya,yksKimyaDogru,yksKimyaYanlıs,13)==1 || checkDiff(biyoloji,yksBioDogru,yksBioYanlıs,13)==1 ||
+               checkDiff(edebiyat,yksEdbDogru,yksEdbYanlıs,24)==1 || checkDiff(tarih1,yksTarih1Dogru,yksTarih2Yanlıs,10)==1 ||
+               checkDiff(coğrafya1,yksCogDogru,yksCogYanlıs,6)==1 || checkDiff(tarih2,yksTarih2Dogru,yksTarih2Yanlıs,11)==1 ||
+               checkDiff(coğrafya2,yksCog2Dogru,yksCog2Yanlıs,11)==1 || checkDiff(felsefe,yksFelsDogru,yksFelsYanlıs,12)==1 ||
+               checkDiff(din,yksDinDogru,yksDinYanlıs,6)==1 || checkDiff(dil,yksDilDogru,yksDilYanlıs,80)==1){
 
-            dipPuan = Integer.parseInt(dipNot.getText().toString())*0.6;
-            trNet = (Integer.parseInt(türkDogru.getText().toString()))-((Integer.parseInt(türkYanlıs.getText().toString()))*0.25);
-            sosNet = (Integer.parseInt(sosDogru.getText().toString()))-((Integer.parseInt(sosYanlıs.getText().toString()))*0.25);
-            matNet = (Integer.parseInt(matDogru.getText().toString()))-((Integer.parseInt(matYanlıs.getText().toString()))*0.25);
-            fenNet = (Integer.parseInt(fenDogru.getText().toString()))-((Integer.parseInt(fenYanlıs.getText().toString()))*0.25);
+            }else{
+                dipPuan = Integer.parseInt(dipNot.getText().toString())*0.6;
+                trNet = (Integer.parseInt(türkDogru.getText().toString()))-((Integer.parseInt(türkYanlıs.getText().toString()))*0.25);
+                sosNet = (Integer.parseInt(sosDogru.getText().toString()))-((Integer.parseInt(sosYanlıs.getText().toString()))*0.25);
+                matNet = (Integer.parseInt(matDogru.getText().toString()))-((Integer.parseInt(matYanlıs.getText().toString()))*0.25);
+                fenNet = (Integer.parseInt(fenDogru.getText().toString()))-((Integer.parseInt(fenYanlıs.getText().toString()))*0.25);
 
-            yksMatNet = (Integer.parseInt(yksMatDogru.getText().toString()))-((Integer.parseInt(yksMatYanlıs.getText().toString()))*0.25);
-            yksFizNet = (Integer.parseInt(yksFizikDogru.getText().toString()))-((Integer.parseInt(yksFizikYanlıs.getText().toString()))*0.25);
-            yksKimNet = (Integer.parseInt(yksKimyaDogru.getText().toString()))-((Integer.parseInt(yksKimyaYanlıs.getText().toString()))*0.25);
-            yksBioNet = (Integer.parseInt(yksBioDogru.getText().toString()))-((Integer.parseInt(yksBioYanlıs.getText().toString()))*0.25);
+                yksMatNet = (Integer.parseInt(yksMatDogru.getText().toString()))-((Integer.parseInt(yksMatYanlıs.getText().toString()))*0.25);
+                yksFizNet = (Integer.parseInt(yksFizikDogru.getText().toString()))-((Integer.parseInt(yksFizikYanlıs.getText().toString()))*0.25);
+                yksKimNet = (Integer.parseInt(yksKimyaDogru.getText().toString()))-((Integer.parseInt(yksKimyaYanlıs.getText().toString()))*0.25);
+                yksBioNet = (Integer.parseInt(yksBioDogru.getText().toString()))-((Integer.parseInt(yksBioYanlıs.getText().toString()))*0.25);
 
-            yksEdbNet = (Integer.parseInt(yksEdbDogru.getText().toString()))-((Integer.parseInt(yksEdbYanlıs.getText().toString()))*0.25);
-            yksTrh1Net = (Integer.parseInt(yksTarih1Dogru.getText().toString()))-((Integer.parseInt(yksTarih1Yanlıs.getText().toString()))*0.25);
-            yksCogNet = (Integer.parseInt(yksCogDogru.getText().toString()))-((Integer.parseInt(yksCogYanlıs.getText().toString()))*0.25);
-            yksTrh2Net = (Integer.parseInt(yksTarih2Dogru.getText().toString()))-((Integer.parseInt(yksTarih2Yanlıs.getText().toString()))*0.25);
+                yksEdbNet = (Integer.parseInt(yksEdbDogru.getText().toString()))-((Integer.parseInt(yksEdbYanlıs.getText().toString()))*0.25);
+                yksTrh1Net = (Integer.parseInt(yksTarih1Dogru.getText().toString()))-((Integer.parseInt(yksTarih1Yanlıs.getText().toString()))*0.25);
+                yksCogNet = (Integer.parseInt(yksCogDogru.getText().toString()))-((Integer.parseInt(yksCogYanlıs.getText().toString()))*0.25);
+                yksTrh2Net = (Integer.parseInt(yksTarih2Dogru.getText().toString()))-((Integer.parseInt(yksTarih2Yanlıs.getText().toString()))*0.25);
 
-            yksCog2Net = (Integer.parseInt(yksCog2Dogru.getText().toString()))-((Integer.parseInt(yksCog2Yanlıs.getText().toString()))*0.25);
-            yksFelNet = (Integer.parseInt(yksFelsDogru.getText().toString()))-((Integer.parseInt(yksFelsYanlıs.getText().toString()))*0.25);
-            yksDilNet = (Integer.parseInt(yksDilDogru.getText().toString()))-((Integer.parseInt(yksDilYanlıs.getText().toString()))*0.25);
-            yksDinNet = (Integer.parseInt(yksDinDogru.getText().toString()))-((Integer.parseInt(yksDinYanlıs.getText().toString()))*0.25);
+                yksCog2Net = (Integer.parseInt(yksCog2Dogru.getText().toString()))-((Integer.parseInt(yksCog2Yanlıs.getText().toString()))*0.25);
+                yksFelNet = (Integer.parseInt(yksFelsDogru.getText().toString()))-((Integer.parseInt(yksFelsYanlıs.getText().toString()))*0.25);
+                yksDilNet = (Integer.parseInt(yksDilDogru.getText().toString()))-((Integer.parseInt(yksDilYanlıs.getText().toString()))*0.25);
+                yksDinNet = (Integer.parseInt(yksDinDogru.getText().toString()))-((Integer.parseInt(yksDinYanlıs.getText().toString()))*0.25);
 
 
-            tytHamPuan = (trNet*3.3)+(matNet*3.3)+(sosNet*3.4)+(fenNet*3.3)+102;
-            tytYerPuan = tytHamPuan+dipPuan;
+                tytHamPuan = (trNet*3.3)+(matNet*3.3)+(sosNet*3.4)+(fenNet*3.3)+102;
+                tytYerPuan = tytHamPuan+dipPuan;
 
-            tyt2 = (trNet*1.32)+(matNet*1.32)+(sosNet*1.36)+(fenNet*1.36)+100;
+                tyt2 = (trNet*1.32)+(matNet*1.32)+(sosNet*1.36)+(fenNet*1.36)+100;
 
-            mfHamPuan = (yksMatNet*3)+(yksFizNet*2.85)+(yksKimNet*3.07)+(yksBioNet*3.07)+tyt2;
-            tmHamPuan = (yksMatNet*3)+(yksEdbNet*3)+(yksTrh1Net*2.8)+(yksCogNet*3.33)+tyt2;
-            tsHamPuan = (yksEdbNet*3)+(yksTrh1Net*2.8)+(yksCogNet*3.33)+(yksTrh2Net*2.91)+(yksCog2Net*2.91)+(yksFelNet*3)+(yksDinNet*3.33)+tyt2;
-            dilHamPuan = (yksDilNet*3)+tyt2;
+                mfHamPuan = (yksMatNet*3)+(yksFizNet*2.85)+(yksKimNet*3.07)+(yksBioNet*3.07)+tyt2;
+                tmHamPuan = (yksMatNet*3)+(yksEdbNet*3)+(yksTrh1Net*2.8)+(yksCogNet*3.33)+tyt2;
+                tsHamPuan = (yksEdbNet*3)+(yksTrh1Net*2.8)+(yksCogNet*3.33)+(yksTrh2Net*2.91)+(yksCog2Net*2.91)+(yksFelNet*3)+(yksDinNet*3.33)+tyt2;
+                dilHamPuan = (yksDilNet*3)+tyt2;
 
-            mfYerPuan = mfHamPuan+dipPuan;
-            tmYerPuan = tmHamPuan+dipPuan;
-            tsYerPuan = tsHamPuan+dipPuan;
-            dilYerPuan = dilHamPuan+dipPuan;
+                mfYerPuan = mfHamPuan+dipPuan;
+                tmYerPuan = tmHamPuan+dipPuan;
+                tsYerPuan = tsHamPuan+dipPuan;
+                dilYerPuan = dilHamPuan+dipPuan;
 
-            System.out.println("Tyt ham puan: "+tytHamPuan+"\nTyt yer puan: "+tytYerPuan+"\nMf ham puan: "+mfHamPuan+"\nMf yer puan: "+mfYerPuan+
-            "\nTm ham puan: "+tmHamPuan+"\nTm yer puan: "+tmYerPuan+"\nTs ham puan: "+tsHamPuan+"\nTs yer puan: "+tsYerPuan+"\nDil ham puan: "+dilHamPuan+"\nDil yer puan: "
-            +dilYerPuan);
+                System.out.println("Tyt ham puan: "+tytHamPuan+"\nTyt yer puan: "+tytYerPuan+"\nMf ham puan: "+mfHamPuan+"\nMf yer puan: "+mfYerPuan+
+                        "\nTm ham puan: "+tmHamPuan+"\nTm yer puan: "+tmYerPuan+"\nTs ham puan: "+tsHamPuan+"\nTs yer puan: "+tsYerPuan+"\nDil ham puan: "+dilHamPuan+"\nDil yer puan: "
+                        +dilYerPuan);
 
-            Intent i = new Intent(getContext(),PopResult.class);
-            i.putExtra("tythampuan",String.valueOf(tytHamPuan));
-            i.putExtra("tytyerpuan",String.valueOf(tytYerPuan));
-            i.putExtra("mfhampuan",String.valueOf(mfHamPuan));
-            i.putExtra("mfyerpuan",String.valueOf(mfYerPuan));
-            i.putExtra("tmhampuan",String.valueOf(tmHamPuan));
-            i.putExtra("tmyerpuan",String.valueOf(tmYerPuan));
-            i.putExtra("tshampuan",String.valueOf(tsHamPuan));
-            i.putExtra("tsyerpuan",String.valueOf(tsYerPuan));
-            i.putExtra("dilhampuan",String.valueOf(dilHamPuan));
-            i.putExtra("dilyerpuan",String.valueOf(dilYerPuan));
+                Intent i = new Intent(getContext(),PopResult.class);
 
-            startActivity(i);
+
+                i.putExtra("tythampuan",String.valueOf(tytHamPuan));
+                i.putExtra("tytyerpuan",String.valueOf(tytYerPuan));
+                i.putExtra("mfhampuan",String.valueOf(mfHamPuan));
+                i.putExtra("mfyerpuan",String.valueOf(mfYerPuan));
+                i.putExtra("tmhampuan",String.valueOf(tmHamPuan));
+                i.putExtra("tmyerpuan",String.valueOf(tmYerPuan));
+                i.putExtra("tshampuan",String.valueOf(tsHamPuan));
+                i.putExtra("tsyerpuan",String.valueOf(tsYerPuan));
+                i.putExtra("dilhampuan",String.valueOf(dilHamPuan));
+                i.putExtra("dilyerpuan",String.valueOf(dilYerPuan));
+
+                startActivity(i);
+
+            }
 
         }
 
@@ -305,8 +354,9 @@ public class Sonuclar extends Fragment {
             return "";
         }
 
-        private boolean isInRange(int a, int b, int c) {
-            return b > a ? c >= a && c <= b : c >= b && c <= a;
+        private boolean isInRange(int a, int b,int c) {
+
+            return b > a ? c >= a && c <= b : c >= b && c <= a ;
         }
     }
 
@@ -318,10 +368,8 @@ public class Sonuclar extends Fragment {
 
     public void clearText(EditText editText){
         if(!editText.getText().toString().equals("")){
-            editText.setText("0");
+            editText.getText().clear();
         }
     }
-
-
 
 }
