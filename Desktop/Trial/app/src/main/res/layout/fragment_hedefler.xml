@@ -3,107 +3,180 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/f7"
+    android:background="@color/f6"
     tools:context="com.trial.kk.trial.Hedefler">
 
-    <TabHost
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <Button
+            android:id="@+id/pzt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pzt" />
+
+        <Button
+            android:id="@+id/sal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sal" />
+
+        <Button
+            android:id="@+id/car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Çar" />
+
+        <Button
+            android:id="@+id/per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Per" />
+
+        <Button
+            android:id="@+id/cum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cum" />
+
+        <Button
+            android:id="@+id/cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cm" />
+
+        <Button
+            android:id="@+id/pzr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pzr" />
+    </LinearLayout>
+
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/tabhost"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="8dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:orientation="vertical" >
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
+            <TextView
+                android:id="@+id/Carsamba"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:text="Çarşamba"
+                tools:layout_editor_absoluteY="286dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Pt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/Persembe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perşembe"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.647"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/Sali"
+                android:layout_width="55dp"
+                android:layout_height="20dp"
+                android:text="Salı"
+                tools:layout_editor_absoluteY="180dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Sa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/Cuma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuma"
+                tools:layout_editor_absoluteY="429dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/Pazartesi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pazartesi"
+                tools:layout_editor_absoluteY="70dp"
+                android:layout_marginLeft="22dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Çr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/Cumartesi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cumartesi"
+                tools:layout_editor_absoluteY="490dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/Pazar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pazar"
+                tools:layout_editor_absoluteY="533dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="16dp" />
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Pr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <Button
+                android:id="@+id/hedef"
+                android:layout_width="198dp"
+                android:layout_height="48dp"
+                android:text="Hedef Ekle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="7dp"
+                app:layout_constraintHorizontal_bias="0.497" />
 
-                </android.support.constraint.ConstraintLayout>
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Cm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </android.support.constraint.ConstraintLayout>
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Ct"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </android.support.constraint.ConstraintLayout>
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Pz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </android.support.constraint.ConstraintLayout>
-
-            </FrameLayout>
-
-            <TabWidget
-                android:id="@android:id/tabs"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TabWidget>
-        </LinearLayout>
-    </TabHost>
-
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

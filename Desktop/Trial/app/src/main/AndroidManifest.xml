@@ -22,7 +22,11 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".PopResult"
+        <activity
+            android:name=".PopResult"
+            android:theme="@style/AppTheme.Popups">
+        </activity>
+        <activity android:name=".HedefPopup"
             android:theme="@style/AppTheme.Popups">
         </activity>
     </application>
