@@ -1,18 +1,22 @@
 package com.trial.kk.trial;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class HedefPopup extends AppCompatActivity {
 
-    private Spinner spinner;
-    private String arr[] = new String[10];
+    private Spinner spinner, spinner2;
+    private String arr[] = new String[11];
     private Button btn;
+    private String gunler[] = {"Gün Seçiniz","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,21 +24,74 @@ public class HedefPopup extends AppCompatActivity {
         setContentView(R.layout.activity_hedef_popup);
 
         spinner = (Spinner) findViewById(R.id.spinner);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
         btn = (Button) findViewById(R.id.Ekle);
 
-        arr[0]="Matematik";
-        arr[1]="Fizik";
-        arr[2]="Kimya";
-        arr[3]="Biyoloji";
-        arr[4]="Edebiyat";
-        arr[5]="Tarih";
-        arr[6]="Coğrafya";
-        arr[7]="Felsefe";
-        arr[8]="Din Kültürü";
-        arr[9]="Yabancı Dil";
+        arr[0]="Ders Seçiniz";
+        arr[1]="Matematik";
+        arr[2]="Fizik";
+        arr[3]="Kimya";
+        arr[4]="Biyoloji";
+        arr[5]="Edebiyat";
+        arr[6]="Tarih";
+        arr[7]="Coğrafya";
+        arr[8]="Felsefe";
+        arr[9]="Din Kültürü";
+        arr[10]="Yabancı Dil";
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,arr);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arr){
+
+            @Override
+            public boolean isEnabled(int position) {
+                if (position==0)
+                    return false;
+                else
+                    return true;
+            }
+
+
+            @Override
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if(position == 0){
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY);
+                }
+                else {
+                    tv.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+        };
         spinner.setAdapter(adapter);
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,gunler){
+            @Override
+            public boolean isEnabled(int position) {
+                if (position==0)
+                    return false;
+                else
+                    return true;
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if(position == 0){
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY);
+                }
+                else {
+                    tv.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+        };
+        spinner2.setAdapter(adapter1);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -52,4 +109,5 @@ public class HedefPopup extends AppCompatActivity {
         });
 
     }
+
 }

@@ -28,7 +28,7 @@ public class Sayac extends Fragment{
     private Button start;
     private Button stop;
     private Button reset;
-    private String hour,minute,second;
+    private String hour="00",minute="00",second="00";
     private CountDownTimer countDownTimer;
     private long totalTime,total,h,m,s;
     private ProgressBar progressBar;
@@ -55,6 +55,10 @@ public class Sayac extends Fragment{
         start.setOnClickListener(new butonStart());
         stop.setOnClickListener(new butonStop());
         reset.setOnClickListener(new butonReset());
+
+        hourEdit.setText(hour);
+        minuteEdit.setText(minute);
+        secondEdit.setText(second);
 
 
 
@@ -131,6 +135,7 @@ public class Sayac extends Fragment{
             }.start();
         }
     }
+
 
     class butonStop implements View.OnClickListener{
 
