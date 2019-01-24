@@ -47,6 +47,7 @@ public class Hedefler extends Fragment {
 
         gl = view.findViewById(R.id.gridpzt);
 
+
         new MyPostit(gl,"asfasf",getContext());
         new MyPostit(gl,"mfmgmg",getContext());
 
