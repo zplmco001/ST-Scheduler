@@ -1,13 +1,18 @@
 package com.trial.kk.trial;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,6 +22,7 @@ public class HedefPopup extends AppCompatActivity {
     private String arr[] = new String[11];
     private Button btn;
     private String gunler[] = {"Gün Seçiniz","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
+    private EditText soru, dk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,8 @@ public class HedefPopup extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinner);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
         btn = (Button) findViewById(R.id.Ekle);
+        soru = (EditText) findViewById(R.id.editText2);
+        dk = (EditText) findViewById(R.id.editText);
 
         arr[0]="Ders Seçiniz";
         arr[1]="Matematik";
@@ -101,10 +109,23 @@ public class HedefPopup extends AppCompatActivity {
 
         getWindow().setLayout((int) (width*.9),(int) (height*.6));
 
+
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
+               // Intent i = new Intent(HedefPopup.this, Hmp.class);
+               // startActivity(i);
+               /* Hedefler hedefler = new Hedefler();
+                GridLayout gl = hedefler.getLayout();
+                Log.e("mgs",String.valueOf(gl.getRowCount()));
+                MyPostit postit = new MyPostit(gl,((String) spinner.getSelectedItem())+soru.getText()+dk.getText(),getBaseContext());*/
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Hedefler());
+                //finish();
+
+
+
             }
         });
 
