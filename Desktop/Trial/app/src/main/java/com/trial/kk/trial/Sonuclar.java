@@ -204,15 +204,41 @@ public class Sonuclar extends Fragment {
             isItNull(yksDinDogru);
             isItNull(yksDinYanlıs);
 
-            if(checkDiff(türkçe,türkDogru,türkYanlıs,40)==1 || checkDiff(sosyal,sosDogru,sosYanlıs,20)==1 ||
-               checkDiff(matematik,matDogru,matYanlıs,40)==1 || checkDiff(fen,fenDogru,fenYanlıs,20)==1 ||
-               checkDiff(matematik2,yksMatDogru,yksMatYanlıs,40)==1 || checkDiff(fizik,yksFizikDogru,yksFizikYanlıs,14)==1 ||
-               checkDiff(kimya,yksKimyaDogru,yksKimyaYanlıs,13)==1 || checkDiff(biyoloji,yksBioDogru,yksBioYanlıs,13)==1 ||
-               checkDiff(edebiyat,yksEdbDogru,yksEdbYanlıs,24)==1 || checkDiff(tarih1,yksTarih1Dogru,yksTarih2Yanlıs,10)==1 ||
-               checkDiff(coğrafya1,yksCogDogru,yksCogYanlıs,6)==1 || checkDiff(tarih2,yksTarih2Dogru,yksTarih2Yanlıs,11)==1 ||
-               checkDiff(coğrafya2,yksCog2Dogru,yksCog2Yanlıs,11)==1 || checkDiff(felsefe,yksFelsDogru,yksFelsYanlıs,12)==1 ||
-               checkDiff(din,yksDinDogru,yksDinYanlıs,6)==1 || checkDiff(dil,yksDilDogru,yksDilYanlıs,80)==1){
-
+            if(checkDiff(türkçe,türkDogru,türkYanlıs,40)==1){
+                clearText(türkYanlıs);
+            }else if(checkDiff(sosyal,sosDogru,sosYanlıs,20)==1){
+                clearText(sosYanlıs);
+            }else if(checkDiff(matematik,matDogru,matYanlıs,40)==1){
+                clearText(matYanlıs);
+            }else if(checkDiff(fen,fenDogru,fenYanlıs,20)==1){
+                clearText(fenYanlıs);
+            }else if(checkDiff(matematik2,yksMatDogru,yksMatYanlıs,40)==1){
+                clearText(yksMatYanlıs);
+            }else if(checkDiff(fizik,yksFizikDogru,yksFizikYanlıs,14)==1){
+                clearText(yksFizikYanlıs);
+            }else if(checkDiff(kimya,yksKimyaDogru,yksKimyaYanlıs,13)==1){
+                clearText(yksKimyaYanlıs);
+            }else if(checkDiff(biyoloji,yksBioDogru,yksBioYanlıs,13)==1){
+                clearText(yksBioYanlıs);
+            }else if(checkDiff(edebiyat,yksEdbDogru,yksEdbYanlıs,24)==1){
+                clearText(yksEdbYanlıs);
+            }
+            else if(checkDiff(tarih1,yksTarih1Dogru,yksTarih2Yanlıs,10)==1){
+                clearText(yksTarih1Yanlıs);
+            }
+            else if(checkDiff(coğrafya1,yksCogDogru,yksCogYanlıs,6)==1){
+                clearText(yksCogYanlıs);
+            }
+            else if(checkDiff(tarih2,yksTarih2Dogru,yksTarih2Yanlıs,11)==1){
+                clearText(yksTarih2Yanlıs);
+            }else if(checkDiff(coğrafya2,yksCog2Dogru,yksCog2Yanlıs,11)==1){
+                clearText(yksCog2Yanlıs);
+            }else if(checkDiff(felsefe,yksFelsDogru,yksFelsYanlıs,12)==1){
+                clearText(yksFelsYanlıs);
+            }else if( checkDiff(din,yksDinDogru,yksDinYanlıs,6)==1){
+                clearText(yksDinYanlıs);
+            }else if( checkDiff(dil,yksDilDogru,yksDilYanlıs,80)==1){
+                clearText(yksDilYanlıs);
             }else{
                 dipPuan = Integer.parseInt(dipNot.getText().toString())*0.6;
                 trNet = (Integer.parseInt(türkDogru.getText().toString()))-((Integer.parseInt(türkYanlıs.getText().toString()))*0.25);
@@ -371,5 +397,4 @@ public class Sonuclar extends Fragment {
             editText.getText().clear();
         }
     }
-
 }

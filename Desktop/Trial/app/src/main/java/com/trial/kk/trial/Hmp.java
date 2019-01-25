@@ -1,11 +1,13 @@
 package com.trial.kk.trial;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,6 +15,14 @@ import android.view.MenuItem;
 
 public class Hmp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private Sayac sayac;
+    static int kontrol=0;
+    private static AlertDialog.Builder builder;
+    private Hmp hmp = this;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,19 @@ public class Hmp extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        sayac = new Sayac();
+
+
+    }
+
+
+    static void alert(Context c){
+        if(kontrol==1){
+            builder = new AlertDialog.Builder(c);
+            builder.setTitle("Koz Karo");
+            builder.setMessage("Süre tamamlandı!");
+            builder.show();
+        }
     }
 
     @Override
@@ -85,7 +108,7 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_kronometre) {
 
             tag = "sayac";
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Sayac(),tag).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,sayac).commit();
 
         } else if (id == R.id.nav_hedefler) {
 
