@@ -17,7 +17,6 @@ public class Hmp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private Sayac sayac;
     static int kontrol=0;
     private static AlertDialog.Builder builder;
     private Hmp hmp = this;
@@ -40,7 +39,6 @@ public class Hmp extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        sayac = new Sayac();
 
 
     }
@@ -108,7 +106,7 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_kronometre) {
 
             tag = "sayac";
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,sayac).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Kronometre()).commit();
 
         } else if (id == R.id.nav_hedefler) {
 

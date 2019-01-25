@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 
 
 public class Sonuclar extends Fragment {
@@ -26,6 +27,8 @@ public class Sonuclar extends Fragment {
     private EditText yksCog2Yanlıs,yksFelsYanlıs,yksDinYanlıs,yksDilYanlıs;
     private EditText türkçe,matematik,fen,sosyal,matematik2,fizik,kimya,biyoloji;
     private EditText edebiyat,tarih1,coğrafya1,tarih2,coğrafya2,felsefe,din,dil;
+
+    private GridLayout grid;
 
     private Button hesapla,temizle,kaydet;
 
@@ -101,6 +104,8 @@ public class Sonuclar extends Fragment {
         temizle = (Button) view.findViewById(R.id.temizle);
         kaydet = (Button) view.findViewById(R.id.kaydet);
 
+        grid = (GridLayout) view.findViewById(R.id.grid);
+
 
         dipNot.setFilters(new InputFilter[]{new MinMaxFilter("0","100")});
         türkDogru.setFilters(new InputFilter[]{new MinMaxFilter("0","40")});
@@ -144,7 +149,12 @@ public class Sonuclar extends Fragment {
         temizle.setOnClickListener(new temizle());
         kaydet.setOnClickListener(new kaydet());
 
+        int width= grid.getWidth();
 
+        dipNot.setWidth(width/3);
+        türkçe.setWidth(width/3);
+        türkDogru.setWidth(width/3);
+        türkYanlıs.setWidth(width/3);
 
         return view;
     }

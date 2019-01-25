@@ -74,6 +74,7 @@
         tools:layout_constraintTop_creator="1">
 
         <GridLayout
+            android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -88,8 +89,7 @@
                 android:focusable="false"
                 android:text="Diploma Puanı"
                 android:textAlignment="viewStart"
-                android:textColor="#000"
-                />
+                android:textColor="#000" />
 
             <EditText
                 android:layout_width="136dp"
@@ -423,10 +423,10 @@
                 android:layout_row="12"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="3"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/dipNot"
@@ -436,10 +436,10 @@
                 android:layout_row="1"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="3"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
 
             <EditText
@@ -450,10 +450,10 @@
                 android:layout_row="4"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/türkYanlıs"
@@ -463,11 +463,10 @@
                 android:layout_row="4"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:hint="0"
-                android:textAlignment="center"
-                 />
+                android:textAlignment="center" />
 
 
             <EditText
@@ -478,11 +477,10 @@
                 android:layout_row="6"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:hint="0"
-                android:textAlignment="center"
-                 />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/matDogru"
@@ -492,10 +490,10 @@
                 android:layout_row="6"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
 
             <EditText
@@ -506,10 +504,10 @@
                 android:layout_row="5"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/sosYanlıs"
@@ -519,10 +517,10 @@
                 android:layout_row="5"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
 
             <EditText
@@ -533,10 +531,10 @@
                 android:layout_row="7"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksMatDogru"
@@ -546,10 +544,10 @@
                 android:layout_row="11"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksMatYanlıs"
@@ -559,10 +557,10 @@
                 android:layout_row="11"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksFizikYanlıs"
@@ -572,10 +570,10 @@
                 android:layout_row="12"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/fenYanlıs"
@@ -585,10 +583,10 @@
                 android:layout_row="7"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksEdbDogru"
@@ -598,10 +596,10 @@
                 android:layout_row="15"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksEdbYanlıs"
@@ -611,10 +609,10 @@
                 android:layout_row="15"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksTarih1Dogru"
@@ -624,10 +622,10 @@
                 android:layout_row="16"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksTarih1Yanlıs"
@@ -637,10 +635,10 @@
                 android:layout_row="16"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksCogDogru"
@@ -650,10 +648,10 @@
                 android:layout_row="17"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksBioDogru"
@@ -663,10 +661,10 @@
                 android:layout_row="14"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
 
             <EditText
@@ -677,10 +675,10 @@
                 android:layout_row="13"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
 
             <EditText
@@ -691,10 +689,10 @@
                 android:layout_row="13"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksBioYanlıs"
@@ -704,11 +702,10 @@
                 android:layout_row="14"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:hint="0"
-                android:textAlignment="center"
-                />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksTarih2Dogru"
@@ -718,10 +715,10 @@
                 android:layout_row="18"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksCog2Dogru"
@@ -731,10 +728,10 @@
                 android:layout_row="19"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksFelsDogru"
@@ -744,10 +741,10 @@
                 android:layout_row="20"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksDinDogru"
@@ -757,10 +754,10 @@
                 android:layout_row="21"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksDilDogru"
@@ -770,10 +767,10 @@
                 android:layout_row="22"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksCogYanlıs"
@@ -783,10 +780,10 @@
                 android:layout_row="17"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0"/>
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksTarih2Yanlıs"
@@ -796,10 +793,10 @@
                 android:layout_row="18"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksCog2Yanlıs"
@@ -809,10 +806,10 @@
                 android:layout_row="19"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksFelsYanlıs"
@@ -822,10 +819,10 @@
                 android:layout_row="20"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksDinYanlıs"
@@ -835,10 +832,10 @@
                 android:layout_row="21"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                android:hint="0" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/yksDilYanlıs"
@@ -850,8 +847,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="2"
-                android:textAlignment="center"
-                 />
+                android:textAlignment="center" />
 
 
         </GridLayout>
