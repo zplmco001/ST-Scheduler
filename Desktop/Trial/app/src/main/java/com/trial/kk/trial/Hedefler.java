@@ -26,7 +26,7 @@ public class Hedefler extends Fragment {
     private ScrollView scrollView;
     private GridLayout gl;
     private int count = 0;
-    int drawable[] = {R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
+    int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
     R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
 
     @Nullable
@@ -53,17 +53,25 @@ public class Hedefler extends Fragment {
 
         gl = view.findViewById(R.id.gridpzt);
 
+        hedef = view.findViewById(R.id.hedef);
+
         new MyPostit(gl,"Matematik",getContext(),0);
         new MyPostit(gl,"Türkçe",getContext(),1);
         new MyPostit(gl,"Fizik",getContext(),2);
         new MyPostit(gl,"Kimya",getContext(),3);
         new MyPostit(gl,"Tarih",getContext(),4);
         new MyPostit(gl,"Coğrafya",getContext(),5);
+        new MyPostit(gl,"Din",getContext(),6);
+        new MyPostit(gl,"Biyoloji",getContext(),7);
 
+
+        int width = gl.getWidth()/3 - 2*10;
+        hedef.setWidth(width);
+        hedef.setHeight(width);
 
         scrollView = view.findViewById(R.id.hedefScroll);
 
-        hedef = view.findViewById(R.id.hedef);
+
         hedef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,7 +130,7 @@ public class Hedefler extends Fragment {
 
             tv = new TextView(context);
             tv.setText(text);
-            tv.setBackgroundDrawable(getResources().getDrawable(drawable[a]));
+            tv.setBackgroundDrawable(getResources().getDrawable(drawable[a%7]));
 
             gl.setRowCount(3);
             gl.setColumnCount(3);
@@ -139,6 +147,7 @@ public class Hedefler extends Fragment {
                     int w = pWidth/numOfCol;
                     int h = pHeight/numOfRow;
 
+
                     GridLayout.LayoutParams params =
                             (GridLayout.LayoutParams)tv.getLayoutParams();
                     params.width = w - 2*10;
@@ -146,8 +155,18 @@ public class Hedefler extends Fragment {
                     params.setMargins(10, 10, 10, 10);
                     tv.setLayoutParams(params);
                     tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+
+                    GridLayout.LayoutParams prm = (GridLayout.LayoutParams)hedef.getLayoutParams();
+                    prm.width = w - 2*10;
+                    prm.height = w - 2*10;
+
+                    prm.setMargins(10,10,10,10);
+                    hedef.setLayoutParams(prm);
+                    hedef.setPadding(0,50,0,0);
                 }
             });
+
 
             gl.addView(tv,count);
             count++;
