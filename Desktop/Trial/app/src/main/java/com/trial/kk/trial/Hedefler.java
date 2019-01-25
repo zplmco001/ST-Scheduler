@@ -2,13 +2,17 @@ package com.trial.kk.trial;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ScrollView;
@@ -22,12 +26,14 @@ public class Hedefler extends Fragment {
     private ScrollView scrollView;
     private GridLayout gl;
     private int count = 0;
+    int drawable[] = {R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
+    R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_hedefler, container, false);
+
 
         pzt = view.findViewById(R.id.pzt);
         sal = view.findViewById(R.id.sal);
@@ -47,8 +53,13 @@ public class Hedefler extends Fragment {
 
         gl = view.findViewById(R.id.gridpzt);
 
-        new MyPostit(gl,"asfasf",getContext());
-        new MyPostit(gl,"mfmgmg",getContext());
+        new MyPostit(gl,"Matematik",getContext(),0);
+        new MyPostit(gl,"Türkçe",getContext(),1);
+        new MyPostit(gl,"Fizik",getContext(),2);
+        new MyPostit(gl,"Kimya",getContext(),3);
+        new MyPostit(gl,"Tarih",getContext(),4);
+        new MyPostit(gl,"Coğrafya",getContext(),5);
+
 
         scrollView = view.findViewById(R.id.hedefScroll);
 
@@ -97,16 +108,26 @@ public class Hedefler extends Fragment {
         return gl;
     }
 
-    class MyPostit {
+    private class MyPostit {
 
 
         private TextView tv;
 
-        MyPostit(final GridLayout gl, String text, Context context){
+        MyPostit(final GridLayout gl, String text, Context context, int a){
+
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+            int height = displaymetrics.heightPixels;
+            int width = displaymetrics.widthPixels;
 
             tv = new TextView(context);
             tv.setText(text);
-            tv.setBackgroundDrawable(getResources().getDrawable(R.drawable.note147951_1280));
+            tv.setBackgroundDrawable(getResources().getDrawable(drawable[a]));
+
+            gl.setRowCount(3);
+            gl.setColumnCount(3);
+            gl.setMinimumWidth(width);
+            gl.setMinimumHeight(height/2);
 
             gl.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
@@ -121,14 +142,13 @@ public class Hedefler extends Fragment {
                     GridLayout.LayoutParams params =
                             (GridLayout.LayoutParams)tv.getLayoutParams();
                     params.width = w - 2*10;
-                    params.height = h - 2*10;
+                    params.height = w - 2*10;
                     params.setMargins(10, 10, 10, 10);
                     tv.setLayoutParams(params);
                     tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 }
             });
-            gl.setRowCount(2);
-            gl.setColumnCount(5);
+
             gl.addView(tv,count);
             count++;
 
