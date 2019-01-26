@@ -9,357 +9,263 @@
     tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp">
 
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sınavtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="AYT KALAN SÜRE"
+        android:text="TYT KALAN ZAMAN"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/pbsaat1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="TYT KALAN SÜRE"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintRight_toLeftOf="@+id/textdk1"
+        android:text="gün"
+        android:textColor="#ffff"
+        android:layout_marginStart="20dp"
         tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/tytlay"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textdk1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
-
-        android:id="@+id/pbgün1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/pbsaat1"
-        android:layout_marginEnd="29dp"
-        app:layout_constraintRight_toRightOf="@+id/textsaat1"
-        app:layout_constraintTop_toTopOf="@+id/pbsaat1" />
-
-    <ProgressBar
-
-        android:id="@+id/pbsaat1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="38dp"
-        android:layout_marginStart="39dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        app:layout_constraintBottom_toBottomOf="@+id/pbdk1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/textsn1"
-        app:layout_constraintTop_toTopOf="@+id/pbdk1"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ProgressBar
-
-        android:id="@+id/pbdk1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="98dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/pbsn1"
-        android:layout_marginEnd="94dp"
-        app:layout_constraintRight_toRightOf="@+id/pbsn1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/pbsaat1"
-        app:layout_constraintTop_toTopOf="@+id/pbsn1" />
-
-    <ProgressBar
-
-        android:id="@+id/pbsn1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="37dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        android:layout_marginTop="1dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="6dp"
-        app:layout_constraintLeft_toLeftOf="@+id/textdk1"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <ProgressBar
-
-        android:id="@+id/pbgün2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/pbdk2"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintRight_toRightOf="@+id/pbgün1"
-        app:layout_constraintTop_toTopOf="@+id/pbdk2" />
-
-    <ProgressBar
-
-        android:id="@+id/pbsaat2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="209dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="25dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        app:layout_constraintLeft_toLeftOf="@+id/pbsaat1"
-        app:layout_constraintRight_toRightOf="@+id/pbsaat1"
-        app:layout_constraintTop_toBottomOf="@+id/pbsaat1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ProgressBar
-
-        android:id="@+id/pbdk2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="209dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="25dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        app:layout_constraintLeft_toLeftOf="@+id/pbdk1"
-        app:layout_constraintRight_toRightOf="@+id/pbdk1"
-        app:layout_constraintTop_toBottomOf="@+id/pbdk1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ProgressBar
-
-        android:id="@+id/pbsn2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="209dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="25dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular"
-        android:secondaryProgress="100"
-        app:layout_constraintLeft_toLeftOf="@+id/pbsn1"
-        app:layout_constraintRight_toRightOf="@+id/pbsn1"
-        app:layout_constraintTop_toBottomOf="@+id/pbsn1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintLeft_toLeftOf="@+id/tytlay" />
 
     <TextView
-        android:id="@+id/textgün1"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="3dp"
-        android:gravity="center"
-        android:text="0\nGün"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textsaat1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/textsaat1"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginLeft="6dp" />
-
-    <TextView
-        android:id="@+id/textsaat1"
-        android:layout_width="92dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="95dp"
-        android:gravity="center"
-        android:text=" 0\n Saat"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/textdk1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textdk1"
-        android:layout_marginLeft="30dp" />
-
-    <TextView
-        android:id="@+id/textdk1"
-        android:layout_width="92dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="99dp"
-        android:gravity="center"
-        android:text="0\nDakika"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="saat"
+        android:textColor="#ffff"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintRight_toLeftOf="@+id/textView21"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/pbdk2"
-        android:layout_marginEnd="98dp"
+        app:layout_constraintTop_toBottomOf="@+id/tytlay" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dakika"
+        android:textColor="#ffff"
+        android:layout_marginEnd="11dp"
+        app:layout_constraintRight_toLeftOf="@+id/textView20"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/tytlay" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="saniye"
+        android:textColor="#ffff"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/tytlay"
+        app:layout_constraintTop_toBottomOf="@+id/tytlay" />
+
+    <LinearLayout
+        android:id="@+id/tytlay"
+        android:layout_width="212dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="95dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="168dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintLeft_toLeftOf="@+id/textsaat1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textsn1"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="6dp"
-        android:gravity="center"
-        android:text="0\n Saniye"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textdk1"
-        app:layout_constraintLeft_toRightOf="@+id/textdk1"
+        <TextView
+            android:id="@+id/textgün"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="140"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="138dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <TextView
+            android:id="@+id/textsaat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="23"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="174dp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <TextView
+            android:id="@+id/textdk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="59"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="246dp" />
+
+        <TextView
+            android:id="@+id/textsn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="59"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="193dp"
+            tools:layout_editor_absoluteY="229dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aytlay"
+        android:layout_width="212dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="168dp">
 
-    <TextView
-        android:id="@+id/textgün2"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="0\nGün"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/textgün1"
-        android:layout_marginTop="163dp"
-        app:layout_constraintTop_toBottomOf="@+id/textgün1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textgün1"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginLeft="4dp" />
+        <TextView
+            android:id="@+id/textgün1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="140"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="138dp" />
 
-    <TextView
-        android:id="@+id/textsaat2"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text=" 0\n Saat"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/textsaat1"
-        android:layout_marginTop="152dp"
-        app:layout_constraintTop_toBottomOf="@+id/textsaat1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textsaat1"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginLeft="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="229dp" />
 
-    <TextView
-        android:id="@+id/textdk2"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="0\nDakika"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/textdk1"
-        android:layout_marginTop="151dp"
-        app:layout_constraintTop_toBottomOf="@+id/textdk1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textdk1"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginRight="2dp" />
+        <TextView
+            android:id="@+id/textsaat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="23"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="174dp" />
 
-    <TextView
-        android:id="@+id/textsn2"
-        android:layout_width="0dp"
-        android:layout_height="92dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text=" 0\n Saniye"
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/textsn1"
-        android:layout_marginTop="160dp"
-        app:layout_constraintTop_toBottomOf="@+id/textsn1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textsn1"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginRight="3dp" />
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <TextView
+            android:id="@+id/textdk1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="59"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="246dp" />
+
+        <TextView
+            android:id="@+id/textsn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="59"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="193dp"
+            tools:layout_editor_absoluteY="229dp" />
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

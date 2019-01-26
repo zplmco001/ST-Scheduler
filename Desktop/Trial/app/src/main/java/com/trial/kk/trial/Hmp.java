@@ -1,6 +1,5 @@
 package com.trial.kk.trial;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -20,6 +19,7 @@ public class Hmp extends AppCompatActivity
     static int kontrol=0;
     private static AlertDialog.Builder builder;
     private Hmp hmp = this;
+    private Kronometre kronometre;
 
 
 
@@ -29,6 +29,8 @@ public class Hmp extends AppCompatActivity
         setContentView(R.layout.activity_hmp);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        kronometre = new Kronometre();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -44,14 +46,7 @@ public class Hmp extends AppCompatActivity
     }
 
 
-    static void alert(Context c){
-        if(kontrol==1){
-            builder = new AlertDialog.Builder(c);
-            builder.setTitle("Koz Karo");
-            builder.setMessage("Süre tamamlandı!");
-            builder.show();
-        }
-    }
+
 
     @Override
     public void onBackPressed() {
@@ -106,7 +101,13 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_kronometre) {
 
             tag = "sayac";
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Kronometre()).commit();
+            if(kontrol==0){
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,kronometre).commit();
+            }else{
+                kronometre.getActivity();
+            }
+
+
 
         } else if (id == R.id.nav_hedefler) {
 

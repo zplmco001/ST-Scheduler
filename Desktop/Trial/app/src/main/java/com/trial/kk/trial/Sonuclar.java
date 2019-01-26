@@ -149,12 +149,6 @@ public class Sonuclar extends Fragment {
         temizle.setOnClickListener(new temizle());
         kaydet.setOnClickListener(new kaydet());
 
-        int width= grid.getWidth();
-
-        dipNot.setWidth(width/3);
-        türkçe.setWidth(width/3);
-        türkDogru.setWidth(width/3);
-        türkYanlıs.setWidth(width/3);
 
         return view;
     }
@@ -232,14 +226,12 @@ public class Sonuclar extends Fragment {
                 clearText(yksBioYanlıs);
             }else if(checkDiff(edebiyat,yksEdbDogru,yksEdbYanlıs,24)==1){
                 clearText(yksEdbYanlıs);
-            }
-            else if(checkDiff(tarih1,yksTarih1Dogru,yksTarih2Yanlıs,10)==1){
+            }else if(checkDiff(tarih1,yksTarih1Dogru,yksTarih2Yanlıs,10)==1){
                 clearText(yksTarih1Yanlıs);
-            }
-            else if(checkDiff(coğrafya1,yksCogDogru,yksCogYanlıs,6)==1){
+            }else if(checkDiff(coğrafya1,yksCogDogru,yksCogYanlıs,6)==1){
                 clearText(yksCogYanlıs);
             }
-            else if(checkDiff(tarih2,yksTarih2Dogru,yksTarih2Yanlıs,11)==1){
+             else if(checkDiff(tarih2,yksTarih2Dogru,yksTarih2Yanlıs,11)==1){
                 clearText(yksTarih2Yanlıs);
             }else if(checkDiff(coğrafya2,yksCog2Dogru,yksCog2Yanlıs,11)==1){
                 clearText(yksCog2Yanlıs);
