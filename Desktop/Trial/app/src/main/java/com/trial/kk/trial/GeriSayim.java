@@ -47,7 +47,7 @@ public class GeriSayim extends Fragment{
 
         View view = inflater.inflate(R.layout.gerisayim_layout, container, false);
 
-        ((AppCompatActivity) getActivity()) .getSupportActionBar().hide();
+        //((AppCompatActivity) getActivity()) .getSupportActionBar().hide();
 
         textgün = (TextView) view.findViewById(R.id.textgün);
         textsaat = (TextView) view.findViewById(R.id.textsaat);
