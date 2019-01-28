@@ -22,15 +22,18 @@ import android.widget.ProgressBar;
 public class Kronometre extends Fragment {
     private EditText houredit,minuteedit,secondedit;
     private Button start,stop,reset;
+    private Button tytsüre,aytsüre,ydtsüre;
     private ProgressBar progressBar;
     private Drawable drawable;
     private Resources res;
     private CountDownTimer countDownTimer;
+    private AlertDialog.Builder builder;
 
     private int hour,minute,second;
     private double h,m,s;
     private int progress=0,check=0,click=0;
     private double totaltime;
+    private int flag=0;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,10 @@ public class Kronometre extends Fragment {
         stop  = (Button) view.findViewById(R.id.stop);
         reset  = (Button) view.findViewById(R.id.reset);
 
+        tytsüre = (Button) view.findViewById(R.id.tytsüre);
+        aytsüre = (Button) view.findViewById(R.id.aytsüre);
+        ydtsüre = (Button) view.findViewById(R.id.ydtsüre);
+
 
         res = getResources();
         drawable = res.getDrawable(R.drawable.circular);
@@ -60,6 +67,48 @@ public class Kronometre extends Fragment {
         stop.setEnabled(false);
         reset.setEnabled(false);
 
+        tytsüre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flag=1;
+                houredit.setText("02");
+                minuteedit.setText("15");
+                secondedit.setText("00");
+                houredit.setEnabled(false);
+                minuteedit.setEnabled(false);
+                secondedit.setEnabled(false);
+                reset.setEnabled(true);
+            }
+        });
+
+        aytsüre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flag=2;
+                houredit.setText("03");
+                minuteedit.setText("00");
+                secondedit.setText("00");
+                houredit.setEnabled(false);
+                minuteedit.setEnabled(false);
+                secondedit.setEnabled(false);
+                reset.setEnabled(true);
+            }
+        });
+
+        ydtsüre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flag=3;
+                houredit.setText("02");
+                minuteedit.setText("00");
+                secondedit.setText("00");
+                houredit.setEnabled(false);
+                minuteedit.setEnabled(false);
+                secondedit.setEnabled(false);
+                reset.setEnabled(true);
+            }
+        });
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +119,9 @@ public class Kronometre extends Fragment {
                     start.setEnabled(false);
                     stop.setEnabled(true);
                     reset.setEnabled(true);
+                    tytsüre.setEnabled(false);
+                    aytsüre.setEnabled(false);
+                    ydtsüre.setEnabled(false);
 
                     houredit.setEnabled(false);
                     minuteedit.setEnabled(false);
@@ -149,10 +201,35 @@ public class Kronometre extends Fragment {
                             houredit.setText("");
                             minuteedit.setText("");
                             secondedit.setText("");
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("Koz Karo");
-                            builder.setMessage("Süre tamamlandı!");
-                            builder.show();
+                            switch (flag){
+                                case 0:
+                                    builder = new AlertDialog.Builder(getActivity());
+                                    builder.setTitle("Koz Karo");
+                                    builder.setMessage("Süre tamamlandı!");
+                                    builder.show();
+                                    break;
+
+                                case 1:
+                                    builder = new AlertDialog.Builder(getActivity());
+                                    builder.setTitle("TYT SINAVI");
+                                    builder.setMessage("TYT SINAVI SONA ERDİ.LÜTFEN KALEMLERİ BIRAKIN!");
+                                    builder.show();
+                                    break;
+
+                                case 2:
+                                    builder = new AlertDialog.Builder(getActivity());
+                                    builder.setTitle("AYT SINAVI");
+                                    builder.setMessage("AYT SINAVI SONA ERDİ.LÜTFEN KALEMLERİ BIRAKIN!");
+                                    builder.show();
+                                    break;
+
+                                case 3:
+                                    builder = new AlertDialog.Builder(getActivity());
+                                    builder.setTitle("YDT SINAVI");
+                                    builder.setMessage("YDT SINAVI SONA ERDİ.LÜTFEN KALEMLERİ BIRAKIN!");
+                                    builder.show();
+                                    break;
+                            }
                         }
                     }.start();
                 }
@@ -169,13 +246,13 @@ public class Kronometre extends Fragment {
                 }
             }
         });
-
-
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(check==1){
-                    countDownTimer.cancel();
+                if(flag>0 || flag<4){
+                    if(check==1){
+                        countDownTimer.cancel();
+                    }
                     houredit.setText("");
                     minuteedit.setText("");
                     secondedit.setText("");
@@ -185,6 +262,9 @@ public class Kronometre extends Fragment {
                     start.setEnabled(true);
                     reset.setEnabled(false);
                     stop.setEnabled(false);
+                    tytsüre.setEnabled(true);
+                    aytsüre.setEnabled(true);
+                    ydtsüre.setEnabled(true);
                     progress=0;
                     click=0;
                     progressBar.setProgress(0);
