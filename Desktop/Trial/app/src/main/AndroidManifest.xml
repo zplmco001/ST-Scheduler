@@ -29,6 +29,8 @@
         <activity android:name=".HedefPopup"
             android:theme="@style/AppTheme.Popups">
         </activity>
+        <activity android:name=".Hedefler$Popup"
+            android:theme="@style/AppTheme.Popups"/>
     </application>
 
 </manifest>

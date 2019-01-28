@@ -2,7 +2,6 @@ package com.trial.kk.trial;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,8 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -31,7 +28,8 @@ public class Hedefler extends Fragment {
     private int count = 0;
     int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
     R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
-    public ArrayList<MyPostit> postits = new ArrayList<>();
+    public ArrayList<String> postits = new ArrayList<>();
+
 
     @Nullable
     @Override
@@ -151,6 +149,9 @@ public class Hedefler extends Fragment {
         public void onClick(View view) {
 
             Intent i = new Intent(getContext(), HedefPopup.class);
+
+            i.putExtra("day",gun[index]);
+
             startActivity(i);
 
         }
