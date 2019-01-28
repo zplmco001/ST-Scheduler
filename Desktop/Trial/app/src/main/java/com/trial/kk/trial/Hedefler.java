@@ -18,6 +18,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Hedefler extends Fragment {
 
@@ -25,10 +26,12 @@ public class Hedefler extends Fragment {
     private ImageButton hedefpzt, hedefsal, hedefcar, hedefper, hedefcum, hedefcmt, hedefpaz;
     private ScrollView scrollView;
     private GridLayout glpzt, glsal, glcar, glper, glcum, glcmt, glpaz;
-    private int count = 0;
-    int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
+    private int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
     R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
-    public ArrayList<String> postits = new ArrayList<>();
+
+    public HashMap<String ,Integer> postits = new HashMap<>();
+    private Button[] buttons  = new Button[7];
+    private GridLayout[] gridLayouts = new GridLayout[7];
 
 
     @Nullable
@@ -53,6 +56,14 @@ public class Hedefler extends Fragment {
         cm.setOnClickListener(new ButtonListener(5));
         pz.setOnClickListener(new ButtonListener(6));
 
+        buttons[0] = pzt;
+        buttons[1] = sal;
+        buttons[2] = car;
+        buttons[3] = per;
+        buttons[4] = cu;
+        buttons[5] = cm;
+        buttons[6] = pz;
+
         glpzt = view.findViewById(R.id.gridpzt);
         glsal = view.findViewById(R.id.gridsali);
         glcar = view.findViewById(R.id.gridcarsamba);
@@ -60,6 +71,14 @@ public class Hedefler extends Fragment {
         glcum = view.findViewById(R.id.gridcuma);
         glcmt = view.findViewById(R.id.gridcumartesi);
         glpaz = view.findViewById(R.id.gridpazar);
+
+        gridLayouts[0] = glpzt;
+        gridLayouts[1] = glsal;
+        gridLayouts[2] = glcar;
+        gridLayouts[3] = glper;
+        gridLayouts[4] = glcum;
+        gridLayouts[5] = glcmt;
+        gridLayouts[6] = glpaz;
 
         hedefpzt = view.findViewById(R.id.hedefpzt);
         hedefpzt.setOnClickListener(new HedefListener(0));
@@ -83,7 +102,6 @@ public class Hedefler extends Fragment {
         hedefpaz.setOnClickListener(new HedefListener(6));
 
 
-
         new MyPostit(glpzt,hedefpzt,"Matematik",getContext(),0);
         new MyPostit(glpzt,hedefpzt,"Türkçe",getContext(),1);
         new MyPostit(glpzt,hedefpzt,"Fizik",getContext(),2);
@@ -95,6 +113,9 @@ public class Hedefler extends Fragment {
         new MyPostit(glpzt,hedefpzt,"Biyoloji",getContext(),8);
         new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),0);
         //new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),1);
+
+        //if ()
+        //Log.e("TAG",getArguments().getString("String"));
 
         setButtonSize(hedefpzt, glpzt);
         setButtonSize(hedefsal, glsal);
@@ -115,6 +136,15 @@ public class Hedefler extends Fragment {
 
         return view;
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.e("resume","resume");
+        for (String key : postits.keySet()){
+            Log.e("mesaj",key);
+        }
     }
 
     void setButtonSize(ImageButton btn, GridLayout gl){
@@ -138,7 +168,6 @@ public class Hedefler extends Fragment {
 
     private class HedefListener implements View.OnClickListener{
 
-        String gun[] = {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
         int index;
 
         HedefListener(int index){
@@ -150,7 +179,7 @@ public class Hedefler extends Fragment {
 
             Intent i = new Intent(getContext(), HedefPopup.class);
 
-            i.putExtra("day",gun[index]);
+            i.putExtra("day",index);
 
             startActivity(i);
 
@@ -241,9 +270,7 @@ public class Hedefler extends Fragment {
                 }
             });
 
-
             gl.addView(tv,a);
-            count++;
 
         }
 

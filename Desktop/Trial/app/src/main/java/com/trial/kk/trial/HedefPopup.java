@@ -23,7 +23,8 @@ public class HedefPopup extends AppCompatActivity {
     private Button btn;
     private EditText soru, dk;
     private Hedefler hedefler = new Hedefler();
-    private String day;
+    private int day;
+    String gun[] = {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,9 @@ public class HedefPopup extends AppCompatActivity {
         soru = (EditText) findViewById(R.id.editText2);
         dk = (EditText) findViewById(R.id.editText);
 
-        day = getIntent().getStringExtra("day");
+        day = getIntent().getIntExtra("day",0);
 
-        Log.e("Gün",day);
+        Log.e("Gün",String.valueOf(day));
 
         arr[0]="Ders Seçiniz";
         arr[1]="Matematik";
@@ -95,7 +96,8 @@ public class HedefPopup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hedefler.postits.add(day+"\n"+spinner.getSelectedItem()+"\n"+soru.getText()+"\n"+dk.getText());
+                //hedefler.postits.put(gun[day]+"\n"+spinner.getSelectedItem()+"\n"+soru.getText()+"\n"+dk.getText(),day);
+
                // Intent i = new Intent(HedefPopup.this, Hmp.class);
                // startActivity(i);
                /* Hedefler hedefler = new Hedefler();
@@ -103,6 +105,10 @@ public class HedefPopup extends AppCompatActivity {
                 Log.e("mgs",String.valueOf(gl.getRowCount()));
                 MyPostit postit = new MyPostit(gl,((String) spinner.getSelectedItem())+soru.getText()+dk.getText(),getBaseContext());*/
                 //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,hedefler).commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("String", gun[day]+"\n"+spinner.getSelectedItem()+"\n"+soru.getText()+"\n"+dk.getText());
+                hedefler.setArguments(bundle);
+
                 finish();
 
 
