@@ -78,50 +78,43 @@
 
     <Button
         android:id="@+id/start"
-        android:layout_width="102dp"
-        android:layout_height="48dp"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
         android:onClick="start"
         android:text="BAŞLAT"
         android:textColor="#000"
-        android:background="@drawable/roundbutton60180p"
-        android:layout_marginStart="53dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/stop"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="26dp" />
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/stop"
-        android:layout_width="129dp"
-        android:layout_height="51dp"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:layout_marginStart="7dp"
         android:onClick="stop"
         android:text="DURDUR"
         android:textColor="#000"
-        android:background="@drawable/roundbutton60180p"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="29dp"
         app:layout_constraintLeft_toRightOf="@+id/start"
-        tools:layout_editor_absoluteY="487dp"
-        android:layout_marginLeft="7dp" />
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="101dp"
-        android:layout_height="48dp"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:onClick="reset"
         android:text="SIFIRLA"
-        android:background="@drawable/roundbutton60180p"
         android:textColor="#000"
-        android:layout_marginStart="10dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/stop"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/stop"
-        android:layout_marginLeft="-35dp" />
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
     <ProgressBar
 
@@ -139,47 +132,30 @@
         android:progressDrawable="@drawable/circular"
         android:secondaryProgress="100"
         app:layout_constraintBottom_toBottomOf="@+id/start"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="18dp"
-        android:layout_height="97dp"
-        android:text=":"
-        android:textAlignment="textStart"
-        android:textColor="#000"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginLeft="137dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="18dp"
-        android:layout_height="97dp"
-        android:text=":"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text=":     :"
         android:textAlignment="textStart"
         android:textColor="#000"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBottom_creator="1"
+        android:textSize="70sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
-        app:layout_constraintVertical_bias="0.413"
-        android:layout_marginRight="140dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
 </android.support.constraint.ConstraintLayout>

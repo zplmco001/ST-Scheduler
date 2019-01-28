@@ -101,11 +101,9 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_kronometre) {
 
             tag = "sayac";
-            if(kontrol==0){
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,kronometre).commit();
-            }else{
-                kronometre.getActivity();
-            }
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,kronometre).commit();
+
 
 
 
