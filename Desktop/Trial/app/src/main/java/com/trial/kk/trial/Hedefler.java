@@ -2,6 +2,7 @@ package com.trial.kk.trial;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,7 +19,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Hedefler extends Fragment {
 
@@ -29,9 +29,13 @@ public class Hedefler extends Fragment {
     private int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
     R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
 
-    public HashMap<String ,Integer> postits = new HashMap<>();
-    private Button[] buttons  = new Button[7];
+    ArrayList<MyPostit> postits = new ArrayList<>();
+    private ImageButton[] buttons  = new ImageButton[7];
     private GridLayout[] gridLayouts = new GridLayout[7];
+    private TextView pazartesi, sali, carsamba, persembe, cuma, cumartesi, pazar;
+    private ArrayList<Integer> pos = new ArrayList<>();
+
+    public static Bundle bund;
 
 
     @Nullable
@@ -39,6 +43,7 @@ public class Hedefler extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hedefler, container, false);
 
+        bund = new Bundle();
 
         pzt = view.findViewById(R.id.pzt);
         sal = view.findViewById(R.id.sal);
@@ -48,6 +53,14 @@ public class Hedefler extends Fragment {
         cm = view.findViewById(R.id.cm);
         pz = view.findViewById(R.id.pzr);
 
+        pazartesi = view.findViewById(R.id.Pazartesi);
+        sali = view.findViewById(R.id.Sali);
+        carsamba = view.findViewById(R.id.Carsamba);
+        persembe = view.findViewById(R.id.Persembe);
+        cuma = view.findViewById(R.id.Cuma);
+        cumartesi = view.findViewById(R.id.Cumartesi);
+        pazar = view.findViewById(R.id.Pazar);
+
         pzt.setOnClickListener(new ButtonListener(0));
         sal.setOnClickListener(new ButtonListener(1));
         car.setOnClickListener(new ButtonListener(2));
@@ -55,14 +68,6 @@ public class Hedefler extends Fragment {
         cu.setOnClickListener(new ButtonListener(4));
         cm.setOnClickListener(new ButtonListener(5));
         pz.setOnClickListener(new ButtonListener(6));
-
-        buttons[0] = pzt;
-        buttons[1] = sal;
-        buttons[2] = car;
-        buttons[3] = per;
-        buttons[4] = cu;
-        buttons[5] = cm;
-        buttons[6] = pz;
 
         glpzt = view.findViewById(R.id.gridpzt);
         glsal = view.findViewById(R.id.gridsali);
@@ -101,21 +106,28 @@ public class Hedefler extends Fragment {
         hedefpaz = view.findViewById(R.id.hedefpaz);
         hedefpaz.setOnClickListener(new HedefListener(6));
 
+        buttons[0] = hedefpzt;
+        buttons[1] = hedefsal;
+        buttons[2] = hedefcar;
+        buttons[3] = hedefper;
+        buttons[4] = hedefcum;
+        buttons[5] = hedefcmt;
+        buttons[6] = hedefpaz;
 
-        new MyPostit(glpzt,hedefpzt,"Matematik",getContext(),0);
-        new MyPostit(glpzt,hedefpzt,"Türkçe",getContext(),1);
-        new MyPostit(glpzt,hedefpzt,"Fizik",getContext(),2);
-        new MyPostit(glpzt,hedefpzt,"Kimya",getContext(),3);
-        new MyPostit(glpzt,hedefpzt,"Tarih",getContext(),4);
-        new MyPostit(glpzt,hedefpzt,"Coğrafya",getContext(),5);
-        new MyPostit(glpzt,hedefpzt,"Din",getContext(),6);
-        new MyPostit(glpzt,hedefpzt,"Biyoloji",getContext(),7);
-        new MyPostit(glpzt,hedefpzt,"Biyoloji",getContext(),8);
-        new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),0);
+
+        new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
+        new MyPostit(glpzt,hedefpzt,"Türkçe","Matematik",getContext(),1);
+        new MyPostit(glpzt,hedefpzt,"Fizik","Matematik",getContext(),2);
+        new MyPostit(glpzt,hedefpzt,"Kimya","Matematik",getContext(),3);
+        new MyPostit(glpzt,hedefpzt,"Tarih","Matematik",getContext(),4);
+        new MyPostit(glpzt,hedefpzt,"Coğrafya","Matematik",getContext(),5);
+        new MyPostit(glpzt,hedefpzt,"Din","Matematik",getContext(),6);
+        new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),7);
+        new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),8);
+        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);
         //new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),1);
 
-        //if ()
-        //Log.e("TAG",getArguments().getString("String"));
+
 
         setButtonSize(hedefpzt, glpzt);
         setButtonSize(hedefsal, glsal);
@@ -141,10 +153,29 @@ public class Hedefler extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("resume","resume");
-        for (String key : postits.keySet()){
-            Log.e("mesaj",key);
+
+        if(!bund.isEmpty()){
+            Log.e("Bundle",String.valueOf(bund.size()));
+            int index = bund.getInt("Integer");
+            Log.e("Day",String.valueOf(index));
+            String front,back;
+            if (bund.size()==2){
+                front = bund.getString("Text1");
+                back = "";
+            }
+            else {
+                front = bund.getString("Text1");
+                back = bund.getString("Text2");
+            }
+            int set = gridLayouts[index].getChildCount()-1;
+            postits.add(new MyPostit(gridLayouts[index],buttons[index],front,back,getContext(),set));
         }
+
+        //Log.e("Tag",bund.getString("String"));
+        //Log.e("TAG",getArguments().getString("String"));
+
+        Log.e("resume","resume");
+
     }
 
     void setButtonSize(ImageButton btn, GridLayout gl){
@@ -165,6 +196,8 @@ public class Hedefler extends Fragment {
         btn.setLayoutParams(prm);
 
     }
+
+
 
     private class HedefListener implements View.OnClickListener{
 
@@ -187,28 +220,47 @@ public class Hedefler extends Fragment {
     }
 
 
+
     private class ButtonListener implements View.OnClickListener{
 
-        private ArrayList<Integer> pos = new ArrayList<>();
+
         private int day;
 
         ButtonListener(int day){
             this.day = day;
-            pos.add(130);
-            pos.add(500);
-            pos.add(870);
-            pos.add(1040);
-            pos.add(1210);
-            pos.add(1380);
-            pos.add(1550);
+
+            pos.add(0);
+            int[] location = new int[2];
+            //sali.getLocationOnScreen(location);
+            sali.getLocationInWindow(location);
+
+            pos.add(sali.getTop());
+
+            carsamba.getLocationOnScreen(location);
+            pos.add(carsamba.getTop());
+
+            persembe.getLocationOnScreen(location);
+            pos.add(persembe.getTop());
+
+            cuma.getLocationOnScreen(location);
+            pos.add(cuma.getTop());
+
+            cumartesi.getLocationOnScreen(location);
+            pos.add(cumartesi.getTop());
+
+            pazar.getLocationOnScreen(location);
+            pos.add(pazar.getTop());
+            Log.e("Pos",String.valueOf(pos.get(pos.size()-1)));
+
         }
+
 
         @Override
         public void onClick(View view) {
             scrollView.post(new Runnable() {
                 @Override
                 public void run() {
-                    scrollView.scrollTo(0,pos.get(day));
+                    scrollView.smoothScrollTo(0,pos.get(day));
                 }
             });
         }
@@ -219,8 +271,9 @@ public class Hedefler extends Fragment {
 
 
         private TextView tv;
+        private int flag = 0;
 
-        MyPostit(final GridLayout gl,final ImageButton btn, String text, Context context, int a){
+        MyPostit(final GridLayout gl, final ImageButton btn, final String front, final String back, Context context, int a){
 
             DisplayMetrics displaymetrics = new DisplayMetrics();
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -228,8 +281,21 @@ public class Hedefler extends Fragment {
             int width = displaymetrics.widthPixels;
 
             tv = new TextView(context);
-            tv.setText(text);
+            tv.setText(front);
             tv.setBackgroundDrawable(getResources().getDrawable(drawable[a%7]));
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (flag == 0&& !back.equals("")){
+                        flag = 1;
+                        tv.setText(back);
+                    }
+                    else {
+                        flag = 0;
+                        tv.setText(front);
+                    }
+                }
+            });
 
             gl.setRowCount(4);
             gl.setColumnCount(3);
@@ -257,15 +323,12 @@ public class Hedefler extends Fragment {
                     params.setMargins(5, 5, 5, 5);
 
                     tv.setLayoutParams(params);
+                    tv.setTextSize(20);
+                    tv.setTextColor(Color.BLACK);
                     tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
                     setButtonSize(btn, gl);
-                    /*setButtonSize(hedefsal, glsal);
-                    setButtonSize(hedefcar,glcar);
-                    setButtonSize(hedefper,glper);
-                    setButtonSize(hedefcum,glcum);
-                    setButtonSize(hedefcmt,glcmt);
-                    setButtonSize(hedefpaz,glpaz);*/
+
 
                 }
             });

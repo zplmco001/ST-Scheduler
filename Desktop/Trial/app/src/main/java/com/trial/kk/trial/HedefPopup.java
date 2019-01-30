@@ -3,6 +3,7 @@ package com.trial.kk.trial;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HedefPopup extends AppCompatActivity {
 
@@ -70,7 +72,6 @@ public class HedefPopup extends AppCompatActivity {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
                 if(position == 0){
-                    // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
                 }
                 else {
@@ -96,17 +97,30 @@ public class HedefPopup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //hedefler.postits.put(gun[day]+"\n"+spinner.getSelectedItem()+"\n"+soru.getText()+"\n"+dk.getText(),day);
+                Bundle bundle = Hedefler.bund;
 
-               // Intent i = new Intent(HedefPopup.this, Hmp.class);
-               // startActivity(i);
-               /* Hedefler hedefler = new Hedefler();
-                GridLayout gl = hedefler.getLayout();
-                Log.e("mgs",String.valueOf(gl.getRowCount()));
-                MyPostit postit = new MyPostit(gl,((String) spinner.getSelectedItem())+soru.getText()+dk.getText(),getBaseContext());*/
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,hedefler).commit();
-                Bundle bundle = new Bundle();
-                bundle.putString("String", gun[day]+"\n"+spinner.getSelectedItem()+"\n"+soru.getText()+"\n"+dk.getText());
+                if (spinner.getSelectedItemPosition()==0){
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(HedefPopup.this);
+                    builder.setMessage("Lütfen ders seçiniz");
+                    builder.show();
+                    return;
+                }
+                if (soru.getText().toString().equals("")){
+
+                    bundle.putString("Text1",spinner.getSelectedItem()+"\n"+dk.getText()+" dk");
+
+                }
+                else if (dk.getText().toString().equals("")){
+
+                    bundle.putString("Text1",spinner.getSelectedItem()+"\n"+soru.getText()+" soru");
+                }
+                else{
+                    bundle.putString("Text1", spinner.getSelectedItem()+"\n"+soru.getText()+" dk");
+                    bundle.putString("Text2",spinner.getSelectedItem()+"\n"+dk.getText()+" soru");
+
+                }
+                bundle.putInt("Integer",day);
                 hedefler.setArguments(bundle);
 
                 finish();

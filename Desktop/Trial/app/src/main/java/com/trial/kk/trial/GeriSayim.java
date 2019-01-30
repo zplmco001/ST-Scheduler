@@ -104,11 +104,10 @@ public class GeriSayim extends Fragment{
 
                 sınavtext.startAnimation(anim);
                 tytlay.startAnimation(anim);
-                textsaat.startAnimation(anim);
-                gün.startAnimation(anim);
-                saat.startAnimation(anim);
-                dakika.startAnimation(anim);
-                saniye.startAnimation(anim);
+                //gün.startAnimation(anim);
+                //saat.startAnimation(anim);
+                //dakika.startAnimation(anim);
+                //saniye.startAnimation(anim);
 
 
             }
@@ -142,11 +141,10 @@ public class GeriSayim extends Fragment{
 
                 sınavtext.startAnimation(anim);
                 aytlay.startAnimation(anim);
-                textsaat.startAnimation(anim);
-                gün.startAnimation(anim);
-                saat.startAnimation(anim);
-                dakika.startAnimation(anim);
-                saniye.startAnimation(anim);
+                //gün.startAnimation(anim);
+                //saat.startAnimation(anim);
+                //dakika.startAnimation(anim);
+                //saniye.startAnimation(anim);
 
             }
         });

@@ -238,92 +238,92 @@
 
             <TextView
                 android:id="@+id/Pazartesi"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit190270"
                 android:text="Pazartesi"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="parent" />
 
             <TextView
                 android:id="@+id/Sali"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit290270"
                 android:text="Salı"
                 android:textColor="@android:color/background_dark"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridpzt" />
 
             <TextView
                 android:id="@+id/Carsamba"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit190270"
                 android:text="Çarşamba"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridsali" />
 
             <TextView
                 android:id="@+id/Persembe"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit290270"
                 android:text="Perşembe"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridcarsamba" />
 
             <TextView
                 android:id="@+id/Cuma"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit190270"
                 android:text="Cuma"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridpersembe" />
 
             <TextView
                 android:id="@+id/Cumartesi"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit290270"
                 android:text="Cumartesi"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridcuma" />
 
             <TextView
                 android:id="@+id/Pazar"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit190270"
                 android:text="Pazar"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/background_dark"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gridcumartesi" />

@@ -3,6 +3,7 @@ package com.trial.kk.trial;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,6 +21,7 @@ public class Hmp extends AppCompatActivity
     private static AlertDialog.Builder builder;
     private Hmp hmp = this;
     private Kronometre kronometre;
+    Fragment currentFragment;
 
 
 
@@ -44,8 +46,6 @@ public class Hmp extends AppCompatActivity
 
 
     }
-
-
 
 
     @Override
@@ -81,6 +81,7 @@ public class Hmp extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -91,6 +92,7 @@ public class Hmp extends AppCompatActivity
         if (id == R.id.nav_countdown) {
 
             tag = "countdown";
+
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new GeriSayim(),tag).commit();
 
         } else if (id == R.id.nav_konular) {
@@ -109,7 +111,8 @@ public class Hmp extends AppCompatActivity
 
         } else if (id == R.id.nav_hedefler) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Hedefler()).commit();
+            currentFragment = new Hedefler();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,currentFragment).commit();
 
         } else if (id == R.id.nav_sonuclar) {
 
@@ -132,3 +135,4 @@ public class Hmp extends AppCompatActivity
         return true;
     }
 }
+
