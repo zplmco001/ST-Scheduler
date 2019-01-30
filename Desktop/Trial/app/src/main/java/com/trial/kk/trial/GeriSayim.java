@@ -8,10 +8,11 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class GeriSayim extends Fragment{
 
 
     private TextView textsaat,textgün,textdk,textsn,textsaat1,textgün1,textdk1,textsn1,sınavtext;
+    private TextView gün,saat,saniye,dakika;
 
 
     private SimpleDateFormat dateFormat;
@@ -36,6 +38,8 @@ public class GeriSayim extends Fragment{
     private TextView tv;
     private CountDownTimer cdt,cdt1;
     private LinearLayout tytlay,aytlay;
+    private Animation animation;
+
 
 
 
@@ -48,6 +52,11 @@ public class GeriSayim extends Fragment{
         View view = inflater.inflate(R.layout.gerisayim_layout, container, false);
 
         //((AppCompatActivity) getActivity()) .getSupportActionBar().hide();
+
+        gün = (TextView) view.findViewById(R.id.gün);
+        saat = (TextView) view.findViewById(R.id.saat);
+        dakika = (TextView) view.findViewById(R.id.dakika);
+        saniye = (TextView) view.findViewById(R.id.saniye);
 
         textgün = (TextView) view.findViewById(R.id.textgün);
         textsaat = (TextView) view.findViewById(R.id.textsaat);
@@ -70,18 +79,75 @@ public class GeriSayim extends Fragment{
         tytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tytlay.setVisibility(View.INVISIBLE);
-                sınavtext.setText("AYT KALAN ZAMAN");
-                aytlay.setVisibility(View.VISIBLE);
+                AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
+                anim.setDuration(400);
+                anim.setRepeatCount(1);
+                anim.setRepeatMode(Animation.REVERSE);
+                anim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                        tytlay.setVisibility(View.INVISIBLE);
+                        sınavtext.setText("AYT GERİ SAYIM");
+                        aytlay.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                sınavtext.startAnimation(anim);
+                tytlay.startAnimation(anim);
+                textsaat.startAnimation(anim);
+                gün.startAnimation(anim);
+                saat.startAnimation(anim);
+                dakika.startAnimation(anim);
+                saniye.startAnimation(anim);
+
+
             }
         });
 
         aytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                aytlay.setVisibility(View.INVISIBLE);
-                sınavtext.setText("TYT KALAN ZAMAN");
-                tytlay.setVisibility(View.VISIBLE);
+                AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
+                anim.setDuration(400);
+                anim.setRepeatCount(1);
+                anim.setRepeatMode(Animation.REVERSE);
+                anim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                        aytlay.setVisibility(View.INVISIBLE);
+                        sınavtext.setText("TYT GERİ SAYIM");
+                        tytlay.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                sınavtext.startAnimation(anim);
+                aytlay.startAnimation(anim);
+                textsaat.startAnimation(anim);
+                gün.startAnimation(anim);
+                saat.startAnimation(anim);
+                dakika.startAnimation(anim);
+                saniye.startAnimation(anim);
+
             }
         });
 

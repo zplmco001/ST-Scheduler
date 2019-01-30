@@ -11,25 +11,26 @@
 
     <ScrollView
         android:id="@+id/scrollView5"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_above="@+id/temizle"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486"
+        app:layout_constraintVertical_bias="0.0"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0">
 
         <GridLayout
             android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:columnCount="4"
             app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -50,7 +51,7 @@
 
 
             <EditText
-                android:layout_width="87dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="2"
@@ -75,7 +76,7 @@
                 android:textColor="#000" />
 
             <EditText
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="3"
@@ -88,7 +89,8 @@
                 android:textColor="#000" />
 
             <EditText
-                android:layout_width="77dp"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="3"
@@ -218,7 +220,7 @@
 
             <EditText
                 android:id="@+id/coğrafya2"
-                android:layout_width="129dp"
+                android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_row="19"
@@ -269,7 +271,7 @@
                 android:textColor="#000" />
 
             <EditText
-                android:layout_width="120dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="8"
@@ -282,7 +284,7 @@
                 android:textColor="#000" />
 
             <EditText
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="9"
@@ -295,7 +297,7 @@
                 android:textColor="#000" />
 
             <EditText
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="9"
@@ -361,7 +363,7 @@
 
             <EditText
                 android:id="@+id/yksFizikDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="12"
@@ -374,7 +376,7 @@
 
             <EditText
                 android:id="@+id/dipNot"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="1"
@@ -388,7 +390,7 @@
 
             <EditText
                 android:id="@+id/türkDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="4"
@@ -401,7 +403,7 @@
 
             <EditText
                 android:id="@+id/türkYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="4"
@@ -414,21 +416,8 @@
 
 
             <EditText
-                android:id="@+id/matYanlıs"
-                android:layout_width="77dp"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_row="6"
-                android:background="@color/f7"
-                android:ems="10"
-                android:hint="0"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textAlignment="center" />
-
-            <EditText
                 android:id="@+id/matDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="6"
@@ -442,7 +431,7 @@
 
             <EditText
                 android:id="@+id/sosDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="5"
@@ -455,7 +444,7 @@
 
             <EditText
                 android:id="@+id/sosYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="5"
@@ -469,7 +458,7 @@
 
             <EditText
                 android:id="@+id/fenDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="7"
@@ -482,7 +471,7 @@
 
             <EditText
                 android:id="@+id/yksMatDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="11"
@@ -495,7 +484,7 @@
 
             <EditText
                 android:id="@+id/yksMatYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="11"
@@ -508,7 +497,7 @@
 
             <EditText
                 android:id="@+id/yksFizikYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="12"
@@ -521,7 +510,7 @@
 
             <EditText
                 android:id="@+id/fenYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="7"
@@ -534,7 +523,7 @@
 
             <EditText
                 android:id="@+id/yksEdbDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="15"
@@ -547,7 +536,7 @@
 
             <EditText
                 android:id="@+id/yksEdbYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="15"
@@ -560,7 +549,7 @@
 
             <EditText
                 android:id="@+id/yksTarih1Dogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="16"
@@ -573,7 +562,7 @@
 
             <EditText
                 android:id="@+id/yksTarih1Yanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="16"
@@ -586,7 +575,7 @@
 
             <EditText
                 android:id="@+id/yksCogDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="17"
@@ -599,7 +588,7 @@
 
             <EditText
                 android:id="@+id/yksBioDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="14"
@@ -613,7 +602,7 @@
 
             <EditText
                 android:id="@+id/yksKimyaDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="13"
@@ -627,7 +616,7 @@
 
             <EditText
                 android:id="@+id/yksKimyaYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="13"
@@ -640,7 +629,7 @@
 
             <EditText
                 android:id="@+id/yksBioYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="14"
@@ -653,7 +642,7 @@
 
             <EditText
                 android:id="@+id/yksTarih2Dogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="18"
@@ -666,7 +655,7 @@
 
             <EditText
                 android:id="@+id/yksCog2Dogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="19"
@@ -679,7 +668,7 @@
 
             <EditText
                 android:id="@+id/yksFelsDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="20"
@@ -692,7 +681,7 @@
 
             <EditText
                 android:id="@+id/yksDinDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="21"
@@ -705,7 +694,7 @@
 
             <EditText
                 android:id="@+id/yksDilDogru"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="22"
@@ -718,7 +707,7 @@
 
             <EditText
                 android:id="@+id/yksCogYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="17"
@@ -731,7 +720,7 @@
 
             <EditText
                 android:id="@+id/yksTarih2Yanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="18"
@@ -744,7 +733,7 @@
 
             <EditText
                 android:id="@+id/yksCog2Yanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="19"
@@ -757,7 +746,7 @@
 
             <EditText
                 android:id="@+id/yksFelsYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="20"
@@ -770,7 +759,7 @@
 
             <EditText
                 android:id="@+id/yksDinYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="21"
@@ -783,12 +772,13 @@
 
             <EditText
                 android:id="@+id/yksDilYanlıs"
-                android:layout_width="77dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
                 android:layout_row="22"
                 android:background="@color/f7"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center" />
@@ -796,7 +786,7 @@
             <EditText
                 android:id="@+id/editText3"
                 android:layout_width="96dp"
-                android:layout_height="59dp"
+                android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="0"
                 android:backgroundTint="@android:color/black"
@@ -806,6 +796,19 @@
                 android:text="DİPLOMA NOTU"
                 android:textAlignment="center"
                 android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/matYanlıs"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="6"
+                android:background="@color/f7"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAlignment="center" />
 
 
         </GridLayout>

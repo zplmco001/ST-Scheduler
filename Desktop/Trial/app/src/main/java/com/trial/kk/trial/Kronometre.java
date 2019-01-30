@@ -153,6 +153,7 @@ public class Kronometre extends Fragment {
                         @Override
                         public void onTick(long totaltime) {
 
+
                             progressBar.setProgress(progress);
 
                             h=totaltime/(60*60*1000);
@@ -198,6 +199,9 @@ public class Kronometre extends Fragment {
                             start.setEnabled(true);
                             stop.setEnabled(false);
                             reset.setEnabled(false);
+                            tytsüre.setEnabled(true);
+                            aytsüre.setEnabled(true);
+                            ydtsüre.setEnabled(true);
                             houredit.setText("");
                             minuteedit.setText("");
                             secondedit.setText("");
@@ -243,6 +247,9 @@ public class Kronometre extends Fragment {
                     click=1;
                     countDownTimer.cancel();
                     start.setEnabled(true);
+                    tytsüre.setEnabled(true);
+                    aytsüre.setEnabled(true);
+                    ydtsüre.setEnabled(true);
                 }
             }
         });
