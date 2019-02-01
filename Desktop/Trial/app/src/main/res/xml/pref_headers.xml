@@ -5,16 +5,23 @@
     <header
         android:fragment="com.trial.kk.trial.SettingsActivity$GeneralPreferenceFragment"
         android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/pref_header_general" />
+        android:title="Kişisel Bilgiler" />
 
     <header
         android:fragment="com.trial.kk.trial.SettingsActivity$NotificationPreferenceFragment"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/pref_header_notifications" />
+        android:title="Bildirimler" />
 
     <header
-        android:fragment="com.trial.kk.trial.SettingsActivity$DataSyncPreferenceFragment"
-        android:icon="@drawable/ic_sync_black_24dp"
-        android:title="@string/pref_header_data_sync" />
+        android:title="Anasayfa Seçenekleri"/>
+
+    <header
+        android:title="Metin Boyutu"/>
+
+    <header
+        android:title="Verileri Sıfırla"/>
+
+    <header
+        android:title="Tanıtım Ekranı"/>
 
 </preference-headers>

@@ -128,7 +128,7 @@ public class Hedefler extends Fragment {
         buttons[6] = hedefpaz;
 
 
-       /* new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
+        new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
         new MyPostit(glpzt,hedefpzt,"Türkçe","Matematik",getContext(),1);
         new MyPostit(glpzt,hedefpzt,"Fizik","Matematik",getContext(),2);
         new MyPostit(glpzt,hedefpzt,"Kimya","Matematik",getContext(),3);
@@ -137,7 +137,7 @@ public class Hedefler extends Fragment {
         new MyPostit(glpzt,hedefpzt,"Din","Matematik",getContext(),6);
         new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),7);
         new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),8);
-        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);*/
+        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);
         //new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),1);
 
         setButtonSize(hedefpzt, glpzt);
@@ -262,9 +262,9 @@ public class Hedefler extends Fragment {
                 @Override
                 public void onClick(View view) {
                     AlphaAnimation animation = new AlphaAnimation(1.0f, 0.1f);
-                    animation.setDuration(500);
+                    animation.setDuration(300);
                     animation.setRepeatCount(1);
-                    animation.setRepeatMode(Animation.REVERSE);
+                    animation.setRepeatMode(Animation.RELATIVE_TO_PARENT);
                     animation.setAnimationListener(new Animation.AnimationListener() {
                         @Override
                         public void onAnimationStart(Animation animation) {
