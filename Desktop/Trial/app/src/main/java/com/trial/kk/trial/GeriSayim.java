@@ -31,7 +31,7 @@ public class GeriSayim extends Fragment{
 
 
     private SimpleDateFormat dateFormat;
-    private long days,hours,minutes,seconds;
+    private long days,hours,minutes,seconds,days1;
     private Date currentDate;
     private Date futureDate,futureDate2;
     private long difference,difference2;
@@ -39,6 +39,7 @@ public class GeriSayim extends Fragment{
     private CountDownTimer cdt,cdt1;
     private LinearLayout tytlay,aytlay;
     private Animation animation;
+    private int click=0;
 
 
 
@@ -79,6 +80,8 @@ public class GeriSayim extends Fragment{
         tytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tytlay.setVisibility(View.INVISIBLE);
+                aytlay.setVisibility(View.INVISIBLE);
                 AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
                 anim.setDuration(400);
                 anim.setRepeatCount(1);
@@ -86,7 +89,8 @@ public class GeriSayim extends Fragment{
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-
+                        tytlay.setVisibility(View.INVISIBLE);
+                        aytlay.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -96,14 +100,14 @@ public class GeriSayim extends Fragment{
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-                        tytlay.setVisibility(View.INVISIBLE);
+
                         sınavtext.setText("AYT GERİ SAYIM");
                         aytlay.setVisibility(View.VISIBLE);
                     }
                 });
 
                 sınavtext.startAnimation(anim);
-                tytlay.startAnimation(anim);
+                aytlay.startAnimation(anim);
                 //gün.startAnimation(anim);
                 //saat.startAnimation(anim);
                 //dakika.startAnimation(anim);
@@ -116,6 +120,8 @@ public class GeriSayim extends Fragment{
         aytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tytlay.setVisibility(View.INVISIBLE);
+                aytlay.setVisibility(View.INVISIBLE);
                 AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
                 anim.setDuration(400);
                 anim.setRepeatCount(1);
@@ -123,6 +129,7 @@ public class GeriSayim extends Fragment{
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+
 
                     }
 
@@ -133,14 +140,15 @@ public class GeriSayim extends Fragment{
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-                        aytlay.setVisibility(View.INVISIBLE);
+
                         sınavtext.setText("TYT GERİ SAYIM");
                         tytlay.setVisibility(View.VISIBLE);
+
                     }
                 });
 
                 sınavtext.startAnimation(anim);
-                aytlay.startAnimation(anim);
+                tytlay.startAnimation(anim);
                 //gün.startAnimation(anim);
                 //saat.startAnimation(anim);
                 //dakika.startAnimation(anim);
@@ -151,7 +159,7 @@ public class GeriSayim extends Fragment{
 
         try {
             dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            futureDate = dateFormat.parse("2019-06-16 08:00:00");
+            futureDate = dateFormat.parse("2019-06-15 08:00:00");
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -165,12 +173,12 @@ public class GeriSayim extends Fragment{
             public void onTick(long difference) {
                 days=  difference/(24*60*60*1000);
                 difference-=days *24 * 60 * 60 * 1000;
+
                 if(days<10){
                     textgün.setText("0"+days);
                 }else{
                     textgün.setText(String.valueOf(days));
                 }
-
 
                 hours=difference/(60*60*1000);
                 difference-=hours*60*60*1000;

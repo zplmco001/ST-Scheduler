@@ -20,8 +20,8 @@ public class Hmp extends AppCompatActivity
     static int kontrol=0;
     private static AlertDialog.Builder builder;
     private Hmp hmp = this;
-    private Kronometre kronometre;
     Fragment currentFragment;
+    Fragment kronometre;
 
 
 

@@ -47,6 +47,33 @@ public class Kronometre extends Fragment {
         minuteedit = (EditText) view.findViewById(R.id.minuteedit);
         secondedit = (EditText) view.findViewById(R.id.secondedit);
 
+        houredit.setCursorVisible(false);
+        minuteedit.setCursorVisible(false);
+        secondedit.setCursorVisible(false);
+
+       /* houredit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                houredit.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
+
+        minuteedit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                minuteedit.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
+
+        secondedit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                secondedit.setFocusableInTouchMode(true);
+                return false;
+            }
+        });*/
         start  = (Button) view.findViewById(R.id.start);
         stop  = (Button) view.findViewById(R.id.stop);
         reset  = (Button) view.findViewById(R.id.reset);
@@ -256,10 +283,12 @@ public class Kronometre extends Fragment {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(flag>0 || flag<4){
                     if(check==1){
                         countDownTimer.cancel();
                     }
+                    flag=0;
                     houredit.setText("");
                     minuteedit.setText("");
                     secondedit.setText("");
