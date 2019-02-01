@@ -4,18 +4,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -72,6 +74,13 @@ public class Hedefler extends Fragment {
         textViews[4] = cuma;
         textViews[5] = cumartesi;
         textViews[6] = pazar;
+
+        for (int i=0;i<7;i++){
+            Typeface tp = Typeface.createFromAsset(getContext().getAssets(), "Architext.ttf");
+            textViews[i].setTypeface(tp);
+            textViews[i].setTextSize(40);
+            textViews[i].setGravity(Gravity.CENTER);
+        }
 
         glpzt = view.findViewById(R.id.gridpzt);
         glsal = view.findViewById(R.id.gridsali);
@@ -206,25 +215,21 @@ public class Hedefler extends Fragment {
         public void onClick(View view) {
 
             Intent i = new Intent(getContext(), HedefPopup.class);
-
             i.putExtra("day",index);
-
             startActivity(i);
 
         }
     }
-
-
 
     private class ButtonListener implements View.OnClickListener{
 
         private int day;
 
         ButtonListener(final int day){
+
             this.day = day;
 
         }
-
 
         @Override
         public void onClick(View view) {
@@ -236,7 +241,6 @@ public class Hedefler extends Fragment {
             });
         }
     }
-
 
     private class MyPostit {
 
@@ -257,14 +261,36 @@ public class Hedefler extends Fragment {
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (flag == 0 && !back.equals("")){
-                        flag = 1;
-                        tv.setText(back);
-                    }
-                    else {
-                        flag = 0;
-                        tv.setText(front);
-                    }
+                    AlphaAnimation animation = new AlphaAnimation(1.0f, 0.1f);
+                    animation.setDuration(500);
+                    animation.setRepeatCount(1);
+                    animation.setRepeatMode(Animation.REVERSE);
+                    animation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                            if (flag == 0 && !back.equals("")){
+                                flag = 1;
+                                tv.setText(back);
+                            }
+                            else {
+                                flag = 0;
+                                tv.setText(front);
+                            }
+                        }
+                    });
+
+                    tv.startAnimation(animation);
+
                 }
             });
 
@@ -276,6 +302,7 @@ public class Hedefler extends Fragment {
                     builder.setMessage("Silmek istediğine emin misin?");
                     builder.setNegativeButton("İptal", new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog, int id) {
+
 
 
                         }
@@ -317,9 +344,12 @@ public class Hedefler extends Fragment {
                     params.setMargins(5, 5, 5, 5);
 
                     tv.setLayoutParams(params);
-                    tv.setTextSize(20);
+                    tv.setTextSize(30);
                     tv.setTextColor(Color.BLACK);
                     tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                    Typeface tp = Typeface.createFromAsset(getContext().getAssets(), "Architext.ttf");
+                    tv.setTypeface(tp);
+                    tv.setGravity(Gravity.CENTER);
 
                     setButtonSize(btn, gl);
 
