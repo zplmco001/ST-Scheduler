@@ -51,6 +51,8 @@ public class Kronometre extends Fragment {
         minuteedit.setCursorVisible(false);
         secondedit.setCursorVisible(false);
 
+        //test
+
        /* houredit.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

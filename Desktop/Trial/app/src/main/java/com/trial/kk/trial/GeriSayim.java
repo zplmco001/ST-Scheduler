@@ -149,6 +149,7 @@ public class GeriSayim extends Fragment{
 
                 sınavtext.startAnimation(anim);
                 tytlay.startAnimation(anim);
+                //
                 //gün.startAnimation(anim);
                 //saat.startAnimation(anim);
                 //dakika.startAnimation(anim);
