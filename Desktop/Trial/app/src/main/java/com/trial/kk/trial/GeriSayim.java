@@ -89,8 +89,7 @@ public class GeriSayim extends Fragment{
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        tytlay.setVisibility(View.INVISIBLE);
-                        aytlay.setVisibility(View.INVISIBLE);
+
                     }
 
                     @Override
