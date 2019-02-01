@@ -25,6 +25,7 @@
         <Button
             android:id="@+id/pzt"
             android:layout_width="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Pzt" />
@@ -33,6 +34,7 @@
             android:id="@+id/sal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="sal" />
 
@@ -40,6 +42,7 @@
             android:id="@+id/car"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="Çar" />
 
@@ -47,6 +50,7 @@
             android:id="@+id/per"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="Per" />
 
@@ -54,6 +58,7 @@
             android:id="@+id/cum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="Cum" />
 
@@ -61,6 +66,7 @@
             android:id="@+id/cm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="Cm" />
 
@@ -68,6 +74,7 @@
             android:id="@+id/pzr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton60180p"
             android:layout_weight="1"
             android:text="Pzr" />
     </LinearLayout>
@@ -244,7 +251,6 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daypostit190270"
                 android:text="Pazartesi"
-                android:textAlignment="viewStart"
                 android:textColor="@android:color/background_dark"
                 android:textSize="24sp"
                 app:layout_constraintLeft_toLeftOf="parent"
