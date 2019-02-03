@@ -1,10 +1,13 @@
 package com.trial.kk.trial;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,30 +17,43 @@ import android.widget.TextView;
  */
 
 public class Konular extends Fragment {
+
+    private BottomNavigationView bottomNav;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
-
         View view = inflater.inflate(R.layout.konular_layout, container, false);
 
 
-        ConstraintLayout cl = view.findViewById(R.id.cs);
+        bottomNav = view.findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        String[] listOfTitles = new String[10];
-        for (int i=0; i<5; i++){
-            listOfTitles[i]="Deneme";
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container,new KonularHmFragment()).commit();
 
-        }
-
-        for(String title: listOfTitles){
-            TextView field = new TextView(getActivity());
-            field.setText(title);
-
-            cl.addView(field);
-        }
 
         return view;
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+
+            switch (item.getItemId()){
+                case R.id.tyt:
+                    selectedFragment = new TytFragment();
+                    break;
+                case R.id.ayt:
+                    selectedFragment = new AytFragment();
+                    break;
+                case R.id.nav:
+                    selectedFragment = new KonularHmFragment();
+                    break;
+            }
+            getFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            return true;
+        }
+    };
 }
