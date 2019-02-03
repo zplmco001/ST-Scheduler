@@ -30,11 +30,12 @@ public class Konular extends Fragment {
         bottomNav = view.findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container,new KonularHmFragment()).commit();
+        getChildFragmentManager().beginTransaction().replace(R.id.cs,new KonularHmFragment()).commit();
 
 
         return view;
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -52,7 +53,7 @@ public class Konular extends Fragment {
                     selectedFragment = new KonularHmFragment();
                     break;
             }
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            getChildFragmentManager().beginTransaction().replace(R.id.cs,selectedFragment).commit();
             return true;
         }
     };
