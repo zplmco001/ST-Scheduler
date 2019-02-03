@@ -33,8 +33,9 @@ public class Hedefler extends Fragment {
     private ScrollView scrollView;
     private GridLayout glpzt, glsal, glcar, glper, glcum, glcmt, glpaz;
     private TextView pazartesi,sali,carsamba,persembe,cuma,cumartesi,pazar;
-    private int drawable[] = {R.drawable.note147951_1280,R.drawable.mavipostit1196,R.drawable.mavipostit2196,R.drawable.morpostit196,R.drawable.yesilpostit1196,
-    R.drawable.yesilpostit2196,R.drawable.yesilpostit3196};
+    private int drawable[] = {R.drawable.krmzpostit196,R.drawable.mavipostit1196,R.drawable.yesilpostit1196,
+    R.drawable.yesilpostit2196,R.drawable.yesilpostit3196,R.drawable.sarpostit1,R.drawable.sarpostit2,R.drawable.pembepostit2copy,R.drawable.pembepostit1196
+    ,R.drawable.pembepostit3196,R.drawable.morpostit196,};
 
     ArrayList<MyPostit> postits = new ArrayList<>();
     private ImageButton[] buttons  = new ImageButton[7];
@@ -128,7 +129,7 @@ public class Hedefler extends Fragment {
         buttons[6] = hedefpaz;
 
 
-        new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
+        /*new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
         new MyPostit(glpzt,hedefpzt,"Türkçe","Matematik",getContext(),1);
         new MyPostit(glpzt,hedefpzt,"Fizik","Matematik",getContext(),2);
         new MyPostit(glpzt,hedefpzt,"Kimya","Matematik",getContext(),3);
@@ -137,7 +138,7 @@ public class Hedefler extends Fragment {
         new MyPostit(glpzt,hedefpzt,"Din","Matematik",getContext(),6);
         new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),7);
         new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),8);
-        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);
+        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);*/
         //new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),1);
 
         setButtonSize(hedefpzt, glpzt);
@@ -163,6 +164,7 @@ public class Hedefler extends Fragment {
             int index = bund.getInt("Integer");
             Log.e("Day",String.valueOf(index));
             String front,back;
+            int ders = bund.getInt("Index");
             if (bund.size()==2){
                 front = bund.getString("Text1");
                 back = "";
@@ -172,7 +174,7 @@ public class Hedefler extends Fragment {
                 back = bund.getString("Text2");
             }
             int set = gridLayouts[index].getChildCount()-1;
-            postits.add(new MyPostit(gridLayouts[index],buttons[index],front,back,getContext(),set));
+            postits.add(new MyPostit(gridLayouts[index],buttons[index],front,back,getContext(),set,ders));
         }
 
         pzt.setOnClickListener(new ButtonListener(0));
@@ -248,7 +250,7 @@ public class Hedefler extends Fragment {
         private TextView tv;
         private int flag = 0;
 
-        MyPostit(final GridLayout gl, final ImageButton btn, final String front, final String back, Context context, int a){
+        MyPostit(final GridLayout gl, final ImageButton btn, final String front, final String back, Context context, int a,int ders){
 
             DisplayMetrics displaymetrics = new DisplayMetrics();
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -257,7 +259,7 @@ public class Hedefler extends Fragment {
 
             tv = new TextView(context);
             tv.setText(front);
-            tv.setBackgroundDrawable(getResources().getDrawable(drawable[a%7]));
+            tv.setBackgroundDrawable(getResources().getDrawable(drawable[ders-1]));
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

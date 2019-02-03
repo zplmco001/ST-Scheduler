@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 public class HedefPopup extends AppCompatActivity {
 
-    private Spinner spinner, spinner2;
-    private String arr[] = new String[11];
+    private Spinner spinner;
+    private String arr[] = new String[13];
     private Button btn;
     private EditText soru, dk;
     private Hedefler hedefler = new Hedefler();
@@ -44,16 +44,18 @@ public class HedefPopup extends AppCompatActivity {
         Log.e("Gün",String.valueOf(day));
 
         arr[0]="Ders Seçiniz";
-        arr[1]="Matematik";
-        arr[2]="Fizik";
-        arr[3]="Kimya";
-        arr[4]="Biyoloji";
-        arr[5]="Edebiyat";
-        arr[6]="Tarih";
-        arr[7]="Coğrafya";
-        arr[8]="Felsefe";
-        arr[9]="Din Kültürü";
-        arr[10]="Yabancı Dil";
+        arr[1]="Deneme";
+        arr[2]="Matematik";
+        arr[3]="Fizik";
+        arr[4]="Kimya";
+        arr[5]="Biyoloji";
+        arr[6]="Türkçe";
+        arr[7]="Edebiyat";
+        arr[8]="Tarih";
+        arr[9]="Coğrafya";
+        arr[10]="Felsefe";
+        arr[11]="Din Kültürü";
+        arr[12]="Yabancı Dil";
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arr){
 
@@ -121,6 +123,7 @@ public class HedefPopup extends AppCompatActivity {
 
                 }
                 bundle.putInt("Integer",day);
+                bundle.putInt("Index",spinner.getSelectedItemPosition());
                 hedefler.setArguments(bundle);
 
                 finish();
