@@ -1,7 +1,1165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/f3">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--MATEMATİK-->
+
+            <Button
+                android:id="@+id/matButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Matematik" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/sayilarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sayılar" />
+
+                <CheckBox
+                    android:id="@+id/sayiBasCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sayı Basamakları" />
+
+                <CheckBox
+                    android:id="@+id/bolmeBolCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Bölme ve Bölünebilme" />
+
+                <CheckBox
+                    android:id="@+id/obekOkekCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="OBEB-OKEK" />
+
+                <CheckBox
+                    android:id="@+id/rasSayCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Rasyonel Sayılar" />
+
+                <CheckBox
+                    android:id="@+id/basitEsitCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Basit Eşitsizlikler" />
+
+                <CheckBox
+                    android:id="@+id/mutlakCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Mutlak Değer" />
+
+                <CheckBox
+                    android:id="@+id/usluSayilarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üslü Sayılar" />
+
+                <CheckBox
+                    android:id="@+id/kokluCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Köklü Sayılar" />
+
+                <CheckBox
+                    android:id="@+id/carpAyirCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Çarpanlara Ayırma" />
+
+                <CheckBox
+                    android:id="@+id/oranOrantiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Oran Orantı" />
+
+                <CheckBox
+                    android:id="@+id/denklemCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Denklem Çözme" />
+
+                <CheckBox
+                    android:id="@+id/problemCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Problemler" />
+
+                <CheckBox
+                    android:id="@+id/kumelerKarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kümeler-Kartezyen Çarpım" />
+
+                <CheckBox
+                    android:id="@+id/fonksiyonCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fonksiyonlar" />
+
+                <CheckBox
+                    android:id="@+id/permutasyonCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Permütasyon" />
+
+                <CheckBox
+                    android:id="@+id/kombinasyonCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kombinasyon" />
+
+                <CheckBox
+                    android:id="@+id/binomCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Binom" />
+
+                <CheckBox
+                    android:id="@+id/olasilikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Olasılık" />
+
+                <CheckBox
+                    android:id="@+id/istatistikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İstatistik" />
+
+                <CheckBox
+                    android:id="@+id/ikinciDerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="2.Dereceden Denklemler" />
+
+                <CheckBox
+                    android:id="@+id/karmasikSayiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Karmaşık Sayılar" />
+
+                <CheckBox
+                    android:id="@+id/polinomCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Polinomlar" />
+            </LinearLayout>
+
+            <!--TÜRKÇE-->
+
+            <Button
+                android:id="@+id/turkceButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Türkçe" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/sozcukteAnlamCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sözcükte Anlatım" />
+
+                <CheckBox
+                    android:id="@+id/sozYorumCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Söz Yorumu" />
+
+                <CheckBox
+                    android:id="@+id/deyimAtasozuCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Deyim ve Atasözü" />
+
+                <CheckBox
+                    android:id="@+id/cumleAnlamCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cümle Anlamı" />
+
+                <CheckBox
+                    android:id="@+id/cumleYorumCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cümle Yorumu" />
+
+                <CheckBox
+                    android:id="@+id/paragTekCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paragrafta Anlatım Tekniknleri" />
+
+                <CheckBox
+                    android:id="@+id/paragAnaCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paragrafta Konu-Ana Düşünce" />
+
+                <CheckBox
+                    android:id="@+id/paragYarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paragrafta Yardımcı Düşünce" />
+
+                <CheckBox
+                    android:id="@+id/paragYapCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paragrafta Yapı" />
+
+                <CheckBox
+                    android:id="@+id/sesBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ses Bilgisi" />
+
+                <CheckBox
+                    android:id="@+id/yazKurCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yazım Kuralları" />
+
+                <CheckBox
+                    android:id="@+id/nokIsaretCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Noktalama İşaretleri" />
+
+                <CheckBox
+                    android:id="@+id/sozcukYapCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sözcüğün Yapısı" />
+
+                <CheckBox
+                    android:id="@+id/sozcukTurCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sözcük Türleri" />
+
+                <CheckBox
+                    android:id="@+id/fiillerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fiiller" />
+
+                <CheckBox
+                    android:id="@+id/sozcukGrupCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sözcük Grupları" />
+
+                <CheckBox
+                    android:id="@+id/cumleOgeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cümlenin Ögeleri" />
+
+                <CheckBox
+                    android:id="@+id/cumleTurCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cümle Türleri" />
+
+                <CheckBox
+                    android:id="@+id/anlatimBozCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Anlatım Bozukluğu" />
+            </LinearLayout>
+
+            <!--GEOMETRİ-->
+
+            <Button
+                android:id="@+id/geoButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Geometri" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/ucgenAciCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Doğruda ve Üçgende Açılar" />
+
+                <CheckBox
+                    android:id="@+id/dikOzelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dik ve Özel Üçgenler" />
+
+                <CheckBox
+                    android:id="@+id/dikUcgenTrigoCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dik Üçgende Trigonemetrik Bağıntılar" />
+
+                <CheckBox
+                    android:id="@+id/ikizEsCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İkizkenar ve Eşkenar Üçgen" />
+
+                <CheckBox
+                    android:id="@+id/ucgenAlanCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üçgende Alanlar" />
+
+                <CheckBox
+                    android:id="@+id/ucgenAciortayCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üçgende Açıortay Bağıntıları" />
+
+                <CheckBox
+                    android:id="@+id/ucgenKenarOrtCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üçgende Kenarortay Bağıntıları" />
+
+                <CheckBox
+                    android:id="@+id/ucgenBenzCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üçgende Eşlik ve Benzerlik" />
+
+                <CheckBox
+                    android:id="@+id/ucgenAciKenarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üçgende Açı-Kenar Bağıntıları" />
+
+                <CheckBox
+                    android:id="@+id/cokgenlerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Çokgenler" />
+
+                <CheckBox
+                    android:id="@+id/dortgenlerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dörtgenler" />
+
+                <CheckBox
+                    android:id="@+id/yamukCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yamuk" />
+
+                <CheckBox
+                    android:id="@+id/paralelKenarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paralelkenar" />
+
+                <CheckBox
+                    android:id="@+id/esDortCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Eşkenar Dörtgen – Deltoid" />
+
+                <CheckBox
+                    android:id="@+id/dikdortgenCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dikdörtgen" />
+
+                <CheckBox
+                    android:id="@+id/cemberCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Çemberde Açılar" />
+
+                <CheckBox
+                    android:id="@+id/cemberUzunlukCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Çemberde Uzunluk" />
+
+                <CheckBox
+                    android:id="@+id/daireCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Daire" />
+
+                <CheckBox
+                    android:id="@+id/prizmaCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Prizmalar" />
+
+                <CheckBox
+                    android:id="@+id/piramitCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Piramitler" />
+
+                <CheckBox
+                    android:id="@+id/kureCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Küre" />
+
+                <CheckBox
+                    android:id="@+id/koordinatCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Koordinat Düzlemi ve Noktanın Analitiği" />
+
+                <CheckBox
+                    android:id="@+id/dogruAnalitikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Doğrunun Analitiği" />
+
+                <CheckBox
+                    android:id="@+id/yansiyanSekCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Tekrar Eden, Dönen ve Yansıyan Şekiller" />
+            </LinearLayout>
+
+            <!--FİZİK-->
+
+            <Button
+                android:id="@+id/fizButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Fizik" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/fizikBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fizik Bilimine Giriş" />
+
+                <CheckBox
+                    android:id="@+id/maddeOzCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Madde ve Özellikleri" />
+
+                <CheckBox
+                    android:id="@+id/hareketKuvvetCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Hareket ve Kuvvet" />
+
+                <CheckBox
+                    android:id="@+id/enerjiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Enerji" />
+
+                <CheckBox
+                    android:id="@+id/isiSicaklikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Isı ve Sıcaklık" />
+
+                <CheckBox
+                    android:id="@+id/elektrostatikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Elektrostatik" />
+
+                <CheckBox
+                    android:id="@+id/elektrikManyetizmaCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Elektrik ve Manyetizma" />
+
+                <CheckBox
+                    android:id="@+id/basincKaldirmaKuvCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Basınç ve Kaldırma Kuvveti" />
+
+                <CheckBox
+                    android:id="@+id/dalgaCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dalgalar" />
+
+                <CheckBox
+                    android:id="@+id/optikCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Optik" />
+            </LinearLayout>
+
+            <!--KİMYA-->
+
+            <Button
+                android:id="@+id/kimyaButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Kimya" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/kimyaBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kimya Bilimi" />
+
+                <CheckBox
+                    android:id="@+id/atomPerSisCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Atom ve Periyodik Sistem" />
+
+                <CheckBox
+                    android:id="@+id/atomTeoCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Modern Atom Teorisi" />
+
+                <CheckBox
+                    android:id="@+id/tepkimelerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kimyasal Türler Arası Tepkimeler" />
+
+                <CheckBox
+                    android:id="@+id/kimyaHesapCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kimyasal Hesaplamalar" />
+
+                <CheckBox
+                    android:id="@+id/asitBazTuzCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Asit, Baz ve Tuz" />
+
+                <CheckBox
+                    android:id="@+id/maddeHalCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Maddenin Halleri" />
+
+                <CheckBox
+                    android:id="@+id/gazlarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Gazlar" />
+
+                <CheckBox
+                    android:id="@+id/karisimlarCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Karışımlar" />
+
+                <CheckBox
+                    android:id="@+id/canlilardaEnerjiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Endüstride ve Canlılarda Enerji" />
+
+                <CheckBox
+                    android:id="@+id/kimyaHerYerdeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kimya Her Yerde" />
+            </LinearLayout>
+
+            <!--BİYOLOJİ-->
+
+            <Button
+                android:id="@+id/biyoButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Biyoloji" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/biyoBilimiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Biyoloji Bilimi" />
+
+                <CheckBox
+                    android:id="@+id/temelBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Canlıların Yapısında Bulunan Temel Bileşenler" />
+
+                <CheckBox
+                    android:id="@+id/hucreCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Hücrenin Yapısı ve İşlevi" />
+
+                <CheckBox
+                    android:id="@+id/canliSinifCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Canlıların Çeşitliliği ve Sınıflandırması" />
+
+                <CheckBox
+                    android:id="@+id/uremeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Üreme" />
+
+                <CheckBox
+                    android:id="@+id/insandaUSCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İnsanda Üreme Sistemi" />
+
+                <CheckBox
+                    android:id="@+id/kalitimCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kalıtım" />
+
+                <CheckBox
+                    android:id="@+id/modernGenCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Modern Genetik Uygulamaları" />
+
+                <CheckBox
+                    android:id="@+id/ekosistemCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ekosistem Ekolojisi" />
+
+                <CheckBox
+                    android:id="@+id/dunyamizCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dünyamız" />
+
+                <CheckBox
+                    android:id="@+id/canliEnerjiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Canlılarda Enerji Dönüşümü" />
+
+                <CheckBox
+                    android:id="@+id/solunumCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Solunum" />
+
+                <CheckBox
+                    android:id="@+id/fizyolojiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İnsan Fizyolojisi (Sistemler)" />
+
+            </LinearLayout>
+
+            <!--TARİH-->
+
+            <Button
+                android:id="@+id/tarihButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Tarih" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/tarihBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Tarih Bilimi" />
+
+                <CheckBox
+                    android:id="@+id/ilkUygCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Uygarlığın Doğuşu ve İlk Uygarlıklar" />
+
+                <CheckBox
+                    android:id="@+id/ilkTurkDevCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İlk Türk Devletleri" />
+
+                <CheckBox
+                    android:id="@+id/islamTarUygCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İslam Tarihi ve Uygarlığı" />
+
+                <CheckBox
+                    android:id="@+id/turkIslamDevCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Türk-İslam Devletleri" />
+
+                <CheckBox
+                    android:id="@+id/turkTarihiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Türkiye Tarihi" />
+
+                <CheckBox
+                    android:id="@+id/beyliktenDevleteCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Beylikten Devlete (1300-1453)" />
+
+                <CheckBox
+                    android:id="@+id/osmanliDevletiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dünya Gücü: Osmanlı Devleti (1453-1600)" />
+
+                <CheckBox
+                    android:id="@+id/arayisYillariCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Arayış Yılları (17. Yüzyıl)" />
+
+                <CheckBox
+                    android:id="@+id/avrOsmanliDevCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Avrupa ve Osmanlı Devleti (18. Yüzyıl)" />
+
+                <CheckBox
+                    android:id="@+id/enUzunYilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="En Uzun Yüzyıl (1800-1922)" />
+
+                <CheckBox
+                    android:id="@+id/yirminciYYOsmanliDevCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="20. Yüzyıl Başlarında Osmanlı Devleti" />
+
+                <CheckBox
+                    android:id="@+id/birDunyaSavCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="1. Dünya Savaşı – Milli Mücadeleye Hazırlık Dönemi" />
+
+                <CheckBox
+                    android:id="@+id/kurtulusSavCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kurtuluş Savaşında Cepheler" />
+
+                <CheckBox
+                    android:id="@+id/turkInkCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Türk İnkılabı" />
+
+                <CheckBox
+                    android:id="@+id/ataturkIlkeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Atatürkçülük ve Atatürk İlkeleri" />
+
+                <CheckBox
+                    android:id="@+id/turkDisPolCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Türk Dış Politikası" />
+
+            </LinearLayout>
+
+            <!--COĞRAFYA-->
+
+            <Button
+                android:id="@+id/cogButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Coğrafya" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cogBolCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Coğrafyanın Bölümleri" />
+
+                <CheckBox
+                    android:id="@+id/parMerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paralel-Meridyen Özellikleri" />
+
+                <CheckBox
+                    android:id="@+id/dunyaSekliCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dünyanın Şekli Ve Hareketleri" />
+
+                <CheckBox
+                    android:id="@+id/haritaBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Harita Bilgisi" />
+
+                <CheckBox
+                    android:id="@+id/iklimBilCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İklim Bilgisi" />
+
+                <CheckBox
+                    android:id="@+id/yerinSekliCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yerin Şekillenmesi" />
+
+                <CheckBox
+                    android:id="@+id/nufusYerlesmeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Nüfus Ve Yerleşme" />
+
+                <CheckBox
+                    android:id="@+id/ulasimYollariCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ulaşım Yolları" />
+
+                <CheckBox
+                    android:id="@+id/ekonomikFaalCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ekonomik Faaliyetler" />
+
+                <CheckBox
+                    android:id="@+id/bolgeCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ortak Payda: Bölge" />
+
+                <CheckBox
+                    android:id="@+id/dogalAfetCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Doğal Afetler" />
+            </LinearLayout>
+
+            <!--FELSEFE-->
+
+            <Button
+                android:id="@+id/felButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Felsefe" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/felKonuCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Felsefe’nin Konusu" />
+
+                <CheckBox
+                    android:id="@+id/bilgiFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Bilgi Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/varlikFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Varlık Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/ahlakFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Ahlak Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/sanatFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sanat Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/dinFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Din Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/siyasetFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Siyaset Felsefesi" />
+
+                <CheckBox
+                    android:id="@+id/bilimFelCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Bilim Felsefesi" />
+            </LinearLayout>
+
+            <!--DİN KÜLTÜRÜ-->
+
+            <Button
+                android:id="@+id/dinButton"
+                android:layout_width="312dp"
+                android:layout_height="45dp"
+                android:text="Din Kültürü" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/kuranAnlasilmasiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Kur’an-ı Kerim’in Anlaşılması ve Kavranması" />
+
+                <CheckBox
+                    android:id="@+id/insanVeDinCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İnsan ve Din" />
+
+                <CheckBox
+                    android:id="@+id/islamİbadetCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İslam ve İbadetler" />
+
+                <CheckBox
+                    android:id="@+id/islamMezhepCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İslam Düşüncesinde Yorumlar, Mezhepler" />
+
+                <CheckBox
+                    android:id="@+id/hzMuhHayatiCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Hz. Muhammed’in Hayatı, Örnekliği ve Onu Anlama" />
+
+                <CheckBox
+                    android:id="@+id/islamBilimCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="İslam ve Bilim, Estetik, Barış" />
+
+                <CheckBox
+                    android:id="@+id/yasayanDinlerCB"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yaşayan Dinler ve Benzer Özellikleri" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
