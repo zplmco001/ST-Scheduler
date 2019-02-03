@@ -16,6 +16,7 @@ import android.view.MenuItem;
 public class Hmp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //kbf onlayn
 
     static int kontrol=0;
     private static AlertDialog.Builder builder;
