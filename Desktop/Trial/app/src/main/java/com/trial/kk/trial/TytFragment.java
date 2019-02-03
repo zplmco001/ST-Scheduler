@@ -3,16 +3,24 @@ package com.trial.kk.trial;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 
 /**
  * Created by kursat on 3.02.2019.
  */
 
 public class TytFragment extends Fragment {
+
+    Button matButton,turkceButton,geoButton,fizButton,kimyaButton,biyoButton,tarihButton,cogButton,felButton,dinButton;
+
+    LinearLayout matLayout,turkceLayout,geoLayout,fizikLayout,kimyaLayout,biyoLayout,
+                    tarihLayout,cogLayout,felLayout, dinLayout;
 
     //MATEMATİK
     CheckBox sayilarCB,sayiBasCB,bolmeBolCB,obebOkekCB,rasSayCB,basitEsitCB,mutlakCB,usluSayilarCB,kokluCB,carpAyirCB,
@@ -64,6 +72,32 @@ public class TytFragment extends Fragment {
         View view = inflater.inflate(R.layout.tyt_fragment,container,false);
 
        // ve  = new VeritabaniErisim(getContext());
+
+        // BUTONLAR
+
+        matButton = (Button) view.findViewById(R.id.matButton);
+        turkceButton = (Button) view.findViewById(R.id.turkceButton);
+        geoButton = (Button) view.findViewById(R.id.geoButton);
+        biyoButton = (Button) view.findViewById(R.id.biyoButton);
+        tarihButton = (Button) view.findViewById(R.id.tarihButton);
+        kimyaButton = (Button) view.findViewById(R.id.kimyaButton);
+        fizButton = (Button) view.findViewById(R.id.fizButton);
+        dinButton = (Button) view.findViewById(R.id.dinButton);
+        felButton = (Button) view.findViewById(R.id.felButton);
+        cogButton = (Button) view.findViewById(R.id.cogButton);
+
+        // LAYOUTLAR
+
+        matLayout = (LinearLayout) view.findViewById(R.id.matLayout);
+        turkceLayout = (LinearLayout) view.findViewById(R.id.turkceLayout);
+        geoLayout = (LinearLayout) view.findViewById(R.id.matLayout);
+        biyoLayout = (LinearLayout) view.findViewById(R.id.biyoLayout);
+        tarihLayout = (LinearLayout) view.findViewById(R.id.tarihLayout);
+        kimyaLayout = (LinearLayout) view.findViewById(R.id.kimyaLayout);
+        fizikLayout = (LinearLayout) view.findViewById(R.id.fizikLayout);
+        dinLayout = (LinearLayout) view.findViewById(R.id.dinLayout);
+        felLayout = (LinearLayout) view.findViewById(R.id.felLayout);
+        cogLayout = (LinearLayout) view.findViewById(R.id.cogLayout);
 
         // MATEMATİK CHECKBOX
 
@@ -257,6 +291,38 @@ public class TytFragment extends Fragment {
         }
         ve.close();  */
 
+        matButton.setOnClickListener(new butonListener(matLayout));
+        turkceButton.setOnClickListener(new butonListener(turkceLayout));
+        geoButton.setOnClickListener(new butonListener(geoLayout));
+        fizButton.setOnClickListener(new butonListener(fizikLayout));
+        kimyaButton.setOnClickListener(new butonListener(kimyaLayout));
+        biyoButton.setOnClickListener(new butonListener(biyoLayout));
+        tarihButton.setOnClickListener(new butonListener(tarihLayout));
+        cogButton.setOnClickListener(new butonListener(cogLayout));
+        felButton.setOnClickListener(new butonListener(felLayout));
+        dinButton.setOnClickListener(new butonListener(dinLayout));
+
         return view;
+    }
+
+    class butonListener implements View.OnClickListener{
+
+        private LinearLayout ln;
+        @Override
+        public void onClick(View view) {
+
+            if (ln.getVisibility() == View.INVISIBLE){
+                ln.setVisibility(View.VISIBLE);
+                ln.setMinimumHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else{
+                ln.setVisibility(View.INVISIBLE);
+                ln.setMinimumHeight(0);
+            }
+
+        }
+
+        butonListener(LinearLayout linearLayout){
+            this.ln = linearLayout;
+        }
     }
 }

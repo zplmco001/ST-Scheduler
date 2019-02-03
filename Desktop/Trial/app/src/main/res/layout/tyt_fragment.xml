@@ -28,7 +28,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:id="@+id/matLayout">
 
                 <CheckBox
                     android:id="@+id/sayilarCB"
@@ -203,7 +205,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/turkceLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/sozcukteAnlamCB"
@@ -350,7 +354,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/geoLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/ucgenAciCB"
@@ -532,7 +538,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/fizikLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/fizikBilCB"
@@ -616,7 +624,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/kimyaLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/kimyaBilCB"
@@ -707,7 +717,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/biyoLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/biyoBilimiCB"
@@ -813,7 +825,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/tarihLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/tarihBilCB"
@@ -947,7 +961,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/cogLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/cogBolCB"
@@ -1038,7 +1054,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/felLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/felKonuCB"
@@ -1108,7 +1126,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/dinLayout"
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/kuranAnlasilmasiCB"
