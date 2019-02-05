@@ -1,11 +1,11 @@
 package com.trial.kk.trial;
 
-import java.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -31,17 +32,14 @@ public class GeriSayim extends Fragment{
 
 
     private SimpleDateFormat dateFormat;
-    private long days,hours,minutes,seconds,days1;
+    private long days,hours,minutes,seconds;
     private Date currentDate;
-    private Date futureDate,futureDate2;
+    private Date futureDate;
     private long difference,difference2;
-    private TextView tv;
     private CountDownTimer cdt,cdt1;
     private LinearLayout tytlay,aytlay;
-    private Animation animation;
-    private int click=0;
-
-
+    private ViewGroup transition;
+    private AlphaAnimation anim;
 
 
 
@@ -52,12 +50,19 @@ public class GeriSayim extends Fragment{
 
         View view = inflater.inflate(R.layout.gerisayim_layout, container, false);
 
-        //((AppCompatActivity) getActivity()) .getSupportActionBar().hide();
+
+        transition = (ViewGroup) view.findViewById(R.id.constralay);
+
+        tytlay = (LinearLayout) transition.findViewById(R.id.tytlay);
+        aytlay = (LinearLayout) transition.findViewById(R.id.aytlay);
+
+        sınavtext = (TextView) view.findViewById(R.id.sınavtext);
 
         gün = (TextView) view.findViewById(R.id.gün);
         saat = (TextView) view.findViewById(R.id.saat);
         dakika = (TextView) view.findViewById(R.id.dakika);
         saniye = (TextView) view.findViewById(R.id.saniye);
+
 
         textgün = (TextView) view.findViewById(R.id.textgün);
         textsaat = (TextView) view.findViewById(R.id.textsaat);
@@ -69,10 +74,8 @@ public class GeriSayim extends Fragment{
         textdk1 = (TextView) view.findViewById(R.id.textdk1);
         textsn1 = (TextView) view.findViewById(R.id.textsn1);
 
-        sınavtext = (TextView) view.findViewById(R.id.sınavtext);
+        ;
 
-        tytlay = (LinearLayout) view.findViewById(R.id.tytlay);
-        aytlay = (LinearLayout) view.findViewById(R.id.aytlay);
 
         tytlay.setVisibility(View.VISIBLE);
         aytlay.setVisibility(View.INVISIBLE);
@@ -80,10 +83,9 @@ public class GeriSayim extends Fragment{
         tytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tytlay.setVisibility(View.INVISIBLE);
-                aytlay.setVisibility(View.INVISIBLE);
-                AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
-                anim.setDuration(400);
+
+                anim = new AlphaAnimation(1.0f,0.0f);
+                anim.setDuration(100);
                 anim.setRepeatCount(1);
                 anim.setRepeatMode(Animation.REVERSE);
                 anim.setAnimationListener(new Animation.AnimationListener() {
@@ -99,36 +101,28 @@ public class GeriSayim extends Fragment{
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-
-                        sınavtext.setText("AYT GERİ SAYIM");
-                        aytlay.setVisibility(View.VISIBLE);
+                        sınavtext.setText("AYT KALAN ZAMAN");
                     }
                 });
 
+                tytlay.setVisibility(View.INVISIBLE);
+                TransitionManager.beginDelayedTransition(transition);
+                aytlay.setVisibility(View.VISIBLE);
                 sınavtext.startAnimation(anim);
-                aytlay.startAnimation(anim);
-                //gün.startAnimation(anim);
-                //saat.startAnimation(anim);
-                //dakika.startAnimation(anim);
-                //saniye.startAnimation(anim);
-
-
             }
         });
 
         aytlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tytlay.setVisibility(View.INVISIBLE);
-                aytlay.setVisibility(View.INVISIBLE);
-                AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
-                anim.setDuration(400);
+
+                anim = new AlphaAnimation(1.0f,0.0f);
+                anim.setDuration(100);
                 anim.setRepeatCount(1);
                 anim.setRepeatMode(Animation.REVERSE);
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-
 
                     }
 
@@ -139,21 +133,14 @@ public class GeriSayim extends Fragment{
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-
-                        sınavtext.setText("TYT GERİ SAYIM");
-                        tytlay.setVisibility(View.VISIBLE);
-
+                        sınavtext.setText("TYT KALAN ZAMAN");
                     }
                 });
 
+                aytlay.setVisibility(View.INVISIBLE);
+                TransitionManager.beginDelayedTransition(transition);
+                tytlay.setVisibility(View.VISIBLE );
                 sınavtext.startAnimation(anim);
-                tytlay.startAnimation(anim);
-                //
-                //gün.startAnimation(anim);
-                //saat.startAnimation(anim);
-                //dakika.startAnimation(anim);
-                //saniye.startAnimation(anim);
-
             }
         });
 
@@ -188,7 +175,6 @@ public class GeriSayim extends Fragment{
                     textsaat.setText(String.valueOf(hours));
                 }
 
-
                 minutes=  difference/(60*1000);
                 difference-=minutes*60*1000;
                 if(minutes<10){
@@ -197,18 +183,12 @@ public class GeriSayim extends Fragment{
                     textdk.setText(String.valueOf(minutes));
                 }
 
-
-
                 seconds=  difference/1000;
                 if(seconds<10){
                     textsn.setText("0"+seconds);
                 }else{
                     textsn.setText(String.valueOf(seconds));
                 }
-
-
-
-
             }
 
             @Override
