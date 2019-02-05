@@ -29,16 +29,13 @@ public class Kronometre extends Fragment {
     private CountDownTimer countDownTimer;
     private AlertDialog.Builder builder;
 
+
     private int hour,minute,second;
     private double h,m,s;
     private int progress=0,check=0,click=0;
     private double totaltime;
     private int flag=0;
 
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.kronometre_layout, container, false);
@@ -51,31 +48,7 @@ public class Kronometre extends Fragment {
         minuteedit.setCursorVisible(false);
         secondedit.setCursorVisible(false);
 
-        //test
 
-       /* houredit.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                houredit.setFocusableInTouchMode(true);
-                return false;
-            }
-        });
-
-        minuteedit.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                minuteedit.setFocusableInTouchMode(true);
-                return false;
-            }
-        });
-
-        secondedit.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                secondedit.setFocusableInTouchMode(true);
-                return false;
-            }
-        });*/
         start  = (Button) view.findViewById(R.id.start);
         stop  = (Button) view.findViewById(R.id.stop);
         reset  = (Button) view.findViewById(R.id.reset);
@@ -94,7 +67,7 @@ public class Kronometre extends Fragment {
         progressBar.setProgressDrawable(drawable);
 
         stop.setEnabled(false);
-        reset.setEnabled(false);
+        reset.setEnabled(true);
 
         tytsüre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,13 +111,15 @@ public class Kronometre extends Fragment {
             }
         });
 
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                check=1;
+
                 if(houredit.getText().toString().equals("") && minuteedit.getText().toString().equals("") && secondedit.getText().toString().equals("")){
 
                 }else{
+                    check=1;
                     start.setEnabled(false);
                     stop.setEnabled(true);
                     reset.setEnabled(true);
@@ -164,6 +139,13 @@ public class Kronometre extends Fragment {
                     }
                     if(secondedit.getText().toString().equals("")){
                         secondedit.setText("00");
+                    }
+
+                    if(Integer.parseInt(minuteedit.getText().toString())>59){
+                        minuteedit.setText("59");
+                    }
+                    if(Integer.parseInt(secondedit.getText().toString())>59){
+                        secondedit.setText("59");
                     }
                     hour=Integer.parseInt(houredit.getText().toString());
                     minute=Integer.parseInt(minuteedit.getText().toString());
@@ -212,9 +194,8 @@ public class Kronometre extends Fragment {
                             }
 
                             progress+=500;
-                            Log.e("sa","onTick: "+progress);
-                            // Log.e("tot", "onTick: "+totaltime);
-                            //Log.e("saniye","onTick: "+s);
+
+
                         }
 
                         @Override
@@ -269,6 +250,7 @@ public class Kronometre extends Fragment {
             }
         });
 
+
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -282,6 +264,8 @@ public class Kronometre extends Fragment {
                 }
             }
         });
+
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -298,7 +282,6 @@ public class Kronometre extends Fragment {
                     minuteedit.setEnabled(true);
                     secondedit.setEnabled(true);
                     start.setEnabled(true);
-                    reset.setEnabled(false);
                     stop.setEnabled(false);
                     tytsüre.setEnabled(true);
                     aytsüre.setEnabled(true);
@@ -309,6 +292,8 @@ public class Kronometre extends Fragment {
                 }
             }
         });
+
+
         return view;
     }
 
