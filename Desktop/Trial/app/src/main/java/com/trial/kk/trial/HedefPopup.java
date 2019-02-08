@@ -108,6 +108,13 @@ public class HedefPopup extends AppCompatActivity {
                     builder.show();
                     return;
                 }
+                if (soru.getText().toString().equals("")&&dk.getText().toString().equals("")){
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(HedefPopup.this);
+                    builder.setMessage("Lütfen soru sayısı veya çalışma süresi giriniz");
+                    builder.show();
+                    return;
+                }
                 if (soru.getText().toString().equals("")){
 
                     bundle.putString("Text1",spinner.getSelectedItem()+"\n"+dk.getText()+" dk");
@@ -122,13 +129,12 @@ public class HedefPopup extends AppCompatActivity {
                     bundle.putString("Text2",spinner.getSelectedItem()+"\n"+dk.getText()+" soru");
 
                 }
+
                 bundle.putInt("Integer",day);
                 bundle.putInt("Index",spinner.getSelectedItemPosition());
                 hedefler.setArguments(bundle);
 
                 finish();
-
-
 
             }
         });

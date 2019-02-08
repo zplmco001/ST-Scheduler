@@ -163,11 +163,11 @@ public class Hedefler extends Fragment {
             Log.e("Bundle",String.valueOf(bund.size()));
             int index = bund.getInt("Integer");
             Log.e("Day",String.valueOf(index));
-            String front,back;
+            String front,back = "";
             int ders = bund.getInt("Index");
-            if (bund.size()==2){
+            if (bund.size()==3){
                 front = bund.getString("Text1");
-                back = "";
+
             }
             else {
                 front = bund.getString("Text1");
@@ -176,7 +176,7 @@ public class Hedefler extends Fragment {
             int set = gridLayouts[index].getChildCount()-1;
             postits.add(new MyPostit(gridLayouts[index],buttons[index],front,back,getContext(),set,ders));
         }
-
+        Log.e("ASFA","GDSDDGS");
         pzt.setOnClickListener(new ButtonListener(0));
         sal.setOnClickListener(new ButtonListener(1));
         car.setOnClickListener(new ButtonListener(2));
@@ -184,6 +184,8 @@ public class Hedefler extends Fragment {
         cu.setOnClickListener(new ButtonListener(4));
         cm.setOnClickListener(new ButtonListener(5));
         pz.setOnClickListener(new ButtonListener(6));
+
+        bund.clear();
 
     }
 
@@ -354,12 +356,12 @@ public class Hedefler extends Fragment {
                     tv.setGravity(Gravity.CENTER);
 
                     setButtonSize(btn, gl);
-
-
+                    
                 }
             });
 
             gl.addView(tv,a);
+
 
         }
 
