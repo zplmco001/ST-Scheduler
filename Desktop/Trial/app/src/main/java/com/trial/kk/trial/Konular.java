@@ -19,6 +19,7 @@ import android.widget.TextView;
 public class Konular extends Fragment {
 
     private BottomNavigationView bottomNav;
+    private TytFragment tytFragment;
 
     @Nullable
     @Override
@@ -29,6 +30,8 @@ public class Konular extends Fragment {
 
         bottomNav = view.findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        tytFragment = new TytFragment();
 
         getChildFragmentManager().beginTransaction().replace(R.id.cs,new KonularHmFragment()).commit();
 
@@ -44,7 +47,7 @@ public class Konular extends Fragment {
 
             switch (item.getItemId()){
                 case R.id.tyt:
-                    selectedFragment = new TytFragment();
+                    selectedFragment = Hmp.tytfr;
                     break;
                 case R.id.ayt:
                     selectedFragment = new AytFragment();

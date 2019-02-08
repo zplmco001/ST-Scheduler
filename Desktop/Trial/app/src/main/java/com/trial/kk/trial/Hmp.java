@@ -23,6 +23,8 @@ public class Hmp extends AppCompatActivity
     private Hmp hmp = this;
     Fragment currentFragment;
     Fragment kronometre;
+    Konular konular;
+    static TytFragment tytfr;
 
 
     @Override
@@ -33,6 +35,10 @@ public class Hmp extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         kronometre = new Kronometre();
+
+        konular = new Konular();
+
+        tytfr = new TytFragment();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,7 +105,7 @@ public class Hmp extends AppCompatActivity
         } else if (id == R.id.nav_konular) {
 
             tag = "konular";
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Konular(),tag).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,konular,tag).commit();
 
         } else if (id == R.id.nav_kronometre) {
 

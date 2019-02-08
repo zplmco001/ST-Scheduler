@@ -434,27 +434,6 @@ public class TytFragment extends Fragment {
         yasayanDinlerCB = view.findViewById(R.id.yasayanDinlerCB);
         checkBoxes.add(yasayanDinlerCB);
 
-        // VERİTABANI KISMI
-
-        /* sayilarCB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ve.open();
-                if (sayilarCB.isChecked()){
-
-                    ve.add((String) sayilarCB.getText(),1);
-                }else{
-                    ve.add((String) sayilarCB.getText(),0);
-                }
-                ve.close();
-            }
-        });
-        ve.open();
-        if (ve.get(0)==1){
-            sayilarCB.setChecked(true);
-        }
-        ve.close();  */
-
         matButton.setOnClickListener(new butonListener(matLayout));
         turkceButton.setOnClickListener(new butonListener(turkceLayout));
         geoButton.setOnClickListener(new butonListener(geoLayout));
@@ -481,14 +460,18 @@ public class TytFragment extends Fragment {
             Log.e("fas",String.valueOf(list.get(i)));
             if (list.get(i) == 1){
                 Log.e("asd","afs");
-                checkBoxes.get(i).setChecked(true);
+                final CheckBox box = checkBoxes.get(i);
+                box.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        box.setChecked(true);
+                    }
+                });
                 Log.e( "index",""+i);
             }
         }
 
         dc.close();
-
-        Log.e("ocview","okk");
 
         return view;
     }
@@ -537,7 +520,7 @@ public class TytFragment extends Fragment {
                 ViewGroup.LayoutParams params = ln.getLayoutParams();
                 params.height = 0;
                 ln.setLayoutParams(params);
-                //ln.setMinimumHeight(0);
+                
             }
 
         }
