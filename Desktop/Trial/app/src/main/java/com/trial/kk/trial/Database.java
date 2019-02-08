@@ -18,8 +18,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String command = "create table konular (sinav text, ders text, konu text, selected integer)";
-        sqLiteDatabase.execSQL(command);
+        String konularCommand = "create table konular (sinav text, ders text, konu text, selected integer)";
+        sqLiteDatabase.execSQL(konularCommand);
         int a = 0;
         for (int i = 0;i<TytFragment.dersler.size();i++) {
             for (int j = 0; j < TytFragment.num[i]; j++) {
