@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 /**
@@ -20,6 +21,7 @@ import android.widget.ProgressBar;
  */
 
 public class Kronometre extends Fragment {
+
     private EditText houredit,minuteedit,secondedit;
     private Button start,stop,reset;
     private Button tytsüre,aytsüre,ydtsüre;
@@ -28,6 +30,7 @@ public class Kronometre extends Fragment {
     private Resources res;
     private CountDownTimer countDownTimer;
     private AlertDialog.Builder builder;
+    private LinearLayout linearLayout;
 
 
     private int hour,minute,second;
@@ -47,6 +50,10 @@ public class Kronometre extends Fragment {
         houredit.setCursorVisible(false);
         minuteedit.setCursorVisible(false);
         secondedit.setCursorVisible(false);
+
+        linearLayout = view.findViewById(R.id.linearLayout);
+
+        linearLayout.bringToFront();
 
 
         start  = (Button) view.findViewById(R.id.start);

@@ -134,6 +134,14 @@ public class HedefPopup extends AppCompatActivity {
                 bundle.putInt("Index",spinner.getSelectedItemPosition());
                 hedefler.setArguments(bundle);
 
+                DatabaseConnection dbc = new DatabaseConnection(getBaseContext());
+                dbc.open();
+                dbc.hedefEkle(day, (String)spinner.getSelectedItem()
+                        ,Integer.parseInt(String.valueOf(soru.getText())),
+                        Integer.parseInt(String.valueOf(dk.getText())));
+                dbc.close();
+
+
                 finish();
 
             }

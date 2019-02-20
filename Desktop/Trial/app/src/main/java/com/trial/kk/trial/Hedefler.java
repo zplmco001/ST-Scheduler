@@ -25,6 +25,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hedefler extends Fragment {
 
@@ -152,6 +153,20 @@ public class Hedefler extends Fragment {
         scrollView = view.findViewById(R.id.hedefScroll);
 
         return view;
+
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+       /* DatabaseConnection dc = new DatabaseConnection(getContext());
+        dc.open();
+        List<NewPostit> postit = dc.hedefAl();
+
+        for (int i=0;i<postit.size();i++){
+
+        }*/
 
     }
 

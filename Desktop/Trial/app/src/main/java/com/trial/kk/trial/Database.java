@@ -29,6 +29,9 @@ public class Database extends SQLiteOpenHelper {
             a += TytFragment.num[i];
         }
 
+        String hedeflerCommand = "create table hedefler (gun integer, ders text, soru integer, sure integer)";
+        sqLiteDatabase.execSQL(hedeflerCommand);
+
     }
 
     @Override
