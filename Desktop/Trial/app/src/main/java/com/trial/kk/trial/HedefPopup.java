@@ -117,29 +117,26 @@ public class HedefPopup extends AppCompatActivity {
                 }
                 if (soru.getText().toString().equals("")){
 
-                    bundle.putString("Text1",spinner.getSelectedItem()+"\n"+dk.getText()+" dk");
+                    bundle.putInt("Dk",Integer.parseInt(dk.getText().toString()));
+                    bundle.putInt("Soru",0);
 
                 }
                 else if (dk.getText().toString().equals("")){
 
-                    bundle.putString("Text1",spinner.getSelectedItem()+"\n"+soru.getText()+" soru");
+                    bundle.putInt("Dk",0);
+                    bundle.putInt("Soru",Integer.parseInt(soru.getText().toString()));
+
                 }
                 else{
-                    bundle.putString("Text1", spinner.getSelectedItem()+"\n"+soru.getText()+" dk");
-                    bundle.putString("Text2",spinner.getSelectedItem()+"\n"+dk.getText()+" soru");
 
+                    bundle.putInt("Dk",Integer.parseInt(dk.getText().toString()));
+                    bundle.putInt("Soru",Integer.parseInt(soru.getText().toString()));
                 }
 
+                bundle.putString("Ders",spinner.getSelectedItem().toString());
                 bundle.putInt("Integer",day);
                 bundle.putInt("Index",spinner.getSelectedItemPosition());
                 hedefler.setArguments(bundle);
-
-                DatabaseConnection dbc = new DatabaseConnection(getBaseContext());
-                dbc.open();
-                dbc.hedefEkle(day, (String)spinner.getSelectedItem()
-                        ,Integer.parseInt(String.valueOf(soru.getText())),
-                        Integer.parseInt(String.valueOf(dk.getText())));
-                dbc.close();
 
 
                 finish();

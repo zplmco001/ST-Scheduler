@@ -129,7 +129,6 @@ public class Hedefler extends Fragment {
         buttons[5] = hedefcmt;
         buttons[6] = hedefpaz;
 
-
         /*new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
         new MyPostit(glpzt,hedefpzt,"Türkçe","Matematik",getContext(),1);
         new MyPostit(glpzt,hedefpzt,"Fizik","Matematik",getContext(),2);
@@ -151,6 +150,35 @@ public class Hedefler extends Fragment {
         setButtonSize(hedefpaz,glpaz);
 
         scrollView = view.findViewById(R.id.hedefScroll);
+
+        DatabaseConnection dbc = new DatabaseConnection(getContext());
+        dbc.open();
+        List<NewPostit> postitList = dbc.hedefAl();
+        for (int i=0;i<postitList.size();i++){
+
+            String front="",back = "";
+            NewPostit postit = postitList.get(i);
+
+            int set = gridLayouts[postit.gun].getChildCount()-1;
+
+            if (postit.sure == 0) {
+
+                front = postit.ders+"\n"+String.valueOf(postit.soru)+" soru";
+
+            }else if (postit.soru == 0){
+
+                front = postit.ders+"\n"+String.valueOf(postit.sure)+" dk";
+
+            }else{
+
+                front = postit.ders+"\n"+String.valueOf(postit.soru)+" soru";
+                back = postit.ders+"\n"+String.valueOf(postit.sure)+" dk";
+
+            }
+
+            postits.add(new MyPostit(gridLayouts[postit.gun],buttons[postit.gun],front,back,getContext(),set,postit.dersindex));
+
+        }
 
         return view;
 
@@ -176,22 +204,39 @@ public class Hedefler extends Fragment {
 
         if(!bund.isEmpty()){
             Log.e("Bundle",String.valueOf(bund.size()));
-            int index = bund.getInt("Integer");
-            Log.e("Day",String.valueOf(index));
-            String front,back = "";
-            int ders = bund.getInt("Index");
-            if (bund.size()==3){
-                front = bund.getString("Text1");
+            int day = bund.getInt("Integer");
+            String ders = bund.getString("Ders");
+            String front="",back = "";
+            int dersindex = bund.getInt("Index");
+            int dk = bund.getInt("Dk");
+            int soru = bund.getInt("Soru");
+
+            DatabaseConnection db = new DatabaseConnection(getContext());
+            db.open();
+            db.hedefEkle(day,ders,soru,dk,dersindex);
+            db.close();
+
+            int set = gridLayouts[day].getChildCount()-1;
+
+            if (dk == 0) {
+
+                front = ders+"\n"+String.valueOf(soru)+" soru";
+
+            }else if (soru == 0){
+
+                front = ders+"\n"+String.valueOf(dk)+" dk";
+
+            }else{
+
+                front = ders+"\n"+String.valueOf(soru)+" soru";
+                back = ders+"\n"+String.valueOf(dk)+" dk";
 
             }
-            else {
-                front = bund.getString("Text1");
-                back = bund.getString("Text2");
-            }
-            int set = gridLayouts[index].getChildCount()-1;
-            postits.add(new MyPostit(gridLayouts[index],buttons[index],front,back,getContext(),set,ders));
+
+            postits.add(new MyPostit(gridLayouts[day],buttons[day],front,back,getContext(),set,dersindex));
         }
         Log.e("ASFA","GDSDDGS");
+
         pzt.setOnClickListener(new ButtonListener(0));
         sal.setOnClickListener(new ButtonListener(1));
         car.setOnClickListener(new ButtonListener(2));
@@ -330,7 +375,9 @@ public class Hedefler extends Fragment {
 
                     builder.setPositiveButton("SİL", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+
                             gl.removeView(tv);
+
                         }
                     });
 

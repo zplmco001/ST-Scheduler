@@ -7,12 +7,13 @@ package com.trial.kk.trial;
 public class NewPostit {
 
     public String ders;
-    public int gun, soru, sure;
+    public int gun, soru, sure, dersindex;
 
-    NewPostit(int gun, String ders, int soru, int sure){
+    NewPostit(int gun, String ders, int soru, int sure, int dersindex){
         this.gun = gun;
         this.ders = ders;
         this.soru = soru;
         this.sure = sure;
+        this.dersindex = dersindex;
     }
 }

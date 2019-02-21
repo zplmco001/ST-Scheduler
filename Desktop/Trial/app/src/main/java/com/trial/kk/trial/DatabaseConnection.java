@@ -40,16 +40,16 @@ public class DatabaseConnection {
         sqLiteDatabase.execSQL(command);
     }
 
-    void hedefEkle(int gun, String ders, int soru, int sure){
-        String cmd = "insert into hedefler (gun, ders, soru , sure) values ('"+gun+"','"+ders+"',"+String.valueOf(soru)+
-                ","+String.valueOf(sure)+")";
+    void hedefEkle(int gun, String ders, int soru, int sure, int dersindex){
+        String cmd = "insert into hedefler (gun, ders, soru , sure, dersindex) values ('"+gun+"','"+ders+"',"+String.valueOf(soru)+
+                ","+String.valueOf(sure)+","+String.valueOf(dersindex)+")";
         sqLiteDatabase.execSQL(cmd);
     }
 
     List<Integer> getState(){
         String columns[] = {"selected"};
         Cursor c = sqLiteDatabase.query("konular",columns,null,null,null,null,null);
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         c.moveToFirst();
         for (int i=0;i<c.getCount();i++){
             //while(!c.isAfterLast()){
@@ -62,7 +62,7 @@ public class DatabaseConnection {
     }
 
     List<NewPostit> hedefAl(){
-        String columns[] = {"gun", "ders", "soru" , "sure"};
+        String columns[] = {"gun", "ders", "soru" , "sure", "dersindex"};
         Cursor c = sqLiteDatabase.query("hedefler", columns,null,null,null,null,null);
         List<NewPostit> list = new ArrayList<>();
         c.moveToFirst();
@@ -72,10 +72,18 @@ public class DatabaseConnection {
             String ders = c.getString(c.getColumnIndex("ders"));
             int soru = c.getInt(c.getColumnIndex("soru"));
             int sure = c.getInt(c.getColumnIndex("sure"));
-            list.add(new NewPostit(gun,ders,soru,sure));
+            int index = c.getInt(c.getColumnIndex("dersindex"));
+
+            list.add(new NewPostit(gun,ders,soru,sure,index));
+            c.moveToNext();
 
         }
+        c.close();
         return list;
+    }
+
+    void hedefSil(){
+
     }
 
 
