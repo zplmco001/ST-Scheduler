@@ -82,7 +82,14 @@ public class DatabaseConnection {
         return list;
     }
 
-    void hedefSil(){
+    void hedefSil(String ders, int gun, String miktar, String tip){
+        String command = "";
+        if (tip.equals("soru")){
+            command = "delete from hedefler where ders = '"+ders+"' and gun = '"+gun+"' and soru = '"+miktar+"'";
+        }else{
+            command = "delete from hedefler where ders = '"+ders+"' and gun = '"+gun+"'and sure = '"+miktar+"'";
+        }
+        sqLiteDatabase.execSQL(command);
 
     }
 

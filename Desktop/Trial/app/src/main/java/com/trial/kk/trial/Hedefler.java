@@ -163,20 +163,20 @@ public class Hedefler extends Fragment {
 
             if (postit.sure == 0) {
 
-                front = postit.ders+"\n"+String.valueOf(postit.soru)+" soru";
+                front = postit.ders+" \n"+String.valueOf(postit.soru)+" soru";
 
             }else if (postit.soru == 0){
 
-                front = postit.ders+"\n"+String.valueOf(postit.sure)+" dk";
+                front = postit.ders+" \n"+String.valueOf(postit.sure)+" dk";
 
             }else{
 
-                front = postit.ders+"\n"+String.valueOf(postit.soru)+" soru";
-                back = postit.ders+"\n"+String.valueOf(postit.sure)+" dk";
+                front = postit.ders+" \n"+String.valueOf(postit.soru)+" soru";
+                back = postit.ders+" \n"+String.valueOf(postit.sure)+" dk";
 
             }
 
-            postits.add(new MyPostit(gridLayouts[postit.gun],buttons[postit.gun],front,back,getContext(),set,postit.dersindex));
+            postits.add(new MyPostit(gridLayouts[postit.gun],buttons[postit.gun],front,back,getContext(),set,postit.dersindex,postit.gun));
 
         }
 
@@ -220,20 +220,20 @@ public class Hedefler extends Fragment {
 
             if (dk == 0) {
 
-                front = ders+"\n"+String.valueOf(soru)+" soru";
+                front = ders+" \n"+String.valueOf(soru)+" soru";
 
             }else if (soru == 0){
 
-                front = ders+"\n"+String.valueOf(dk)+" dk";
+                front = ders+" \n"+String.valueOf(dk)+" dk";
 
             }else{
 
-                front = ders+"\n"+String.valueOf(soru)+" soru";
-                back = ders+"\n"+String.valueOf(dk)+" dk";
+                front = ders+" \n"+String.valueOf(soru)+" soru";
+                back = ders+" \n"+String.valueOf(dk)+" dk";
 
             }
 
-            postits.add(new MyPostit(gridLayouts[day],buttons[day],front,back,getContext(),set,dersindex));
+            postits.add(new MyPostit(gridLayouts[day],buttons[day],front,back,getContext(),set,dersindex,day));
         }
         Log.e("ASFA","GDSDDGS");
 
@@ -312,7 +312,7 @@ public class Hedefler extends Fragment {
         private TextView tv;
         private int flag = 0;
 
-        MyPostit(final GridLayout gl, final ImageButton btn, final String front, final String back, Context context, int a,int ders){
+        MyPostit(final GridLayout gl, final ImageButton btn, final String front, final String back, Context context, int a,int ders,final int gun){
 
             DisplayMetrics displaymetrics = new DisplayMetrics();
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -375,7 +375,16 @@ public class Hedefler extends Fragment {
 
                     builder.setPositiveButton("SİL", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-
+                            String [] text = tv.getText().toString().split(" ");
+                            DatabaseConnection db = new DatabaseConnection(getContext());
+                            if (text[2].equals("soru")){
+                                Log.e("if","soru");
+                            }else if (text[2].equals("dk")){
+                                Log.e("if","dk");
+                            }
+                            db.open();
+                            db.hedefSil(text[0],gun,text[1],text[2]);
+                            db.close();
                             gl.removeView(tv);
 
                         }
