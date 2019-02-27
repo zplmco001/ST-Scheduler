@@ -1,7 +1,12 @@
 package com.trial.kk.trial;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -10,8 +15,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import java.util.Calendar;
+import java.util.List;
 
 public class Hmp extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +37,7 @@ public class Hmp extends AppCompatActivity
     Konular konular;
     static TytFragment tytfr;
     //static AytFragment aytfr;
+    private TextView textView;
 
 
     @Override
@@ -43,6 +55,67 @@ public class Hmp extends AppCompatActivity
 
         //aytfr = new AytFragment();
 
+        textView = (TextView) findViewById(R.id.anasayfapostit);
+
+
+        Log.e("",String.valueOf(Calendar.MONDAY));
+        Log.e("",""+Calendar.TUESDAY);
+        Log.e("",""+Calendar.WEDNESDAY);
+        Log.e("",""+Calendar.THURSDAY);
+        Log.e("",""+Calendar.FRIDAY);
+        Log.e("",""+Calendar.SATURDAY);
+        Log.e("",""+Calendar.SUNDAY);
+
+        DatabaseConnection db = new DatabaseConnection(getBaseContext());
+        db.open();
+        List<NewPostit> list = db.hedefAl();
+        db.close();
+
+        int sure=0, soru=0;
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+        for (int i=0;i<list.size();i++){
+            if ((day-2)%7==list.get(i).gun){
+                sure += list.get(i).sure;
+                soru += list.get(i).soru;
+            }
+        }
+
+        String daytext="";
+
+        switch (day) {
+            case Calendar.SUNDAY:
+                daytext = "Pazar";
+                break;
+            case Calendar.MONDAY:
+                daytext = "Pazartesi";
+                break;
+            case Calendar.TUESDAY:
+                daytext = "Salı";
+                break;
+            case Calendar.WEDNESDAY:
+                daytext = "Çarşamba";
+                break;
+            case Calendar.THURSDAY:
+                daytext = "Perşembe";
+                break;
+            case Calendar.FRIDAY:
+                daytext = "Cuma";
+                break;
+            case Calendar.SATURDAY:
+                daytext = "Cumartesi";
+                break;
+
+        }
+        textView.setText(daytext+"\n"+soru+" soru\n"+sure+" dk");
+        textView.setTextSize(30);
+        textView.setTextColor(Color.BLACK);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        Typeface tp = Typeface.createFromAsset(getBaseContext().getAssets(), "Architext.ttf");
+        textView.setTypeface(tp);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -52,6 +125,11 @@ public class Hmp extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        TextView tv = (TextView) findViewById(R.id.name);
+
+        tv.setText(SettingsActivity.name);
+
 
         new Hedefler();
 
@@ -115,8 +193,6 @@ public class Hmp extends AppCompatActivity
             tag = "sayac";
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,kronometre).commit();
-
-
 
 
         } else if (id == R.id.nav_hedefler) {

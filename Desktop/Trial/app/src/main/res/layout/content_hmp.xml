@@ -9,4 +9,79 @@
     tools:context="com.trial.kk.trial.Hmp"
     tools:showIn="@layout/app_bar_hmp">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@color/f1"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/pref_default_display_name"
+            android:textAlignment="center"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/f4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="192dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/linearLayout4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:text="view1"
+            android:textColor="#000"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/anasayfapostit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/sarpostit1"
+            android:gravity="center_vertical"
+            android:text="view2"
+            android:textColor="#000"
+            android:textAlignment="center" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

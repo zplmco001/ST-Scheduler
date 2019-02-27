@@ -5,12 +5,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/cs">
+    android:id="@+id/cs"
+    android:background="#fff">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:background="#64B5F6"
+        android:background="#3700B3"
         android:layout_height="48dp"
         app:menu="@menu/bottom_navigation"
         android:layout_alignParentBottom="true"
