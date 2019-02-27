@@ -30,12 +30,12 @@ public class DatabaseConnection {
         database.close();
     }
 
-    void changeState(String konu, boolean state){
+    void changeState(String konu, String sinav, boolean state){
         int a = 0;
         if (state){
             a = 1;
         }
-        String command = "update konular set selected = "+String.valueOf(a)+" where konu = '"+konu+"'";
+        String command = "update konular set selected = "+String.valueOf(a)+" where konu = '"+konu+"' and sinav = '"+sinav+"'";
         Log.e("cmd",command);
         sqLiteDatabase.execSQL(command);
     }
@@ -51,6 +51,7 @@ public class DatabaseConnection {
         Cursor c = sqLiteDatabase.query("konular",columns,null,null,null,null,null);
         List<Integer> list = new ArrayList<>();
         c.moveToFirst();
+        Log.e("size",""+c.getCount());
         for (int i=0;i<c.getCount();i++){
             //while(!c.isAfterLast()){
             int item = c.getInt(0);
@@ -60,6 +61,16 @@ public class DatabaseConnection {
         c.close();
         return list;
     }
+
+   /* void printList(){
+        String columns[] = {"konu","selected"};
+        Cursor c = sqLiteDatabase.query("konular",columns,null,null,null,null,null);
+        c.moveToFirst();
+        for (int i=0;i<c.getCount();i++){
+            Log.e(c.getString(c.getColumnIndex("konu")),c.getString(c.getColumnIndex("selected"))+i);
+            c.moveToNext();
+        }
+    }*/
 
     List<NewPostit> hedefAl(){
         String columns[] = {"gun", "ders", "soru" , "sure", "dersindex"};

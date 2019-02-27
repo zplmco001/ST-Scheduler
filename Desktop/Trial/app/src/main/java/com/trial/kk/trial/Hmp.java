@@ -25,6 +25,7 @@ public class Hmp extends AppCompatActivity
     Fragment kronometre;
     Konular konular;
     static TytFragment tytfr;
+    //static AytFragment aytfr;
 
 
     @Override
@@ -39,6 +40,8 @@ public class Hmp extends AppCompatActivity
         konular = new Konular();
 
         tytfr = new TytFragment();
+
+        //aytfr = new AytFragment();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

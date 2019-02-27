@@ -4,13 +4,15 @@ package com.trial.kk.trial;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kursat on 3.02.2019.
@@ -29,9 +31,14 @@ public class AytFragment extends Fragment {
     ArrayList <String> felsefeCB = new ArrayList<>();
     ArrayList <String> dinCB = new ArrayList<>();
 
+    static ArrayList<String> konular = new ArrayList<>();
+    static int nums [] = {31,15,27,17,18,24,29,6,22,11};
+
     static ArrayList <String> derslerAYT = new ArrayList<>();
-    Button mat2Button,geo2Button,fizik2Button,kimya2Button,biyo2Button,edebiyatButton,cog2Button,tarih2Button,dinVeFelButton;
-    LinearLayout mat2Layout,geo2Layout,fizik2Layout,kimya2Layout,biyo2Layout,edebiyat2Layout,cog2Layout,tarih2Layout,dinveFelLayout;
+    ArrayList<CheckBox> checkBoxes = new ArrayList<>();
+
+    //Button mat2Button,geo2Button,fizik2Button,kimya2Button,biyo2Button,edebiyatButton,cog2Button,tarih2Button,dinVeFelButton;
+    //LinearLayout mat2Layout,geo2Layout,fizik2Layout,kimya2Layout,biyo2Layout,edebiyat2Layout,cog2Layout,tarih2Layout,dinveFelLayout;
 
     @Nullable
     @Override
@@ -39,6 +46,126 @@ public class AytFragment extends Fragment {
         View view = inflater.inflate(R.layout.ayt_fragment,container,false);
 
 
+        LinearLayout linearLayout = view.findViewById(R.id.aytLayout);
+
+        KonularView matKonu = new KonularView(getContext(),"Matematik",matCB);
+        linearLayout.addView(matKonu.getLinearLayout());
+
+        ArrayList<CheckBox> checks = matKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+
+        KonularView edebiyatKonu= new KonularView(getContext(),"Edebiyat",edebiyatCB);
+        linearLayout.addView(edebiyatKonu.getLinearLayout());
+
+        checks = edebiyatKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView geometriKonu = new KonularView(getContext(),"Geometri",geometriCB);
+        linearLayout.addView(geometriKonu.getLinearLayout());
+
+        checks = geometriKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView fizikKonu = new KonularView(getContext(),"Fizik",fizikCB);
+        linearLayout.addView(fizikKonu.getLinearLayout());
+
+        checks = fizikKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView kimyaKonu = new KonularView(getContext(),"Kimya",kimyaCB);
+        linearLayout.addView(kimyaKonu.getLinearLayout());
+
+        checks = kimyaKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView biyolojiKonu = new KonularView(getContext(),"Biyoloji",biyolojiCB);
+        linearLayout.addView(biyolojiKonu.getLinearLayout());
+
+        checks = biyolojiKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView tarihKonu = new KonularView(getContext(),"Tarih",tarihCB);
+        linearLayout.addView(tarihKonu.getLinearLayout());
+
+        checks = tarihKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView cografyaKonu = new KonularView(getContext(),"Coğrafya",cografyaCB);
+        linearLayout.addView(cografyaKonu.getLinearLayout());
+
+        checks = cografyaKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView felsefeKonu = new KonularView(getContext(),"Felsefe",felsefeCB);
+        linearLayout.addView(felsefeKonu.getLinearLayout());
+
+        checks = felsefeKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        KonularView dinKonu = new KonularView(getContext(),"Din Kültürü",dinCB);
+        linearLayout.addView(dinKonu.getLinearLayout());
+
+        checks = dinKonu.getChecboxes();
+        for (int i=0; i<checks.size();i++){
+            checkBoxes.add(checks.get(i));
+        }
+
+        for (int i=0;i<checkBoxes.size();i++){
+            checkBoxes.get(i).setOnClickListener(new checkListener(checkBoxes.get(i)));
+        }
+
+        DatabaseConnection dc = new DatabaseConnection(getContext());
+        dc.open();
+
+        List<Integer> list = dc.getState();
+
+        Log.e("ads",""+list.size());
+
+        for (int i=143;i<list.size();i++){
+            Log.e("saf",String.valueOf(list.get(i)));
+            if (list.get(i) == 1){
+                Log.e("asd","afs");
+                final CheckBox box = checkBoxes.get(i-143);
+                Log.e("konu",box.getText().toString());
+                box.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.e("","checked");
+                        box.setChecked(true);
+                    }
+                });
+                Log.e( "index",""+i);
+            }
+        }
+
+        dc.close();
+
+
+        return view;
+    }
+
+
+
+    AytFragment(){
         // DERS ADLARI
 
         derslerAYT.add("Matematik");
@@ -86,6 +213,10 @@ public class AytFragment extends Fragment {
         matCB.add("Türev");
         matCB.add("İntegral");
 
+        for (int i=0;i<matCB.size();i++){
+            konular.add(matCB.get(i));
+        }
+
         // EDEBİYAT CHECKBOX
 
         edebiyatCB.add("Güzel Sanatlar ve Edebiyat");
@@ -103,6 +234,10 @@ public class AytFragment extends Fragment {
         edebiyatCB.add("Cumhuriyet Döneminde Öğretici Metinler");
         edebiyatCB.add("Cumhuriyet Döneminde Coşku ve Heyecanı Dile Getiren Metinler (Şiir)\n");
         edebiyatCB.add("Cumhuriyet Döneminde Olay Çevresinde Oluşan Edebi Metinler");
+
+        for (int i=0;i<edebiyatCB.size();i++){
+            konular.add(edebiyatCB.get(i));
+        }
 
         // GEOMETRİ CHECKBOX
 
@@ -134,6 +269,10 @@ public class AytFragment extends Fragment {
         geometriCB.add("Trigonometri");
         geometriCB.add("Çemberin Analitiği");
 
+        for (int i=0;i<geometriCB.size();i++){
+            konular.add(geometriCB.get(i));
+        }
+
         // FİZİK CHECKBOX
 
         fizikCB.add("Fizik Bilimine Giriş");
@@ -153,6 +292,10 @@ public class AytFragment extends Fragment {
         fizikCB.add("Atom Fiziğine Giriş ve Radyoaktive");
         fizikCB.add("Modern Fizik");
         fizikCB.add("Modern Fiziğin Teknolojideki Uygulamaları");
+
+        for (int i=0;i<fizikCB.size();i++){
+            konular.add(fizikCB.get(i));
+        }
 
         // KİMYA CHECKBOX
 
@@ -174,6 +317,10 @@ public class AytFragment extends Fragment {
         kimyaCB.add("Endüstride ve Canlılarda Enerji");
         kimyaCB.add("Kimya Her Yerde");
         kimyaCB.add("Hayatımızdaki Kimya");
+
+        for (int i=0;i<kimyaCB.size();i++){
+            konular.add(kimyaCB.get(i));
+        }
 
         // BİYOLOJİ CHECKBOX
 
@@ -201,6 +348,10 @@ public class AytFragment extends Fragment {
         biyolojiCB.add("Bitkisel Dokular");
         biyolojiCB.add("Bitki Biyolojisi");
         biyolojiCB.add("Kominite ve Popülasyon Ekolojisi");
+
+        for (int i=0;i<biyolojiCB.size();i++){
+            konular.add(biyolojiCB.get(i));
+        }
 
         // TARİH CHECKBOX
 
@@ -234,6 +385,10 @@ public class AytFragment extends Fragment {
         tarihCB.add("Türklerde Eğitim");
         tarihCB.add("Türklerde Sanat");
 
+        for (int i=0;i<tarihCB.size();i++){
+            konular.add(tarihCB.get(i));
+        }
+
         // COĞRAFYA CHECKBOX
 
         cografyaCB.add("Doğal Sistemler");
@@ -242,6 +397,10 @@ public class AytFragment extends Fragment {
         cografyaCB.add("Küresel Ortam: Bölgeler ve Ülkeler");
         cografyaCB.add("Çevre ve Toplum");
         cografyaCB.add("Ekonomik Faaliyetler");
+
+        for (int i=0;i<cografyaCB.size();i++){
+            konular.add(cografyaCB.get(i));
+        }
 
         // FELSEFE CHECKBOX
 
@@ -268,6 +427,10 @@ public class AytFragment extends Fragment {
         felsefeCB.add("Toplum ve Kültür");
         felsefeCB.add("Toplumsal Kurumlar");
 
+        for (int i=0;i<felsefeCB.size();i++){
+            konular.add(felsefeCB.get(i));
+        }
+
         // DİN KÜLTÜRÜ CHECKBOX
 
         dinCB.add("Kur’an-ı Kerim’in Anlaşılması ve Kavranması");
@@ -282,40 +445,31 @@ public class AytFragment extends Fragment {
         dinCB.add("Hazreti Muhammed");
         dinCB.add("Vahiy ve Akıl Kur’an Yorumları");
 
+        for (int i=0;i<dinCB.size();i++){
+            konular.add(dinCB.get(i));
+        }
 
-        LinearLayout linearLayout = view.findViewById(R.id.aytLayout);
-
-        KonularView matKonu = new KonularView(getContext(),"Matematik",matCB);
-        linearLayout.addView(matKonu.getLinearLayout());
-
-        KonularView edebiyatKonu= new KonularView(getContext(),"Edebiyat",edebiyatCB);
-        linearLayout.addView(edebiyatKonu.getLinearLayout());
-
-        KonularView geometriKonu = new KonularView(getContext(),"Geometri",geometriCB);
-        linearLayout.addView(geometriKonu.getLinearLayout());
-
-        KonularView fizikKonu = new KonularView(getContext(),"Fizik",fizikCB);
-        linearLayout.addView(fizikKonu.getLinearLayout());
-
-        KonularView kimyaKonu = new KonularView(getContext(),"Kimya",kimyaCB);
-        linearLayout.addView(kimyaKonu.getLinearLayout());
-
-        KonularView biyolojiKonu = new KonularView(getContext(),"Biyoloji",biyolojiCB);
-        linearLayout.addView(biyolojiKonu.getLinearLayout());
-
-        KonularView tarihKonu = new KonularView(getContext(),"Tarih",tarihCB);
-        linearLayout.addView(tarihKonu.getLinearLayout());
-
-        KonularView cografyaKonu = new KonularView(getContext(),"Coğrafya",cografyaCB);
-        linearLayout.addView(cografyaKonu.getLinearLayout());
-
-        KonularView felsefeKonu = new KonularView(getContext(),"Felsefe",felsefeCB);
-        linearLayout.addView(felsefeKonu.getLinearLayout());
-
-        KonularView dinKonu = new KonularView(getContext(),"Din Kültürü",dinCB);
-        linearLayout.addView(dinKonu.getLinearLayout());
-
-
-        return view;
     }
+
+    class checkListener implements View.OnClickListener{
+
+        private CheckBox cb;
+
+        checkListener(CheckBox checkBox){
+            this.cb = checkBox;
+        }
+
+        @Override
+        public void onClick(View view) {
+            DatabaseConnection dc = new DatabaseConnection(getContext());
+            dc.open();
+            if (cb.isChecked()){
+                dc.changeState((String) cb.getText(),"ayt",true);
+            }
+            else
+                dc.changeState((String) cb.getText(),"ayt",false);
+            dc.close();
+        }
+    }
+
 }

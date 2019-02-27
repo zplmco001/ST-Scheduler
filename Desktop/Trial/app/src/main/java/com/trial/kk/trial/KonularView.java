@@ -34,11 +34,12 @@ public class KonularView {
         konu.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        params.gravity = Gravity.CENTER;
+                new LinearLayout.LayoutParams(430, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.gravity = Gravity.CENTER_HORIZONTAL;
 
         for (int i=0;i<konular.size();i++){
             CheckBox checkBox = new CheckBox(context);
+            //checkBox.setWidth(430);
             checkBox.setText(konular.get(i));
             checkBox.setLayoutParams(params);
             checkArray.add(checkBox);
@@ -55,7 +56,7 @@ public class KonularView {
         return general;
     }
 
-    List<CheckBox> getChecboxes(){
+    ArrayList<CheckBox> getChecboxes(){
         return checkArray;
     }
 

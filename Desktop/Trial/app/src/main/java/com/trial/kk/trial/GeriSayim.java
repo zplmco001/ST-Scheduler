@@ -74,7 +74,6 @@ public class GeriSayim extends Fragment{
         textdk1 = (TextView) view.findViewById(R.id.textdk1);
         textsn1 = (TextView) view.findViewById(R.id.textsn1);
 
-        ;
 
 
         tytlay.setVisibility(View.VISIBLE);
@@ -146,7 +145,7 @@ public class GeriSayim extends Fragment{
 
         try {
             dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            futureDate = dateFormat.parse("2019-06-15 08:00:00");
+            futureDate = dateFormat.parse("2019-06-15 10:15:00");
 
         } catch (ParseException e) {
             e.printStackTrace();

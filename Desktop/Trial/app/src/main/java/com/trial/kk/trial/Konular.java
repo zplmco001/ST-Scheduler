@@ -30,8 +30,9 @@ public class Konular extends Fragment {
 
         bottomNav = view.findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+        //bottomNav.setSelectedItemId(R.id.tyt);
 
-        tytFragment = new TytFragment();
+        //tytFragment = new TytFragment();
 
         getChildFragmentManager().beginTransaction().replace(R.id.cs,new KonularHmFragment()).commit();
 

@@ -79,7 +79,6 @@ public class TytFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tyt_fragment,container,false);
 
-       // ve  = new VeritabaniErisim(getContext());
 
         dersler.add("Matematik");
         dersler.add("Türkçe");
@@ -160,12 +159,13 @@ public class TytFragment extends Fragment {
         checkBoxes.add(olasilikCB);
         istatistikCB = view.findViewById(R.id.istatistikCB);
         checkBoxes.add(istatistikCB);
+        ikinciDerCB = view.findViewById(R.id.ikinciDerCB);
+        checkBoxes.add(ikinciDerCB);
         karmasikSayiCB = view.findViewById(R.id.karmasikSayiCB);
         checkBoxes.add(karmasikSayiCB);
         polinomCB = view.findViewById(R.id.polinomCB);
         checkBoxes.add(polinomCB);
-        ikinciDerCB = view.findViewById(R.id.ikinciDerCB);
-        checkBoxes.add(ikinciDerCB);
+
 
         // TÜRKÇE CHECKBOX
 
@@ -214,7 +214,7 @@ public class TytFragment extends Fragment {
         checkBoxes.add(ucgenAciCB);
         dikOzelCB = view.findViewById(R.id.dikOzelCB);
         checkBoxes.add(dikOzelCB);
-        dikUcgenTrigoCB = view.findViewById(R.id.dikdortgenCB);
+        dikUcgenTrigoCB = view.findViewById(R.id.dikUcgenTrigoCB);
         checkBoxes.add(dikUcgenTrigoCB);
         ikizEsCB = view.findViewById(R.id.ikizEsCB);
         checkBoxes.add(ikizEsCB);
@@ -230,8 +230,6 @@ public class TytFragment extends Fragment {
         checkBoxes.add(ucgenAciKenarCB);
         cokgenlerCB = view.findViewById(R.id.cokgenlerCB);
         checkBoxes.add(cokgenlerCB);
-        dikdortgenlerCB = view.findViewById(R.id.dikdortgenCB);
-        checkBoxes.add(dikdortgenlerCB);
         dortgenlerCB = view.findViewById(R.id.dortgenlerCB);
         checkBoxes.add(dortgenlerCB);
         yamukCB = view.findViewById(R.id.yamukCB);
@@ -240,6 +238,8 @@ public class TytFragment extends Fragment {
         checkBoxes.add(paralelKenarCB);
         esDortCB = view.findViewById(R.id.esDortCB);
         checkBoxes.add(esDortCB);
+        dikdortgenlerCB = view.findViewById(R.id.dikdortgenCB);
+        checkBoxes.add(dikdortgenlerCB);
         cemberCB = view.findViewById(R.id.cemberCB);
         checkBoxes.add(cemberCB);
         cemberUzunlukCB = view.findViewById(R.id.cemberUzunlukCB);
@@ -456,7 +456,7 @@ public class TytFragment extends Fragment {
 
         Log.e("ads",""+list.size());
 
-        for (int i=0;i<list.size();i++){
+        for (int i=0;i<143;i++){
             Log.e("fas",String.valueOf(list.get(i)));
             if (list.get(i) == 1){
                 Log.e("asd","afs");
@@ -496,10 +496,10 @@ public class TytFragment extends Fragment {
             DatabaseConnection dc = new DatabaseConnection(getContext());
             dc.open();
             if (cb.isChecked()){
-                dc.changeState((String) cb.getText(),true);
+                dc.changeState((String) cb.getText(),"tyt",true);
             }
             else
-                dc.changeState((String) cb.getText(),false);
+                dc.changeState((String) cb.getText(),"tyt",false);
             dc.close();
         }
     }
