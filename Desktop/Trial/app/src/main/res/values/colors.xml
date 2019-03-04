@@ -11,4 +11,13 @@
     <color name="f6">#6D4C41</color>
     <color name="f8">#76FF03</color>
     <color name="f7">#FFF</color>
+    <color name="color1">#7db2cc</color>
+    <color name="color2">#006785</color>
+    <color name="color3">#003643</color>
+    <color name="color4">#132843</color>
+    <color name="color5">#824165</color>
+    <color name="color6">#b05671</color>
+    <color name="color7">#ed6e76 </color>
+    <color name="color8">#f2be8b</color>
+    <color name="BarColor">#132843</color>
 </resources>

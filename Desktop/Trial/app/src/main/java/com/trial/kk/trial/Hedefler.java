@@ -36,7 +36,7 @@ public class Hedefler extends Fragment {
     private TextView pazartesi,sali,carsamba,persembe,cuma,cumartesi,pazar;
     private int drawable[] = {R.drawable.krmzpostit196,R.drawable.mavipostit1196,R.drawable.yesilpostit1196,
     R.drawable.yesilpostit2196,R.drawable.yesilpostit3196,R.drawable.sarpostit1,R.drawable.sarpostit2,R.drawable.pembepostit2copy,R.drawable.pembepostit1196
-    ,R.drawable.pembepostit3196,R.drawable.morpostit196,};
+    ,R.drawable.pembepostit3196,R.drawable.pembepostit3196,R.drawable.morpostit196,};
 
     ArrayList<MyPostit> postits = new ArrayList<>();
     private ImageButton[] buttons  = new ImageButton[7];

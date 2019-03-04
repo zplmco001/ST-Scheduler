@@ -1,8 +1,11 @@
 package com.trial.kk.trial;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -20,13 +23,20 @@ import java.util.List;
 
 public class AnaSayfa extends Fragment {
 
+    TextView tv;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.content_hmp,container,false);
 
-         TextView textView = view.findViewById(R.id.anasayfapostit);
+        TextView textView = view.findViewById(R.id.anasayfapostit);
+
+        tv = view.findViewById(R.id.name);
+
+
+
+
 
 
         Log.e("",String.valueOf(Calendar.MONDAY));
@@ -88,8 +98,22 @@ public class AnaSayfa extends Fragment {
         textView.setTypeface(tp);
 
 
-
         return view;
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String name = preferences.getString("example_text","def");
+        tv.setText(name);
+
+        Log.e("name1",name);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
     }
 }

@@ -128,10 +128,17 @@ public class Hmp extends AppCompatActivity
 
         TextView tv = (TextView) findViewById(R.id.name);
 
-        tv.setText(SettingsActivity.name);
+        /*SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String name = preferences.getString("stringValue",""+SettingsActivity.name+"");
+
+        Log.e("name",name);*/
+
+        //tv.setText(name);
 
 
         new Hedefler();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AnaSayfa()).commit();
 
     }
 

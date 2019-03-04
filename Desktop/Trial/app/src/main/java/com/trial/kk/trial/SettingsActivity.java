@@ -19,6 +19,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 
 import java.util.List;
@@ -85,11 +86,27 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 // simple string representation.
                 preference.setSummary(stringValue);
                 name = stringValue;
+                preference.getEditor().apply();
+
 
             }
             return true;
         }
     };
+
+
+    void setPreferences(){
+        SharedPreferences sharedPref = this.getSharedPreferences("name",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("stringValue",name); //string değer ekleniyor
+        editor.commit();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String name = preferences.getString("stringValue",""+SettingsActivity.name+"");
+        Log.e("onpause",name);
+
+    }
+
+
 
     /**
      * Helper method to determine if the device has an extra-large screen. For
