@@ -26,7 +26,6 @@ public class HedefPopup extends AppCompatActivity {
     private EditText soru, dk;
     private Hedefler hedefler = new Hedefler();
     private int day;
-    String gun[] = {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

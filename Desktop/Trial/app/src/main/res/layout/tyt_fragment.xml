@@ -13,7 +13,7 @@
         android:paddingBottom="50dp">
 
         <LinearLayout
-            android:layout_width="312dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -21,16 +21,16 @@
 
             <Button
                 android:id="@+id/matButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Matematik" />
 
             <LinearLayout
+                android:id="@+id/matLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="invisible"
-                android:id="@+id/matLayout">
+                android:visibility="invisible">
 
                 <CheckBox
                     android:id="@+id/sayilarCB"
@@ -198,15 +198,15 @@
 
             <Button
                 android:id="@+id/turkceButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Türkçe" />
 
             <LinearLayout
+                android:id="@+id/turkceLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/turkceLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -347,15 +347,15 @@
 
             <Button
                 android:id="@+id/geoButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Geometri" />
 
             <LinearLayout
+                android:id="@+id/geoLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/geoLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -531,15 +531,15 @@
 
             <Button
                 android:id="@+id/fizButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Fizik" />
 
             <LinearLayout
+                android:id="@+id/fizikLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/fizikLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -617,15 +617,15 @@
 
             <Button
                 android:id="@+id/kimyaButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Kimya" />
 
             <LinearLayout
+                android:id="@+id/kimyaLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/kimyaLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -710,15 +710,15 @@
 
             <Button
                 android:id="@+id/biyoButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Biyoloji" />
 
             <LinearLayout
+                android:id="@+id/biyoLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/biyoLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -818,15 +818,15 @@
 
             <Button
                 android:id="@+id/tarihButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Tarih" />
 
             <LinearLayout
+                android:id="@+id/tarihLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/tarihLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -954,15 +954,15 @@
 
             <Button
                 android:id="@+id/cogButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Coğrafya" />
 
             <LinearLayout
+                android:id="@+id/cogLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/cogLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -1047,15 +1047,15 @@
 
             <Button
                 android:id="@+id/felButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Felsefe" />
 
             <LinearLayout
+                android:id="@+id/felLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/felLayout"
                 android:visibility="invisible">
 
                 <CheckBox
@@ -1119,15 +1119,15 @@
 
             <Button
                 android:id="@+id/dinButton"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="Din Kültürü" />
 
             <LinearLayout
+                android:id="@+id/dinLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:id="@+id/dinLayout"
                 android:visibility="invisible">
 
                 <CheckBox

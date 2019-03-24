@@ -129,18 +129,6 @@ public class Hedefler extends Fragment {
         buttons[5] = hedefcmt;
         buttons[6] = hedefpaz;
 
-        /*new MyPostit(glpzt,hedefpzt,"Matematik","Matematik",getContext(),0);
-        new MyPostit(glpzt,hedefpzt,"Türkçe","Matematik",getContext(),1);
-        new MyPostit(glpzt,hedefpzt,"Fizik","Matematik",getContext(),2);
-        new MyPostit(glpzt,hedefpzt,"Kimya","Matematik",getContext(),3);
-        new MyPostit(glpzt,hedefpzt,"Tarih","Matematik",getContext(),4);
-        new MyPostit(glpzt,hedefpzt,"Coğrafya","Matematik",getContext(),5);
-        new MyPostit(glpzt,hedefpzt,"Din","Matematik",getContext(),6);
-        new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),7);
-        new MyPostit(glpzt,hedefpzt,"Biyoloji","Matematik",getContext(),8);
-        new MyPostit(glsal,hedefsal,"Biyoloji","Matematik",getContext(),0);*/
-        //new MyPostit(glsal,hedefsal,"Biyoloji",getContext(),1);
-
         setButtonSize(hedefpzt, glpzt);
         setButtonSize(hedefsal, glsal);
         setButtonSize(hedefcar,glcar);
@@ -181,20 +169,6 @@ public class Hedefler extends Fragment {
         }
 
         return view;
-
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-       /* DatabaseConnection dc = new DatabaseConnection(getContext());
-        dc.open();
-        List<NewPostit> postit = dc.hedefAl();
-
-        for (int i=0;i<postit.size();i++){
-
-        }*/
 
     }
 
@@ -439,5 +413,4 @@ public class Hedefler extends Fragment {
     }
 
 }
-
 

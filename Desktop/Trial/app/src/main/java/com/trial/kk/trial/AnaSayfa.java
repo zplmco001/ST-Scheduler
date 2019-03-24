@@ -1,8 +1,11 @@
 package com.trial.kk.trial;
 
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
@@ -10,20 +13,28 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by mehmetcanolgun on 17.01.2019.
  */
 
-public class AnaSayfa extends Fragment {
+public class AnaSayfa extends Fragment implements SurfaceHolder.Callback{
 
-    TextView tv;
+    private TextView tv;
+    private TextView ilerlemeText;
+    private ProgressBar ilerleme;
 
     @Nullable
     @Override
@@ -34,8 +45,10 @@ public class AnaSayfa extends Fragment {
 
         tv = view.findViewById(R.id.name);
 
+        GraphView graph = view.findViewById(R.id.graph);
 
-
+        ilerlemeText = view.findViewById(R.id.ilerlemeText);
+        ilerleme = view.findViewById(R.id.ilerleme);
 
 
 
@@ -49,8 +62,31 @@ public class AnaSayfa extends Fragment {
 
         DatabaseConnection db = new DatabaseConnection(getContext());
         db.open();
+        List<Integer> listState = db.getState();
         List<NewPostit> list = db.hedefAl();
         db.close();
+
+        int counter = 0;
+        for (int i=0;i<listState.size();i++){
+            if (listState.get(i) == 1){
+                counter++;
+                Log.e("counter",""+counter);
+            }
+        }
+
+
+
+        float yuzde = ((float) counter/(float) listState.size())*100;
+
+        Log.e("yuzde",""+yuzde);
+        Log.e("size",listState.size()+"");
+
+        ilerlemeText.setText("Genel İlerleme\n%"+Math.round(yuzde));
+
+        ProgressBarAnimation anim = new ProgressBarAnimation(ilerleme, 0, Math.round(yuzde));
+        anim.setDuration(1000);
+        ilerleme.startAnimation(anim);
+
 
         int sure=0, soru=0;
 
@@ -115,5 +151,56 @@ public class AnaSayfa extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    public void cnsDraw(SurfaceHolder holder){
+        Canvas canvas = holder.lockCanvas();
+        if (canvas == null) {
+            Log.e("sfads", "Cannot draw onto the canvas as it's null");
+        } else {
+            drawMyStuff(canvas);
+            holder.unlockCanvasAndPost(canvas);
+        }
+    }
+
+    private void drawMyStuff(final Canvas canvas) {
+        Random random = new Random();
+        Log.i("afs", "Drawing...");
+        canvas.drawRGB(255, 128, 128);
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        cnsDraw(surfaceHolder);
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+        cnsDraw(surfaceHolder);
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+
+    }
+    class ProgressBarAnimation extends Animation {
+        private ProgressBar progressBar;
+        private float from;
+        private float  to;
+
+        public ProgressBarAnimation(ProgressBar progressBar, float from, float to) {
+            super();
+            this.progressBar = progressBar;
+            this.from = from;
+            this.to = to;
+        }
+
+        @Override
+        protected void applyTransformation(float interpolatedTime, Transformation t) {
+            super.applyTransformation(interpolatedTime, t);
+            float value = from + (to - from) * interpolatedTime;
+            progressBar.setProgress((int) value);
+        }
+
     }
 }
