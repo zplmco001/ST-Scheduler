@@ -20,7 +20,7 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String konularCommand = "create table konular (sinav text, ders text, konu text, selected integer)";
         sqLiteDatabase.execSQL(konularCommand);
-        int a = 0;
+        /*int a = 0;
         Log.e("sizeout",""+TytFragment.dersler.size());
         for (int i = 0;i<TytFragment.dersler.size();i++) {
             for (int j = 0; j < TytFragment.num[i]; j++) {
@@ -38,7 +38,7 @@ public class Database extends SQLiteOpenHelper {
                 Log.e("","insert into konular (sinav,ders,konu,selected) values ('ayt' , '" + AytFragment.derslerAYT.get(i) + "','" + AytFragment.konular.get(a+j) + "',0)");
             }
             a += AytFragment.nums[i];
-        }
+        }*/
 
         String hedeflerCommand = "create table hedefler (gun integer, ders text, soru integer, sure integer, dersindex integer)";
         sqLiteDatabase.execSQL(hedeflerCommand);

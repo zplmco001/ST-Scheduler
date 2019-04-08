@@ -93,7 +93,7 @@
                 android:layout_height="0dp"
                 android:layout_centerInParent="true"
 
-                android:background="@drawable/kronometre_layoutp"
+
                 android:indeterminate="false"
                 android:max="100"
                 android:progress="50"
@@ -113,19 +113,18 @@
                 android:id="@+id/ilerlemeText"
                 android:layout_width="177dp"
                 android:layout_height="179dp"
-                android:gravity="center_vertical"
-                android:text="view1"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:textColor="#000"
-                app:layout_constraintTop_toTopOf="@+id/ilerleme"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="7dp"
-                app:layout_constraintRight_toRightOf="@+id/ilerleme"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="@+id/ilerleme"
+                android:layout_marginRight="7dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ilerleme"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintLeft_toLeftOf="@+id/ilerleme"
+                app:layout_constraintRight_toRightOf="@+id/ilerleme"
+                app:layout_constraintTop_toTopOf="@+id/ilerleme" />
 
         </android.support.constraint.ConstraintLayout>
 

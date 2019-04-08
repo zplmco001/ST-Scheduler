@@ -36,7 +36,7 @@ public class Hmp extends AppCompatActivity
     Fragment kronometre;
     Konular konular;
     static TytFragment tytfr;
-    //static AytFragment aytfr;
+    static AytFragment aytfr;
     private TextView textView;
 
 
@@ -51,9 +51,17 @@ public class Hmp extends AppCompatActivity
 
         konular = new Konular();
 
+        /*SharedPreferences preferences = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit(); //SharedPreferences'a kayıt eklemek için editor oluşturuyoruz
+        if (preferences.getInt("intValue",0)!=1){
+            editor.putInt("intValue",0);
+            editor.apply();
+        }*/
+
+
         tytfr = new TytFragment();
 
-        //aytfr = new AytFragment();
+        aytfr = new AytFragment();
 
         textView = (TextView) findViewById(R.id.anasayfapostit);
 

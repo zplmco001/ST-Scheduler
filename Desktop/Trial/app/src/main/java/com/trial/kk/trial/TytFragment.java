@@ -1,5 +1,7 @@
 package com.trial.kk.trial;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -451,6 +453,16 @@ public class TytFragment extends Fragment {
 
         DatabaseConnection dc = new DatabaseConnection(getContext());
         dc.open();
+
+        SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        if (preferences.getInt("intValue",0)!=1){
+            dc.initializeKonular();
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putInt("intValue",1);
+            editor.apply();
+        }
+
+
 
         List<Integer> list = dc.getState();
 

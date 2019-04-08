@@ -51,7 +51,7 @@ public class KonularView {
         dersBtn.setOnClickListener(new butonListener(konu));
 
         ViewGroup.LayoutParams layoutParams = dersBtn.getLayoutParams();
-        params.height = 30;
+        //params.height = 50;
         params.width = ViewGroup.LayoutParams.MATCH_PARENT;
         dersBtn.setLayoutParams(layoutParams);
 
