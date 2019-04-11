@@ -17,11 +17,13 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -39,13 +41,42 @@ public class AnaSayfa extends Fragment implements SurfaceHolder.Callback{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.content_hmp,container,false);
+        final View view = inflater.inflate(R.layout.content_hmp,container,false);
 
         TextView textView = view.findViewById(R.id.anasayfapostit);
 
         tv = view.findViewById(R.id.name);
 
-        GraphView graph = view.findViewById(R.id.graph);
+        final ArrayList <Point> points = new ArrayList<>();
+
+        Point point = new Point(1,400);
+        Point point2 = new Point(2,370);
+        Point point1 = new Point(3,100);
+        Point point5 = new Point(0,0);
+
+        points.add(point);
+        points.add(point2);
+        points.add(point1);
+        points.add(point5);
+
+        final GraphView graph = view.findViewById(R.id.graph);
+
+
+
+        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                int width = graph.getWidth();
+                int height = graph.getHeight();
+                graph.setSize(width, height);
+                graph.setPoints(points);
+            }
+        });
+
+
+
 
         ilerlemeText = view.findViewById(R.id.ilerlemeText);
         ilerleme = view.findViewById(R.id.ilerleme);
@@ -142,7 +173,7 @@ public class AnaSayfa extends Fragment implements SurfaceHolder.Callback{
     public void onResume() {
         super.onResume();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String name = preferences.getString("example_text","def");
+        String name = preferences.getString("example_text","");
         tv.setText(name);
 
         Log.e("name1",name);

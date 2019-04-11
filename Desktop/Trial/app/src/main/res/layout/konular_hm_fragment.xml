@@ -1,6 +1,559 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="ToggleButton" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeMat"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeMatText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeMat"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeMat"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeMat"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeMat" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeTur"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular2"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeTurText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeTur"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeTur"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeTur"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeTur" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeGeo"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular3"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeGeoText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeGeo"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeGeo"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeGeo"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeGeo" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeFiz"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular4"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeFizText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeFiz"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeFiz"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeFiz"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeFiz" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeKim"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular5"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeKimText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeKim"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeKim"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeKim"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeKim" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeBiy"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeBiyText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeBiy"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeBiy"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeBiy"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeBiy" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeTar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular2"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeTarText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeTar"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeTar"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeTar"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeTar" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeCog"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular3"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeCogText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeCog"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeCog"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeCog"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeCog" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeFel"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular4"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeFelText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeFel"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeFel"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeFel"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeFel" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+
+                    <ProgressBar
+
+                        android:id="@+id/ilerlemeDin"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true"
+
+
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/circular5"
+                        android:secondaryProgress="100"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.495"
+                        tools:layout_constraintBottom_creator="1"
+                        tools:layout_constraintLeft_creator="1"
+                        tools:layout_constraintRight_creator="1"
+                        tools:layout_constraintTop_creator="1" />
+
+                    <TextView
+                        android:id="@+id/ilerlemeDinText"
+                        android:layout_width="177dp"
+                        android:layout_height="179dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ilerlemeDin"
+                        app:layout_constraintLeft_toLeftOf="@+id/ilerlemeDin"
+                        app:layout_constraintRight_toRightOf="@+id/ilerlemeDin"
+                        app:layout_constraintTop_toTopOf="@+id/ilerlemeDin" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

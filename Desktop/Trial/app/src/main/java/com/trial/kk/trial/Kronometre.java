@@ -69,7 +69,7 @@ public class Kronometre extends Fragment {
         drawable = res.getDrawable(R.drawable.circular);
         progressBar = (ProgressBar) view.findViewById(R.id.sayac);
         progressBar.setProgress(0);
-        progressBar.setSecondaryProgress(200);
+        //progressBar.setSecondaryProgress(200);
         progressBar.setMax(100);
         progressBar.setProgressDrawable(drawable);
 

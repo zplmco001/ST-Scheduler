@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/secondaryProgress">
         <shape
@@ -38,9 +37,9 @@
                     android:toDegrees="360" />
 
                 <gradient
-                    android:centerColor="#00ff0f"
-                    android:endColor="#00ff0f"
-                    android:startColor="#00ff0f"
+                    android:centerColor="@color/f5"
+                    android:endColor="@color/f5"
+                    android:startColor="@color/f5"
                     android:type="sweep" />
 
             </shape>

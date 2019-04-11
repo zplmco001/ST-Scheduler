@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import java.util.List;
@@ -20,9 +21,11 @@ public class GraphView extends View {
     private Paint paint = new Paint();
     List<Point> list;
     private Canvas canvas;
+    private int width, height;
 
     public GraphView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
     }
 
 
@@ -30,15 +33,53 @@ public class GraphView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         this.canvas = canvas;
-        canvas.drawRect(50,590,1000,600,paint);
-        canvas.drawRect(50,50,60,590,paint);
+        Log.e("canvas",canvas+"");
+
+        canvas.drawRect(width/20,height*6/7,width*19/20,height*6/7+10,paint);
+        canvas.drawRect(width/20,height/20,width/20+10,height*6/7,paint);
+
+        drawPoints(canvas);
 
     }
 
-    public void drawPoints(){
-        for (Point p: list){
-            canvas.drawPoint(p.x,p.y,paint);
+    public void setSize(int width, int height){
+        this.width = width;
+        this.height = height;
+    }
+
+    public void setPoints(List<Point> list){
+        this.list = list;
+        Log.e("inside",""+this.list.size());
+    }
+
+    public void drawPoints(Canvas canvas){
+
+        int r1 = width*19/20;
+        int r2 = width/20+10;
+        int t1 = height*6/7;
+        int t2 = height/20;
+
+       // Log.e("inside",""+this.list.size());
+
+        int wRange = r1-r2;
+        int hRAnge = t1-t2;
+
+        Log.e("RAnge",""+hRAnge);
+
+        int x = r2;
+        int y = t1;
+
+        if (hRAnge>0){
+            for (int i=0;i<this.list.size();i++){
+                canvas.drawCircle(wRange*(i+1)/list.size()+r2,t1-hRAnge*list.get(i).y/500,10,paint);
+                canvas.drawLine(x,y,wRange*(i+1)/list.size()+r2,t1-hRAnge*list.get(i).y/500,paint);
+                x = wRange*(i+1)/list.size()+r2;
+                y = t1-hRAnge*list.get(i).y/500;
+            }
         }
+
+
+
     }
 
 }
